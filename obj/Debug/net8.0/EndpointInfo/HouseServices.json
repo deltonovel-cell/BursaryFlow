@@ -1,0 +1,1016 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "HouseServices",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/Bursary": {
+      "get": {
+        "tags": [
+          "Bursary"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Bursary/{id}": {
+      "get": {
+        "tags": [
+          "Bursary"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Bursary/search": {
+      "get": {
+        "tags": [
+          "Bursary"
+        ],
+        "parameters": [
+          {
+            "name": "search",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Bursary/open": {
+      "get": {
+        "tags": [
+          "Bursary"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Bursary/match": {
+      "get": {
+        "tags": [
+          "Bursary"
+        ],
+        "parameters": [
+          {
+            "name": "studyLevel",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "studyField",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "yearOfStudy",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "average",
+            "in": "query",
+            "schema": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          {
+            "name": "householdIncome",
+            "in": "query",
+            "schema": {
+              "type": "number",
+              "format": "double"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Bursary": {
+      "get": {
+        "tags": [
+          "BursaryPage"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Bursary/Details/{id}": {
+      "get": {
+        "tags": [
+          "BursaryPage"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/DatabaseTest": {
+      "get": {
+        "tags": [
+          "DatabaseTest"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Eligibility/student/{studentId}": {
+      "get": {
+        "tags": [
+          "Eligibility"
+        ],
+        "parameters": [
+          {
+            "name": "studentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Profile": {
+      "get": {
+        "tags": [
+          "Profile"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/StudentProfile": {
+      "get": {
+        "tags": [
+          "StudentProfile"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "StudentProfile"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StudentProfile"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StudentProfile"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/StudentProfile"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/StudentProfile/{id}": {
+      "get": {
+        "tags": [
+          "StudentProfile"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "StudentProfile"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StudentProfile"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StudentProfile"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/StudentProfile"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "StudentProfile"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Application": {
+        "type": "object",
+        "properties": {
+          "applicationID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "studentID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "bursaryID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cycleID": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "applicationDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "eligibilityScore": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "eligibilityStatus": {
+            "type": "string",
+            "nullable": true
+          },
+          "missingDocumentsCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "missingRequirementsCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "submittedDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "externalApplicationURL": {
+            "type": "string",
+            "nullable": true
+          },
+          "externalReference": {
+            "type": "string",
+            "nullable": true
+          },
+          "notes": {
+            "type": "string",
+            "nullable": true
+          },
+          "student": {
+            "$ref": "#/components/schemas/StudentProfile"
+          },
+          "bursary": {
+            "$ref": "#/components/schemas/Bursary"
+          },
+          "cycle": {
+            "$ref": "#/components/schemas/BursaryCycle"
+          },
+          "documents": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApplicationDocument"
+            },
+            "nullable": true
+          },
+          "statusHistory": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApplicationStatusHistory"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ApplicationDocument": {
+        "type": "object",
+        "properties": {
+          "applicationDocumentID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "applicationID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "studentDocumentID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "isAccepted": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "reviewNotes": {
+            "type": "string",
+            "nullable": true
+          },
+          "application": {
+            "$ref": "#/components/schemas/Application"
+          },
+          "studentDocument": {
+            "$ref": "#/components/schemas/StudentDocument"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ApplicationStatusHistory": {
+        "type": "object",
+        "properties": {
+          "historyID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "applicationID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "oldStatus": {
+            "type": "string",
+            "nullable": true
+          },
+          "newStatus": {
+            "type": "string",
+            "nullable": true
+          },
+          "statusMessage": {
+            "type": "string",
+            "nullable": true
+          },
+          "changedDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "application": {
+            "$ref": "#/components/schemas/Application"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Bursary": {
+        "type": "object",
+        "properties": {
+          "bursaryID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "providerID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "bursaryName": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "websiteURL": {
+            "type": "string",
+            "nullable": true
+          },
+          "applicationURL": {
+            "type": "string",
+            "nullable": true
+          },
+          "informationURL": {
+            "type": "string",
+            "nullable": true
+          },
+          "studyLevel": {
+            "type": "string",
+            "nullable": true
+          },
+          "studyFields": {
+            "type": "string",
+            "nullable": true
+          },
+          "minimumAverage": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "maximumHouseholdIncome": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "minimumYearOfStudy": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "maximumYearOfStudy": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "minimumAge": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "maximumAge": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "citizenshipRequirement": {
+            "type": "string",
+            "nullable": true
+          },
+          "institutionRequirement": {
+            "type": "string",
+            "nullable": true
+          },
+          "financialNeedRequired": {
+            "type": "boolean"
+          },
+          "tuitionIncluded": {
+            "type": "boolean"
+          },
+          "booksIncluded": {
+            "type": "boolean"
+          },
+          "accommodationIncluded": {
+            "type": "boolean"
+          },
+          "accommodationAllowanceIncluded": {
+            "type": "boolean"
+          },
+          "livingAllowanceIncluded": {
+            "type": "boolean"
+          },
+          "transportAllowanceIncluded": {
+            "type": "boolean"
+          },
+          "isVerified": {
+            "type": "boolean"
+          },
+          "verificationStatus": {
+            "type": "string",
+            "nullable": true
+          },
+          "isActive": {
+            "type": "boolean"
+          },
+          "lastVerified": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "createdDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "provider": {
+            "$ref": "#/components/schemas/BursaryProvider"
+          }
+        },
+        "additionalProperties": false
+      },
+      "BursaryCycle": {
+        "type": "object",
+        "properties": {
+          "cycleID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "bursaryID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "academicYear": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cycleName": {
+            "type": "string",
+            "nullable": true
+          },
+          "openingDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "closingDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "applicationURL": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "isVerified": {
+            "type": "boolean"
+          },
+          "lastChecked": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "sourceURL": {
+            "type": "string",
+            "nullable": true
+          },
+          "notes": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "bursary": {
+            "$ref": "#/components/schemas/Bursary"
+          },
+          "applications": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Application"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "BursaryDocumentRequirement": {
+        "type": "object",
+        "properties": {
+          "bursaryDocumentRequirementID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "bursaryID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "documentTypeID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "isMandatory": {
+            "type": "boolean"
+          },
+          "additionalInstructions": {
+            "type": "string",
+            "nullable": true
+          },
+          "bursary": {
+            "$ref": "#/components/schemas/Bursary"
+          },
+          "documentType": {
+            "$ref": "#/components/schemas/DocumentType"
+          }
+        },
+        "additionalProperties": false
+      },
+      "BursaryProvider": {
+        "type": "object",
+        "properties": {
+          "providerID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "providerName": {
+            "type": "string",
+            "nullable": true
+          },
+          "providerType": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "websiteURL": {
+            "type": "string",
+            "nullable": true
+          },
+          "applicationPortalURL": {
+            "type": "string",
+            "nullable": true
+          },
+          "contactEmail": {
+            "type": "string",
+            "nullable": true
+          },
+          "contactPhone": {
+            "type": "string",
+            "nullable": true
+          },
+          "isOfficial": {
+            "type": "boolean"
+          },
+          "isActive": {
+            "type": "boolean"
+          },
+          "lastVerified": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "createdDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "bursaries": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Bursary"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DocumentType": {
+        "type": "object",
+        "properties": {
+          "documentTypeID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "documentName": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "isCommonDocument": {
+            "type": "boolean"
+          },
+          "createdDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "studentDocuments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/StudentDocument"
+            },
+            "nullable": true
+          },
+          "bursaryRequirements": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BursaryDocumentRequirement"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "StudentDocument": {
+        "type": "object",
+        "properties": {
+          "studentDocumentID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "studentID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "documentTypeID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fileName": {
+            "type": "string",
+            "nullable": true
+          },
+          "filePath": {
+            "type": "string",
+            "nullable": true
+          },
+          "fileType": {
+            "type": "string",
+            "nullable": true
+          },
+          "fileSize": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "uploadedDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "verificationStatus": {
+            "type": "string",
+            "nullable": true
+          },
+          "isReadable": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "isLowQuality": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "containsPotentialTypos": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "hasMismatchingInformation": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "aiAnalysisNotes": {
+            "type": "string",
+            "nullable": true
+          },
+          "verifiedDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "student": {
+            "$ref": "#/components/schemas/StudentProfile"
+          },
+          "documentType": {
+            "$ref": "#/components/schemas/DocumentType"
+          },
+          "applicationDocuments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApplicationDocument"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "StudentProfile": {
+        "type": "object",
+        "properties": {
+          "studentID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "firstName": {
+            "type": "string",
+            "nullable": true
+          },
+          "middleName": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastName": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "phoneNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "idNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "dateOfBirth": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "citizenship": {
+            "type": "string",
+            "nullable": true
+          },
+          "gender": {
+            "type": "string",
+            "nullable": true
+          },
+          "province": {
+            "type": "string",
+            "nullable": true
+          },
+          "city": {
+            "type": "string",
+            "nullable": true
+          },
+          "institution": {
+            "type": "string",
+            "nullable": true
+          },
+          "studentNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "studyLevel": {
+            "type": "string",
+            "nullable": true
+          },
+          "course": {
+            "type": "string",
+            "nullable": true
+          },
+          "faculty": {
+            "type": "string",
+            "nullable": true
+          },
+          "yearOfStudy": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "averageMark": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "householdIncome": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "hasDisability": {
+            "type": "boolean"
+          },
+          "isFirstGenerationStudent": {
+            "type": "boolean"
+          },
+          "createdDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updatedDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "documents": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/StudentDocument"
+            },
+            "nullable": true
+          },
+          "applications": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Application"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}
