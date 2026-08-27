@@ -1,0 +1,1602 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0" />
+
+    <title>BursaryFlow | Dashboard</title>
+
+    <meta name="description"
+          content="Your BursaryFlow student dashboard." />
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="~/css/dashboard.css" />
+
+</head>
+
+<body>
+
+    <div class="dashboard-shell">
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar" id="sidebar">
+
+            <div class="sidebar-brand">
+
+                <a href="/" class="brand">
+
+                    <span class="brand-mark">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+
+                    <span>
+                        Bursary<span>Flow</span>
+                    </span>
+
+                </a>
+
+            </div>
+
+
+            <div class="sidebar-profile">
+
+                <div class="profile-avatar">
+                    D
+                </div>
+
+                <div class="profile-details">
+
+                    <strong id="studentName">
+                        Delton
+                    </strong>
+
+                    <span>
+                        Student
+                    </span>
+
+                </div>
+
+                <button class="profile-menu"
+                        type="button">
+                    ⋮
+                </button>
+
+            </div>
+
+
+            <nav class="sidebar-navigation">
+
+                <div class="navigation-label">
+                    WORKSPACE
+                </div>
+
+                <a href="/Dashboard"
+                   class="sidebar-link active">
+
+                    <span class="sidebar-icon">
+                        <i data-lucide="layout-dashboard"></i>
+                    </span>
+
+                    <span>
+                        Dashboard
+                    </span>
+
+                </a>
+
+
+                <a href="/Bursary"
+                   class="sidebar-link">
+
+                    <span class="sidebar-icon">
+                        <i data-lucide="search"></i>
+                    </span>
+
+                    <span>
+                        Find bursaries
+                    </span>
+
+                    <span class="sidebar-count"
+                          id="bursaryCount">
+                        13
+                    </span>
+
+                </a>
+
+
+                <a href="/Applications"
+                   class="sidebar-link">
+
+                    <span class="sidebar-icon">
+                        <i data-lucide="send"></i>
+                    </span>
+
+                    <span>
+                        My applications
+                    </span>
+
+                </a>
+
+
+                <a href="/Documents"
+                   class="sidebar-link">
+
+                    <span class="sidebar-icon">
+                        <i data-lucide="folder"></i>
+                    </span>
+
+                    <span>
+                        Documents
+                    </span>
+
+                </a>
+
+
+                <div class="navigation-label">
+                    TOOLS
+                </div>
+
+
+                <a href="/Profile"
+                   class="sidebar-link">
+
+                    <span class="sidebar-icon">
+                        <i data-lucide="user-round"></i>
+                    </span>
+
+                    <span>
+                        My profile
+                    </span>
+
+                </a>
+
+
+                <a href="/AiAssistant"
+                   class="sidebar-link">
+
+                    <span class="sidebar-icon">
+                        <i data-lucide="sparkles"></i>
+                    </span>
+
+                    <span>
+                        AI assistant
+                    </span>
+
+                    <span class="ai-badge">
+                        AI
+                    </span>
+
+                </a>
+
+
+                <a href="/Documents/Create"
+                   class="sidebar-link">
+
+                    <span class="sidebar-icon">
+                        <i data-lucide="file-plus-2"></i>
+                    </span>
+
+                    <span>
+                        Create document
+                    </span>
+
+                </a>
+
+
+                <div class="navigation-label">
+                    ACCOUNT
+                </div>
+
+
+                <a href="/Settings"
+                   class="sidebar-link">
+
+                    <span class="sidebar-icon">
+                        <i data-lucide="settings"></i>
+                    </span>
+
+                    <span>
+                        Settings
+                    </span>
+
+                </a>
+
+            </nav>
+
+
+            <div class="sidebar-bottom">
+
+                <div class="help-card">
+
+                    <div class="help-icon">
+                        <i data-lucide="circle-help"></i>
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Need help?
+                        </strong>
+
+                        <span>
+                            Ask BursaryFlow AI
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <a href="/Account/Logout"
+                   class="logout-link">
+
+                    <i data-lucide="log-out"></i>
+
+                    <span>
+                        Sign out
+                    </span>
+
+                </a>
+
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN -->
+
+        <main class="dashboard-main">
+
+
+            <!-- TOP BAR -->
+
+            <header class="dashboard-header">
+
+                <button class="mobile-menu"
+                        id="mobileMenu"
+                        type="button"
+                        aria-label="Open navigation">
+
+                    <i data-lucide="menu"></i>
+
+                </button>
+
+
+                <div class="header-search">
+
+                    <i data-lucide="search"></i>
+
+                    <input type="text"
+                           id="globalSearch"
+                           placeholder="Search bursaries, applications or documents..." />
+
+                    <span class="search-shortcut">
+                        /
+                    </span>
+
+                </div>
+
+
+                <div class="header-actions">
+
+                    <button class="header-icon-button"
+                            type="button"
+                            title="Notifications">
+
+                        <i data-lucide="bell"></i>
+
+                        <span class="notification-dot"></span>
+
+                    </button>
+
+
+                    <div class="header-divider"></div>
+
+
+                    <button class="header-user"
+                            type="button">
+
+                        <span class="header-avatar">
+                            D
+                        </span>
+
+                        <span class="header-user-name">
+                            Delton
+                        </span>
+
+                        <i data-lucide="chevron-down"></i>
+
+                    </button>
+
+                </div>
+
+            </header>
+
+
+            <!-- CONTENT -->
+
+            <div class="dashboard-content">
+
+
+                <!-- WELCOME -->
+
+                <section class="welcome-section">
+
+                    <div>
+
+                        <div class="welcome-date">
+                            <span class="status-indicator"></span>
+                            YOUR BURSARY JOURNEY
+                        </div>
+
+                        <h1>
+                            Good afternoon, Delton.
+                        </h1>
+
+                        <p>
+                            Here's what's happening with your
+                            bursary applications.
+                        </p>
+
+                    </div>
+
+
+                    <div class="welcome-actions">
+
+                        <a href="/Bursary"
+                           class="button-primary">
+
+                            <i data-lucide="search"></i>
+
+                            Find bursaries
+
+                        </a>
+
+                        <a href="/Documents"
+                           class="button-secondary">
+
+                            <i data-lucide="upload"></i>
+
+                            Upload document
+
+                        </a>
+
+                    </div>
+
+                </section>
+
+
+                <!-- PROFILE COMPLETION -->
+
+                <section class="profile-completion-card">
+
+                    <div class="completion-left">
+
+                        <div class="completion-icon">
+                            <i data-lucide="user-round-check"></i>
+                        </div>
+
+                        <div>
+
+                            <span class="eyebrow">
+                                PROFILE READINESS
+                            </span>
+
+                            <h3>
+                                Complete your profile
+                            </h3>
+
+                            <p>
+                                A complete profile helps BursaryFlow
+                                find more accurate bursary matches.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="completion-progress">
+
+                        <div class="completion-number">
+                            <strong id="profilePercentage">
+                                82
+                            </strong>
+
+                            <span>%</span>
+                        </div>
+
+                        <div class="completion-bar">
+                            <span style="width:82%"></span>
+                        </div>
+
+                    </div>
+
+
+                    <a href="/Profile"
+                       class="completion-action">
+
+                        Complete profile
+
+                        <i data-lucide="arrow-up-right"></i>
+
+                    </a>
+
+                </section>
+
+
+                <!-- STATISTICS -->
+
+                <section class="stats-grid">
+
+
+                    <article class="stat-card">
+
+                        <div class="stat-top">
+
+                            <span class="stat-label">
+                                MATCHES FOUND
+                            </span>
+
+                            <span class="stat-icon">
+                                <i data-lucide="target"></i>
+                            </span>
+
+                        </div>
+
+                        <strong class="stat-value"
+                                id="matchesCount">
+                            13
+                        </strong>
+
+                        <div class="stat-footer positive">
+
+                            <i data-lucide="trending-up"></i>
+
+                            <span>
+                                4 new this week
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="stat-card">
+
+                        <div class="stat-top">
+
+                            <span class="stat-label">
+                                ACTIVE APPLICATIONS
+                            </span>
+
+                            <span class="stat-icon">
+                                <i data-lucide="send"></i>
+                            </span>
+
+                        </div>
+
+                        <strong class="stat-value">
+                            3
+                        </strong>
+
+                        <div class="stat-footer">
+
+                            <span>
+                                1 awaiting documents
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="stat-card">
+
+                        <div class="stat-top">
+
+                            <span class="stat-label">
+                                DOCUMENTS
+                            </span>
+
+                            <span class="stat-icon">
+                                <i data-lucide="files"></i>
+                            </span>
+
+                        </div>
+
+                        <strong class="stat-value">
+                            8
+                        </strong>
+
+                        <div class="stat-footer positive">
+
+                            <i data-lucide="check-circle"></i>
+
+                            <span>
+                                All verified
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="stat-card">
+
+                        <div class="stat-top">
+
+                            <span class="stat-label">
+                                READINESS
+                            </span>
+
+                            <span class="stat-icon">
+                                <i data-lucide="shield-check"></i>
+                            </span>
+
+                        </div>
+
+                        <strong class="stat-value">
+                            87%
+                        </strong>
+
+                        <div class="stat-footer">
+
+                            <span>
+                                Almost ready to apply
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                </section>
+
+
+                <!-- MAIN GRID -->
+
+                <section class="dashboard-grid">
+
+
+                    <!-- MATCHES -->
+
+                    <div class="dashboard-panel matches-panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <span class="panel-eyebrow">
+                                    AI MATCHING
+                                </span>
+
+                                <h2>
+                                    Recommended for you
+                                </h2>
+
+                            </div>
+
+                            <a href="/Bursary"
+                               class="panel-link">
+
+                                View all
+
+                                <i data-lucide="arrow-up-right"></i>
+
+                            </a>
+
+                        </div>
+
+
+                        <div class="bursary-list"
+                             id="recommendedBursaries">
+
+                            <div class="bursary-loading">
+
+                                <span class="loading-spinner"></span>
+
+                                Finding your best matches...
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- APPLICATION ACTIVITY -->
+
+                    <div class="dashboard-panel activity-panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <span class="panel-eyebrow">
+                                    APPLICATIONS
+                                </span>
+
+                                <h2>
+                                    Recent activity
+                                </h2>
+
+                            </div>
+
+                            <a href="/Applications"
+                               class="panel-link">
+
+                                View all
+
+                                <i data-lucide="arrow-up-right"></i>
+
+                            </a>
+
+                        </div>
+
+
+                        <div class="activity-list">
+
+
+                            <div class="activity-item">
+
+                                <div class="activity-icon submitted">
+                                    <i data-lucide="send"></i>
+                                </div>
+
+                                <div class="activity-information">
+
+                                    <strong>
+                                        Application submitted
+                                    </strong>
+
+                                    <span>
+                                        Sasol Bursary
+                                    </span>
+
+                                </div>
+
+                                <time>
+                                    Today
+                                </time>
+
+                            </div>
+
+
+                            <div class="activity-item">
+
+                                <div class="activity-icon verified">
+                                    <i data-lucide="check"></i>
+                                </div>
+
+                                <div class="activity-information">
+
+                                    <strong>
+                                        Document verified
+                                    </strong>
+
+                                    <span>
+                                        Academic transcript
+                                    </span>
+
+                                </div>
+
+                                <time>
+                                    Yesterday
+                                </time>
+
+                            </div>
+
+
+                            <div class="activity-item">
+
+                                <div class="activity-icon warning">
+                                    <i data-lucide="triangle-alert"></i>
+                                </div>
+
+                                <div class="activity-information">
+
+                                    <strong>
+                                        Action required
+                                    </strong>
+
+                                    <span>
+                                        Upload proof of income
+                                    </span>
+
+                                </div>
+
+                                <time>
+                                    2 days ago
+                                </time>
+
+                            </div>
+
+
+                            <div class="activity-item">
+
+                                <div class="activity-icon matched">
+                                    <i data-lucide="sparkles"></i>
+                                </div>
+
+                                <div class="activity-information">
+
+                                    <strong>
+                                        New bursary match
+                                    </strong>
+
+                                    <span>
+                                        CSIR Bursary Programme
+                                    </span>
+
+                                </div>
+
+                                <time>
+                                    3 days ago
+                                </time>
+
+                            </div>
+
+
+                        </div>
+
+
+                        <a href="/Applications"
+                           class="activity-footer">
+
+                            View application timeline
+
+                            <i data-lucide="arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+
+                </section>
+
+
+                <!-- DEADLINES + DOCUMENT HEALTH -->
+
+                <section class="lower-grid">
+
+
+                    <!-- DEADLINES -->
+
+                    <div class="dashboard-panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <span class="panel-eyebrow">
+                                    DEADLINES
+                                </span>
+
+                                <h2>
+                                    Don't miss an opportunity
+                                </h2>
+
+                            </div>
+
+                            <a href="/Bursary"
+                               class="panel-link">
+
+                                All deadlines
+
+                            </a>
+
+                        </div>
+
+
+                        <div class="deadline-list">
+
+
+                            <div class="deadline-item urgent">
+
+                                <div class="deadline-date">
+
+                                    <strong>
+                                        28
+                                    </strong>
+
+                                    <span>
+                                        AUG
+                                    </span>
+
+                                </div>
+
+                                <div class="deadline-information">
+
+                                    <strong>
+                                        NSFAS Bursary
+                                    </strong>
+
+                                    <span>
+                                        Application deadline
+                                    </span>
+
+                                </div>
+
+                                <span class="deadline-status">
+                                    3 days
+                                </span>
+
+                            </div>
+
+
+                            <div class="deadline-item">
+
+                                <div class="deadline-date">
+
+                                    <strong>
+                                        05
+                                    </strong>
+
+                                    <span>
+                                        SEP
+                                    </span>
+
+                                </div>
+
+                                <div class="deadline-information">
+
+                                    <strong>
+                                        CSIR Bursary Programme
+                                    </strong>
+
+                                    <span>
+                                        Application deadline
+                                    </span>
+
+                                </div>
+
+                                <span class="deadline-status">
+                                    11 days
+                                </span>
+
+                            </div>
+
+
+                            <div class="deadline-item">
+
+                                <div class="deadline-date">
+
+                                    <strong>
+                                        15
+                                    </strong>
+
+                                    <span>
+                                        SEP
+                                    </span>
+
+                                </div>
+
+                                <div class="deadline-information">
+
+                                    <strong>
+                                        Sasol Bursary
+                                    </strong>
+
+                                    <span>
+                                        Application deadline
+                                    </span>
+
+                                </div>
+
+                                <span class="deadline-status">
+                                    21 days
+                                </span>
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- DOCUMENT HEALTH -->
+
+                    <div class="dashboard-panel document-health">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <span class="panel-eyebrow">
+                                    DOCUMENT HEALTH
+                                </span>
+
+                                <h2>
+                                    Application readiness
+                                </h2>
+
+                            </div>
+
+                            <a href="/Documents"
+                               class="panel-link">
+
+                                Manage
+
+                            </a>
+
+                        </div>
+
+
+                        <div class="document-health-content">
+
+                            <div class="health-score">
+
+                                <div class="health-ring">
+
+                                    <strong>
+                                        87
+                                    </strong>
+
+                                    <span>
+                                        %
+                                    </span>
+
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Good to go
+                                    </strong>
+
+                                    <p>
+                                        Most of your documents
+                                        are ready for applications.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="health-items">
+
+                                <div>
+
+                                    <span class="health-check">
+                                        <i data-lucide="check"></i>
+                                    </span>
+
+                                    <span>
+                                        Identity document
+                                    </span>
+
+                                    <strong>
+                                        Verified
+                                    </strong>
+
+                                </div>
+
+
+                                <div>
+
+                                    <span class="health-check">
+                                        <i data-lucide="check"></i>
+                                    </span>
+
+                                    <span>
+                                        Academic record
+                                    </span>
+
+                                    <strong>
+                                        Verified
+                                    </strong>
+
+                                </div>
+
+
+                                <div>
+
+                                    <span class="health-warning">
+                                        <i data-lucide="alert-triangle"></i>
+                                    </span>
+
+                                    <span>
+                                        Proof of income
+                                    </span>
+
+                                    <strong>
+                                        Missing
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </section>
+
+
+                <!-- AI ASSISTANT -->
+
+                <section class="ai-dashboard-card">
+
+                    <div class="ai-dashboard-content">
+
+                        <div class="ai-symbol">
+
+                            <i data-lucide="sparkles"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span class="panel-eyebrow">
+                                BURSARYFLOW AI
+                            </span>
+
+                            <h2>
+                                What would you like to do?
+                            </h2>
+
+                            <p>
+                                I can find suitable bursaries,
+                                check your documents, explain
+                                requirements or help prepare an
+                                application.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="ai-actions">
+
+                        <button type="button"
+                                data-ai-action="matches">
+
+                            <i data-lucide="target"></i>
+
+                            Find my matches
+
+                        </button>
+
+
+                        <button type="button"
+                                data-ai-action="documents">
+
+                            <i data-lucide="file-check-2"></i>
+
+                            Check my documents
+
+                        </button>
+
+
+                        <button type="button"
+                                data-ai-action="application">
+
+                            <i data-lucide="file-pen-line"></i>
+
+                            Help with an application
+
+                        </button>
+
+                    </div>
+
+                </section>
+
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <!-- MOBILE OVERLAY -->
+
+    <div class="sidebar-overlay"
+         id="sidebarOverlay">
+    </div>
+
+
+    <!-- LUCIDE ICONS -->
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+                lucide.createIcons();
+
+                loadRecommendedBursaries();
+
+                setupMobileNavigation();
+
+                setupSearch();
+
+            }
+        );
+
+
+        async function loadRecommendedBursaries() {
+
+            const container =
+                document.getElementById(
+                    "recommendedBursaries"
+                );
+
+            try {
+
+                const response =
+                    await fetch(
+                        "/api/Bursary"
+                    );
+
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        "Unable to retrieve bursaries."
+                    );
+
+                }
+
+
+                const result =
+                    await response.json();
+
+
+                let bursaries = [];
+
+
+                if (Array.isArray(result)) {
+
+                    bursaries = result;
+
+                }
+                else if (Array.isArray(result.data)) {
+
+                    bursaries = result.data;
+
+                }
+                else if (Array.isArray(result.bursaries)) {
+
+                    bursaries = result.bursaries;
+
+                }
+
+
+                if (bursaries.length === 0) {
+
+                    container.innerHTML = `
+
+                        <div class="empty-state">
+
+                            <div class="empty-icon">
+                                <i data-lucide="search-x"></i>
+                            </div>
+
+                            <strong>
+                                No matches yet
+                            </strong>
+
+                            <p>
+                                Complete your profile so we can
+                                find bursaries suitable for you.
+                            </p>
+
+                            <a href="/Profile"
+                               class="button-secondary">
+
+                                Complete profile
+
+                            </a>
+
+                        </div>
+
+                    `;
+
+                    lucide.createIcons();
+
+                    return;
+
+                }
+
+
+                const recommended =
+                    bursaries.slice(0, 3);
+
+
+                container.innerHTML =
+                    recommended
+                        .map(
+                            bursary =>
+                                createBursaryCard(
+                                    bursary
+                                )
+                        )
+                        .join("");
+
+
+                lucide.createIcons();
+
+
+                const count =
+                    document.getElementById(
+                        "bursaryCount"
+                    );
+
+                if (count) {
+
+                    count.textContent =
+                        bursaries.length;
+
+                }
+
+
+                const matches =
+                    document.getElementById(
+                        "matchesCount"
+                    );
+
+                if (matches) {
+
+                    matches.textContent =
+                        bursaries.length;
+
+                }
+
+            }
+            catch (error) {
+
+                console.error(
+                    "Bursary loading error:",
+                    error
+                );
+
+
+                container.innerHTML = `
+
+                    <div class="empty-state error">
+
+                        <div class="empty-icon">
+                            <i data-lucide="wifi-off"></i>
+                        </div>
+
+                        <strong>
+                            Couldn't load bursaries
+                        </strong>
+
+                        <p>
+                            Make sure the BursaryFlow API
+                            is running and try again.
+                        </p>
+
+                        <button
+                            type="button"
+                            onclick="loadRecommendedBursaries()"
+                            class="button-secondary">
+
+                            Try again
+
+                        </button>
+
+                    </div>
+
+                `;
+
+                lucide.createIcons();
+
+            }
+
+        }
+
+
+        function createBursaryCard(bursary) {
+
+            const id =
+                bursary.bursaryID ??
+                bursary.BursaryID ??
+                0;
+
+
+            const name =
+                bursary.bursaryName ??
+                bursary.BursaryName ??
+                "Bursary opportunity";
+
+
+            const provider =
+                bursary.providerName ??
+                bursary.ProviderName ??
+                "Verified provider";
+
+
+            const studyLevel =
+                bursary.studyLevel ??
+                bursary.StudyLevel ??
+                "Various study levels";
+
+
+            const minimumAverage =
+                bursary.minimumAverage ??
+                bursary.MinimumAverage;
+
+
+            let requirement =
+                studyLevel;
+
+
+            if (minimumAverage !== null &&
+                minimumAverage !== undefined) {
+
+                requirement =
+                    `${studyLevel} · ${minimumAverage}% minimum`;
+
+            }
+
+
+            return `
+
+                <article class="bursary-match-card">
+
+                    <div class="bursary-provider-logo">
+
+                        ${escapeHtml(
+                            provider
+                                .substring(0, 2)
+                                .toUpperCase()
+                        )}
+
+                    </div>
+
+
+                    <div class="bursary-match-content">
+
+                        <div class="bursary-match-heading">
+
+                            <div>
+
+                                <span class="verified-label">
+
+                                    <i data-lucide="badge-check"></i>
+
+                                    Verified opportunity
+
+                                </span>
+
+                                <h3>
+                                    ${escapeHtml(name)}
+                                </h3>
+
+                                <p>
+                                    ${escapeHtml(provider)}
+                                </p>
+
+                            </div>
+
+
+                            <span class="match-percentage">
+                                Match
+                            </span>
+
+                        </div>
+
+
+                        <div class="bursary-tags">
+
+                            <span>
+                                <i data-lucide="graduation-cap"></i>
+                                ${escapeHtml(requirement)}
+                            </span>
+
+                        </div>
+
+
+                        <div class="bursary-match-actions">
+
+                            <a href="/Bursary/Details/${id}"
+                               class="text-button">
+
+                                View details
+
+                                <i data-lucide="arrow-right"></i>
+
+                            </a>
+
+
+                            <a href="/Application/Create?bursaryId=${id}"
+                               class="small-primary-button">
+
+                                Apply
+
+                                <i data-lucide="arrow-up-right"></i>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            `;
+
+        }
+
+
+        function escapeHtml(value) {
+
+            if (value === null ||
+                value === undefined) {
+
+                return "";
+
+            }
+
+
+            return String(value)
+                .replaceAll("&", "&amp;")
+                .replaceAll("<", "&lt;")
+                .replaceAll(">", "&gt;")
+                .replaceAll('"', "&quot;")
+                .replaceAll("'", "&#039;");
+
+        }
+
+
+        function setupMobileNavigation() {
+
+            const menu =
+                document.getElementById(
+                    "mobileMenu"
+                );
+
+            const sidebar =
+                document.getElementById(
+                    "sidebar"
+                );
+
+            const overlay =
+                document.getElementById(
+                    "sidebarOverlay"
+                );
+
+
+            function toggleSidebar() {
+
+                sidebar.classList.toggle(
+                    "mobile-visible"
+                );
+
+                overlay.classList.toggle(
+                    "visible"
+                );
+
+            }
+
+
+            menu?.addEventListener(
+                "click",
+                toggleSidebar
+            );
+
+
+            overlay?.addEventListener(
+                "click",
+                toggleSidebar
+            );
+
+        }
+
+
+        function setupSearch() {
+
+            const search =
+                document.getElementById(
+                    "globalSearch"
+                );
+
+
+            search?.addEventListener(
+                "keydown",
+                function (event) {
+
+                    if (
+                        event.key === "Enter" &&
+                        search.value.trim()
+                    ) {
+
+                        window.location.href =
+                            "/Bursary?search=" +
+                            encodeURIComponent(
+                                search.value.trim()
+                            );
+
+                    }
+
+                }
+            );
+
+        }
+
+
+        document
+            .querySelectorAll(
+                "[data-ai-action]"
+            )
+            .forEach(
+                button => {
+
+                    button.addEventListener(
+                        "click",
+                        function () {
+
+                            const action =
+                                this.dataset.aiAction;
+
+
+                            if (
+                                action === "matches"
+                            ) {
+
+                                window.location.href =
+                                    "/Bursary";
+
+                            }
+                            else if (
+                                action === "documents"
+                            ) {
+
+                                window.location.href =
+                                    "/Documents";
+
+                            }
+                            else if (
+                                action === "application"
+                            ) {
+
+                                window.location.href =
+                                    "/Applications";
+
+                            }
+
+                        }
+                    );
+
+                }
+            );
+
+    </script>
+
+</body>
+
+</html>
+

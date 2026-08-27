@@ -1,0 +1,1063 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0" />
+
+    <title>BursaryFlow | Delton AI</title>
+
+    <meta name="description"
+          content="Meet Delton, your BursaryFlow AI assistant for bursary discovery, applications and documents." />
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="~/css/dashboard.css" />
+
+    <link rel="stylesheet"
+          href="~/css/aiassistant.css" />
+</head>
+<body>
+    <div class="dashboard-shell">
+
+        <aside class="sidebar" id="sidebar">
+
+            <div class="sidebar-brand">
+
+                <a href="/Dashboard" class="brand">
+
+                    <span class="brand-mark">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+
+                    <span>
+                        Bursary<span>Flow</span>
+                    </span>
+
+                </a>
+
+            </div>
+
+
+            <div class="sidebar-profile">
+
+                <div class="profile-avatar">
+                    D
+                </div>
+
+                <div class="profile-details">
+
+                    <strong>
+                        Delton
+                    </strong>
+
+                    <span>
+                        Student
+                    </span>
+
+                </div>
+
+                <button class="profile-menu"
+                        type="button">
+
+                    ⋮
+
+                </button>
+
+            </div>
+
+
+            <nav class="sidebar-navigation">
+
+                <div class="navigation-label">
+                    WORKSPACE
+                </div>
+
+
+                <a href="/Dashboard"
+                   class="sidebar-link">
+
+                    <span class="sidebar-icon">
+                        <i data-lucide="layout-dashboard"></i>
+                    </span>
+
+                    <span>
+                        Dashboard
+                    </span>
+
+                </a>
+
+
+                <a href="/BursaryPage"
+                   class="sidebar-link">
+
+                    <span class="sidebar-icon">
+                        <i data-lucide="search"></i>
+                    </span>
+
+                    <span>
+                        Find bursaries
+                    </span>
+
+                    <span class="sidebar-count">
+                        0
+                    </span>
+
+                </a>
+
+
+                <a href="/Applications"
+                   class="sidebar-link">
+
+                    <span class="sidebar-icon">
+                        <i data-lucide="send"></i>
+                    </span>
+
+                    <span>
+                        My applications
+                    </span>
+
+                </a>
+
+
+                <a href="/Documents"
+                   class="sidebar-link">
+
+                    <span class="sidebar-icon">
+                        <i data-lucide="folder"></i>
+                    </span>
+
+                    <span>
+                        Documents
+                    </span>
+
+                </a>
+
+
+                <div class="navigation-label">
+                    TOOLS
+                </div>
+
+
+                <a href="/Profile"
+                   class="sidebar-link">
+
+                    <span class="sidebar-icon">
+                        <i data-lucide="user-round"></i>
+                    </span>
+
+                    <span>
+                        My profile
+                    </span>
+
+                </a>
+
+
+                <a href="/AiAssistant"
+                   class="sidebar-link active">
+
+                    <span class="sidebar-icon">
+                        <i data-lucide="sparkles"></i>
+                    </span>
+
+                    <span>
+                        AI assistant
+                    </span>
+
+                    <span class="ai-badge">
+                        AI
+                    </span>
+
+                </a>
+
+
+                <a href="/Documents/Create"
+                   class="sidebar-link">
+
+                    <span class="sidebar-icon">
+                        <i data-lucide="file-plus-2"></i>
+                    </span>
+
+                    <span>
+                        Create document
+                    </span>
+
+                </a>
+
+
+                <div class="navigation-label">
+                    ACCOUNT
+                </div>
+
+
+                <a href="/Settings"
+                   class="sidebar-link">
+
+                    <span class="sidebar-icon">
+                        <i data-lucide="settings"></i>
+                    </span>
+
+                    <span>
+                        Settings
+                    </span>
+
+                </a>
+
+            </nav>
+
+
+            <div class="sidebar-bottom">
+
+                <div class="help-card">
+
+                    <div class="help-icon">
+                        <i data-lucide="circle-help"></i>
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Need help?
+                        </strong>
+
+                        <span>
+                            Ask Delton AI
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <a href="/Account/Logout"
+                   class="logout-link">
+
+                    <i data-lucide="log-out"></i>
+
+                    <span>
+                        Sign out
+                    </span>
+
+                </a>
+
+            </div>
+
+        </aside>
+
+
+        <main class="dashboard-main">
+
+            <header class="dashboard-header">
+
+                <button class="mobile-menu"
+                        id="mobileMenu"
+                        type="button"
+                        aria-label="Open navigation">
+
+                    <i data-lucide="menu"></i>
+
+                </button>
+
+
+                <div class="header-search">
+
+                    <i data-lucide="search"></i>
+
+                    <input type="text"
+                           id="globalSearch"
+                           placeholder="Search bursaries, applications or documents..." />
+
+                    <span class="search-shortcut">
+                        /
+                    </span>
+
+                </div>
+
+
+                <div class="header-actions">
+
+                    <button class="header-icon-button"
+                            type="button"
+                            title="Notifications">
+
+                        <i data-lucide="bell"></i>
+
+                        <span class="notification-dot"></span>
+
+                    </button>
+
+
+                    <div class="header-divider"></div>
+
+
+                    <button class="header-user"
+                            type="button">
+
+                        <span class="header-avatar">
+                            D
+                        </span>
+
+                        <span class="header-user-name">
+                            Delton
+                        </span>
+
+                        <i data-lucide="chevron-down"></i>
+
+                    </button>
+
+                </div>
+
+            </header>
+
+
+            <div class="dashboard-content aiassistant-content">
+
+
+                <section class="aiassistant-hero">
+
+                    <div>
+
+                        <div class="hero-eyebrow">
+
+                            <span></span>
+
+                            BURSARYFLOW AI
+
+                        </div>
+
+
+                        <h1>
+                            Meet <em>Delton.</em>
+                        </h1>
+
+
+                        <p>
+
+                            Your personal bursary assistant. Get help
+                            finding opportunities, preparing applications,
+                            checking documents and understanding bursary
+                            requirements.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="ai-status-card">
+
+                        <div class="ai-status-orb">
+
+                            <i data-lucide="sparkles"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                DELTON AI
+                            </span>
+
+                            <strong>
+                                Online & ready
+                            </strong>
+
+                        </div>
+
+                        <span class="online-dot"></span>
+
+                    </div>
+
+                </section>
+
+
+                <section class="ai-workspace">
+
+
+                    <div class="ai-chat-card">
+
+
+                        <div class="ai-chat-header">
+
+                            <div class="ai-chat-identity">
+
+                                <div class="delton-avatar">
+
+                                    <i data-lucide="sparkles"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Delton
+                                    </strong>
+
+                                    <span>
+                                        BursaryFlow AI Assistant
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="ai-chat-actions">
+
+                                <button type="button"
+                                        id="clearChat"
+                                        title="Clear conversation">
+
+                                    <i data-lucide="rotate-ccw"></i>
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="ai-messages"
+                             id="aiMessages">
+
+
+                            <div class="ai-message ai-message-bot">
+
+                                <div class="message-avatar">
+
+                                    <i data-lucide="sparkles"></i>
+
+                                </div>
+
+                                <div class="message-content">
+
+                                    <span class="message-name">
+                                        Delton
+                                    </span>
+
+                                    <div class="message-bubble">
+
+                                        <p>
+                                            Hey Delton 👋
+                                        </p>
+
+                                        <p>
+
+                                            I'm Delton, your BursaryFlow AI
+                                            assistant. I can help you navigate
+                                            the bursary process from finding
+                                            opportunities to preparing your
+                                            application.
+
+                                        </p>
+
+                                        <p>
+                                            What would you like to work on?
+                                        </p>
+
+                                    </div>
+
+                                    <span class="message-time">
+                                        Just now
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="ai-suggestions"
+                                 id="aiSuggestions">
+
+                                <button type="button"
+                                        class="suggestion-button"
+                                        data-message="Find bursaries that match my profile">
+
+                                    <i data-lucide="search"></i>
+
+                                    Find bursaries for me
+
+                                </button>
+
+
+                                <button type="button"
+                                        class="suggestion-button"
+                                        data-message="Help me prepare a bursary application">
+
+                                    <i data-lucide="file-check-2"></i>
+
+                                    Prepare my application
+
+                                </button>
+
+
+                                <button type="button"
+                                        class="suggestion-button"
+                                        data-message="Check which documents I need for a bursary application">
+
+                                    <i data-lucide="folder-check"></i>
+
+                                    Check my documents
+
+                                </button>
+
+
+                                <button type="button"
+                                        class="suggestion-button"
+                                        data-message="How can I improve my bursary chances?">
+
+                                    <i data-lucide="trending-up"></i>
+
+                                    Improve my chances
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="typing-indicator hidden"
+                             id="typingIndicator">
+
+                            <div class="message-avatar">
+
+                                <i data-lucide="sparkles"></i>
+
+                            </div>
+
+                            <div class="typing-bubble">
+
+                                <span></span>
+                                <span></span>
+                                <span></span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="ai-input-area">
+
+                            <div class="ai-input-wrapper">
+
+                                <textarea id="aiInput"
+                                          rows="1"
+                                          placeholder="Ask Delton anything about bursaries..."></textarea>
+
+
+                                <div class="input-actions">
+
+                                    <button type="button"
+                                            class="input-tool"
+                                            id="attachDocument"
+                                            title="Attach document">
+
+                                        <i data-lucide="paperclip"></i>
+
+                                    </button>
+
+
+                                    <button type="button"
+                                            class="input-tool"
+                                            id="voiceInput"
+                                            title="Voice input">
+
+                                        <i data-lucide="mic"></i>
+
+                                    </button>
+
+
+                                    <button type="button"
+                                            class="send-button"
+                                            id="sendMessage"
+                                            title="Send message">
+
+                                        <i data-lucide="arrow-up"></i>
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="ai-input-footer">
+
+                                <span>
+
+                                    <i data-lucide="shield-check"></i>
+
+                                    Delton can make mistakes. Verify important information.
+
+                                </span>
+
+                                <span>
+                                    Enter to send
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <aside class="ai-tools-column">
+
+
+                        <section class="ai-tool-card match-card">
+
+                            <div class="ai-tool-header">
+
+                                <div class="tool-icon">
+                                    <i data-lucide="target"></i>
+                                </div>
+
+                                <span>
+                                    PROFILE MATCH
+                                </span>
+
+                            </div>
+
+
+                            <h3>
+                                Your bursary match
+                            </h3>
+
+
+                            <div class="match-score">
+
+                                <strong>
+                                    75%
+                                </strong>
+
+                                <span>
+                                    profile ready
+                                </span>
+
+                            </div>
+
+
+                            <div class="match-progress">
+
+                                <div style="width:75%;"></div>
+
+                            </div>
+
+
+                            <p>
+
+                                Complete your financial information
+                                to help Delton improve your matches.
+
+                            </p>
+
+
+                            <a href="/Profile">
+
+                                Complete profile
+
+                                <i data-lucide="arrow-right"></i>
+
+                            </a>
+
+                        </section>
+
+
+                        <section class="ai-tool-card">
+
+                            <div class="ai-tool-header">
+
+                                <div class="tool-icon">
+                                    <i data-lucide="wand-sparkles"></i>
+                                </div>
+
+                                <span>
+                                    AI TOOLS
+                                </span>
+
+                            </div>
+
+
+                            <div class="ai-tool-list">
+
+
+                                <button type="button"
+                                        class="ai-tool-item"
+                                        data-message="Find bursaries that match my academic profile">
+
+                                    <div class="tool-item-icon">
+                                        <i data-lucide="search"></i>
+                                    </div>
+
+                                    <div>
+
+                                        <strong>
+                                            Bursary finder
+                                        </strong>
+
+                                        <span>
+                                            Discover matching opportunities
+                                        </span>
+
+                                    </div>
+
+                                    <i data-lucide="chevron-right"></i>
+
+                                </button>
+
+
+                                <button type="button"
+                                        class="ai-tool-item"
+                                        data-message="Review my bursary application and tell me what I should improve">
+
+                                    <div class="tool-item-icon">
+                                        <i data-lucide="file-search"></i>
+                                    </div>
+
+                                    <div>
+
+                                        <strong>
+                                            Application review
+                                        </strong>
+
+                                        <span>
+                                            Improve your application
+                                        </span>
+
+                                    </div>
+
+                                    <i data-lucide="chevron-right"></i>
+
+                                </button>
+
+
+                                <button type="button"
+                                        class="ai-tool-item"
+                                        data-message="Tell me which documents I should prepare for bursaries">
+
+                                    <div class="tool-item-icon">
+                                        <i data-lucide="files"></i>
+                                    </div>
+
+                                    <div>
+
+                                        <strong>
+                                            Document checker
+                                        </strong>
+
+                                        <span>
+                                            Find missing documents
+                                        </span>
+
+                                    </div>
+
+                                    <i data-lucide="chevron-right"></i>
+
+                                </button>
+
+
+                                <button type="button"
+                                        class="ai-tool-item"
+                                        data-message="Help me write a strong bursary motivation letter">
+
+                                    <div class="tool-item-icon">
+                                        <i data-lucide="pen-line"></i>
+                                    </div>
+
+                                    <div>
+
+                                        <strong>
+                                            Motivation writer
+                                        </strong>
+
+                                        <span>
+                                            Create a stronger motivation
+                                        </span>
+
+                                    </div>
+
+                                    <i data-lucide="chevron-right"></i>
+
+                                </button>
+
+                            </div>
+
+                        </section>
+
+
+                        <section class="ai-tool-card">
+
+                            <div class="ai-tool-header">
+
+                                <div class="tool-icon">
+                                    <i data-lucide="clock-3"></i>
+                                </div>
+
+                                <span>
+                                    RECENT ACTIVITY
+                                </span>
+
+                            </div>
+
+
+                            <div class="ai-activity">
+
+                                <div class="activity-icon">
+                                    <i data-lucide="search"></i>
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Bursary search
+                                    </strong>
+
+                                    <span>
+                                        No recent activity
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="ai-activity">
+
+                                <div class="activity-icon">
+                                    <i data-lucide="file-text"></i>
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Application review
+                                    </strong>
+
+                                    <span>
+                                        No recent activity
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </section>
+
+
+                        <section class="ai-privacy-card">
+
+                            <div class="privacy-icon">
+                                <i data-lucide="lock-keyhole"></i>
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Your information is private
+                                </strong>
+
+                                <p>
+
+                                    Delton only uses information
+                                    available in your BursaryFlow
+                                    profile and documents to assist you.
+
+                                </p>
+
+                            </div>
+
+                        </section>
+
+                    </aside>
+
+                </section>
+
+
+                <section class="ai-capabilities">
+
+                    <div class="capabilities-heading">
+
+                        <span>
+                            WHAT DELTON CAN DO
+                        </span>
+
+                        <h2>
+                            Your bursary journey,
+                            <em>simplified.</em>
+                        </h2>
+
+                    </div>
+
+
+                    <div class="capability-grid">
+
+
+                        <button type="button"
+                                class="capability-card"
+                                data-message="Find bursaries based on my profile">
+
+                            <div class="capability-icon">
+                                <i data-lucide="search"></i>
+                            </div>
+
+                            <h3>
+                                Find opportunities
+                            </h3>
+
+                            <p>
+
+                                Discover bursaries that match your
+                                studies, academic performance and profile.
+
+                            </p>
+
+                            <span>
+
+                                Explore bursaries
+
+                                <i data-lucide="arrow-right"></i>
+
+                            </span>
+
+                        </button>
+
+
+                        <button type="button"
+                                class="capability-card"
+                                data-message="Help me prepare my bursary application">
+
+                            <div class="capability-icon">
+                                <i data-lucide="clipboard-check"></i>
+                            </div>
+
+                            <h3>
+                                Prepare applications
+                            </h3>
+
+                            <p>
+
+                                Understand requirements and work through
+                                your application step by step.
+
+                            </p>
+
+                            <span>
+
+                                Prepare application
+
+                                <i data-lucide="arrow-right"></i>
+
+                            </span>
+
+                        </button>
+
+
+                        <button type="button"
+                                class="capability-card"
+                                data-message="Check my documents for bursary applications">
+
+                            <div class="capability-icon">
+                                <i data-lucide="folder-check"></i>
+                            </div>
+
+                            <h3>
+                                Check documents
+                            </h3>
+
+                            <p>
+
+                                Identify documents you may need before
+                                submitting your bursary application.
+
+                            </p>
+
+                            <span>
+
+                                Check documents
+
+                                <i data-lucide="arrow-right"></i>
+
+                            </span>
+
+                        </button>
+
+
+                        <button type="button"
+                                class="capability-card"
+                                data-message="Help me write a bursary motivation letter">
+
+                            <div class="capability-icon">
+                                <i data-lucide="pen-tool"></i>
+                            </div>
+
+                            <h3>
+                                Create documents
+                            </h3>
+
+                            <p>
+
+                                Get assistance creating motivation letters,
+                                application answers and other documents.
+
+                            </p>
+
+                            <span>
+
+                                Create document
+
+                                <i data-lucide="arrow-right"></i>
+
+                            </span>
+
+                        </button>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script src="~/js/aiassistant.js"></script>
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+                if (typeof lucide !== "undefined") {
+
+                    lucide.createIcons();
+
+                }
+
+            }
+        );
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,530 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0" />
+
+    <title>BursaryFlow | Create Account</title>
+
+    <meta name="description"
+          content="Create your BursaryFlow account and start your funding journey." />
+
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+          rel="stylesheet">
+
+
+
+    <link rel="stylesheet"
+          href="~/css/register.css" />
+
+</head>
+
+
+<body>
+
+
+    <main class="register-page">
+
+
+        <!-- BACK HOME -->
+
+        <a href="/"
+           class="back-home">
+
+            ← Back to home
+
+        </a>
+
+
+
+
+        <!-- CARD -->
+
+        <section class="register-card">
+
+
+            <!-- BRAND -->
+
+            <a href="/"
+               class="register-brand">
+
+
+                <span class="brand-mark">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </span>
+
+
+                <span class="brand-name">
+
+                    Bursary<span>Flow</span>
+
+                </span>
+
+
+            </a>
+
+
+
+
+            <!-- HEADER -->
+
+            <div class="register-header">
+
+
+                <span class="register-label">
+
+                    GET STARTED
+
+                </span>
+
+
+                <h1>
+
+                    Create your account.
+
+                </h1>
+
+
+                <p>
+
+                    Join BursaryFlow and discover
+                    funding opportunities built around you.
+
+                </p>
+
+
+            </div>
+
+
+
+
+            <!-- FORM -->
+
+            <form method="post"
+                  action="/Account/Register"
+                  class="register-form">
+
+
+
+                <div class="form-row">
+
+
+                    <div class="form-group">
+
+                        <label>
+                            First name
+                        </label>
+
+
+                        <input type="text"
+                               name="FirstName"
+                               placeholder="Enter your first name"
+                               required />
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Last name
+                        </label>
+
+
+                        <input type="text"
+                               name="LastName"
+                               placeholder="Enter your surname"
+                               required />
+
+                    </div>
+
+
+                </div>
+
+
+
+
+
+                <div class="form-group">
+
+
+                    <label>
+                        Email address
+                    </label>
+
+
+                    <input type="email"
+                           name="Email"
+                           placeholder="Enter your email address"
+                           required />
+
+
+                </div>
+
+
+
+
+
+
+                <div class="form-group">
+
+
+                    <label>
+                        Password
+                    </label>
+
+
+                    <div class="password-wrapper">
+
+
+                        <input type="password"
+                               id="password"
+                               name="Password"
+                               placeholder="Create password"
+                               required />
+
+
+                        <button type="button"
+                                class="show-password"
+                                id="showPassword">
+
+                            Show
+
+                        </button>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+
+
+
+                <div class="form-group">
+
+
+                    <label>
+                        Confirm password
+                    </label>
+
+
+                    <div class="password-wrapper">
+
+
+                        <input type="password"
+                               id="confirmPassword"
+                               name="ConfirmPassword"
+                               placeholder="Repeat password"
+                               required />
+
+
+                        <button type="button"
+                                class="show-password"
+                                id="showConfirmPassword">
+
+                            Show
+
+                        </button>
+
+
+                    </div>
+
+
+                    <div id="passwordMessage"
+                         class="password-message">
+                    </div>
+
+
+                </div>
+
+
+
+
+
+
+                <label class="terms-label">
+
+
+                    <input type="checkbox"
+                           required />
+
+
+                    <span class="custom-checkbox"></span>
+
+
+                    <span>
+
+                        I agree to the BursaryFlow
+
+                        <a href="#">
+                            Terms
+                        </a>
+
+                        and
+
+                        <a href="#">
+                            Privacy Policy
+                        </a>
+
+                    </span>
+
+
+                </label>
+
+
+
+
+
+
+                <button type="submit"
+                        class="register-button">
+
+
+                    <span>
+                        Create account
+                    </span>
+
+
+                    <span class="register-arrow">
+                        →
+                    </span>
+
+
+                </button>
+
+
+
+            </form>
+
+
+
+
+
+
+            <!-- LOGIN -->
+
+            <div class="login-section">
+
+
+                <span>
+                    Already have an account?
+                </span>
+
+
+                <a href="/Account/Login">
+
+                    Log in
+
+                </a>
+
+
+            </div>
+
+
+
+
+
+
+
+            <!-- SECURITY -->
+
+            <div class="register-security">
+
+
+                <span class="security-icon">
+
+                    ✓
+
+                </span>
+
+
+                <div>
+
+
+                    <strong>
+                        Your information matters
+                    </strong>
+
+
+                    <small>
+
+                        Your information stays organised
+                        and under your control.
+
+                    </small>
+
+
+                </div>
+
+
+            </div>
+
+
+
+        </section>
+
+
+
+
+
+
+        <!-- FOOTER -->
+
+        <div class="register-footer">
+
+
+            <span>
+                © 2026 BursaryFlow
+            </span>
+
+
+            <span>
+                Apply smarter. Move forward.
+            </span>
+
+
+        </div>
+
+
+
+
+    </main>
+
+
+
+
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function(){
+
+
+            const password =
+                document.getElementById("password");
+
+
+            const confirmPassword =
+                document.getElementById("confirmPassword");
+
+
+            const showPassword =
+                document.getElementById("showPassword");
+
+
+            const showConfirmPassword =
+                document.getElementById("showConfirmPassword");
+
+
+            const message =
+                document.getElementById("passwordMessage");
+
+
+
+            function togglePassword(input,button){
+
+                if(input.type === "password"){
+
+                    input.type="text";
+                    button.textContent="Hide";
+
+                }
+                else{
+
+                    input.type="password";
+                    button.textContent="Show";
+
+                }
+
+            }
+
+
+
+            showPassword.onclick=function(){
+
+                togglePassword(password,showPassword);
+
+            }
+
+
+
+            showConfirmPassword.onclick=function(){
+
+                togglePassword(confirmPassword,showConfirmPassword);
+
+            }
+
+
+
+
+            confirmPassword.addEventListener("input",function(){
+
+
+                if(confirmPassword.value===""){
+
+                    message.textContent="";
+                    return;
+
+                }
+
+
+                if(password.value===confirmPassword.value){
+
+
+                    message.textContent="Passwords match.";
+
+                    message.className=
+                    "password-message success";
+
+
+                }
+                else{
+
+
+                    message.textContent=
+                    "Passwords do not match.";
+
+                    message.className=
+                    "password-message error";
+
+
+                }
+
+
+            });
+
+
+
+        });
+
+
+    </script>
+
+
+</body>
+
+</html>

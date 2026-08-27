@@ -1,0 +1,699 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+        <meta charset="utf-8" />
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0" />
+
+    <title>BursaryFlow | Find Bursaries</title>
+
+    <meta name="description"
+          content="Find bursaries matched to your studies, academic performance and eligibility." />
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- ORIGINAL DASHBOARD CSS -->
+    <link rel="stylesheet"
+          href="~/css/dashboard.css" />
+
+    <!-- BURSARY-SPECIFIC CSS -->
+    <link rel="stylesheet"
+          href="~/css/bursary.css" />
+    ```
+
+</head>
+
+<body>
+
+    ```
+    <div class="dashboard-shell">
+
+        <!-- =====================================================
+             ORIGINAL SIDEBAR
+             ===================================================== -->
+
+        <aside class="sidebar" id="sidebar">
+
+            <div class="sidebar-brand">
+
+                <a href="/Dashboard" class="brand">
+
+                    <span class="brand-mark">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+
+                    <span>
+                        Bursary<span>Flow</span>
+                    </span>
+
+                </a>
+
+            </div>
+
+
+            <div class="sidebar-profile">
+
+                <div class="profile-avatar">
+                    D
+                </div>
+
+                <div class="profile-details">
+
+                    <strong>
+                        Delton
+                    </strong>
+
+                    <span>
+                        Student
+                    </span>
+
+                </div>
+
+                <button class="profile-menu"
+                        type="button">
+
+                    ⋮
+
+                </button>
+
+            </div>
+
+
+            <nav class="sidebar-navigation">
+
+                <div class="navigation-label">
+                    WORKSPACE
+                </div>
+
+
+                <a href="/Dashboard"
+                   class="sidebar-link">
+
+                    <span class="sidebar-icon">
+                        <i data-lucide="layout-dashboard"></i>
+                    </span>
+
+                    <span>
+                        Dashboard
+                    </span>
+
+                </a>
+
+
+                <!-- ACTIVE PAGE -->
+
+                <a href="/BursaryPage"
+                   class="sidebar-link active">
+
+                    <span class="sidebar-icon">
+                        <i data-lucide="search"></i>
+                    </span>
+
+                    <span>
+                        Find bursaries
+                    </span>
+
+                    <span class="sidebar-count"
+                          id="bursaryCount">
+                        0
+                    </span>
+
+                </a>
+
+
+                <a href="/Applications"
+                   class="sidebar-link">
+
+                    <span class="sidebar-icon">
+                        <i data-lucide="send"></i>
+                    </span>
+
+                    <span>
+                        My applications
+                    </span>
+
+                </a>
+
+
+                <a href="/Documents"
+                   class="sidebar-link">
+
+                    <span class="sidebar-icon">
+                        <i data-lucide="folder"></i>
+                    </span>
+
+                    <span>
+                        Documents
+                    </span>
+
+                </a>
+
+
+                <div class="navigation-label">
+                    TOOLS
+                </div>
+
+
+                <a href="/Profile"
+                   class="sidebar-link">
+
+                    <span class="sidebar-icon">
+                        <i data-lucide="user-round"></i>
+                    </span>
+
+                    <span>
+                        My profile
+                    </span>
+
+                </a>
+
+
+                <a href="/AiAssistant"
+                   class="sidebar-link">
+
+                    <span class="sidebar-icon">
+                        <i data-lucide="sparkles"></i>
+                    </span>
+
+                    <span>
+                        AI assistant
+                    </span>
+
+                    <span class="ai-badge">
+                        AI
+                    </span>
+
+                </a>
+
+
+                <a href="/Documents/Create"
+                   class="sidebar-link">
+
+                    <span class="sidebar-icon">
+                        <i data-lucide="file-plus-2"></i>
+                    </span>
+
+                    <span>
+                        Create document
+                    </span>
+
+                </a>
+
+
+                <div class="navigation-label">
+                    ACCOUNT
+                </div>
+
+
+                <a href="/Settings"
+                   class="sidebar-link">
+
+                    <span class="sidebar-icon">
+                        <i data-lucide="settings"></i>
+                    </span>
+
+                    <span>
+                        Settings
+                    </span>
+
+                </a>
+
+            </nav>
+
+
+            <div class="sidebar-bottom">
+
+                <div class="help-card">
+
+                    <div class="help-icon">
+                        <i data-lucide="circle-help"></i>
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Need help?
+                        </strong>
+
+                        <span>
+                            Ask BursaryFlow AI
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <a href="/Account/Logout"
+                   class="logout-link">
+
+                    <i data-lucide="log-out"></i>
+
+                    <span>
+                        Sign out
+                    </span>
+
+                </a>
+
+            </div>
+
+        </aside>
+
+
+        <!-- =====================================================
+             ORIGINAL DASHBOARD MAIN
+             ===================================================== -->
+
+        <main class="dashboard-main">
+
+
+            <!-- ORIGINAL HEADER -->
+
+            <header class="dashboard-header">
+
+                <button class="mobile-menu"
+                        id="mobileMenu"
+                        type="button"
+                        aria-label="Open navigation">
+
+                    <i data-lucide="menu"></i>
+
+                </button>
+
+
+                <div class="header-search">
+
+                    <i data-lucide="search"></i>
+
+                    <input type="text"
+                           id="globalSearch"
+                           placeholder="Search bursaries, applications or documents..." />
+
+                    <span class="search-shortcut">
+                        /
+                    </span>
+
+                </div>
+
+
+                <div class="header-actions">
+
+                    <button class="header-icon-button"
+                            type="button"
+                            title="Notifications">
+
+                        <i data-lucide="bell"></i>
+
+                        <span class="notification-dot"></span>
+
+                    </button>
+
+
+                    <div class="header-divider"></div>
+
+
+                    <button class="header-user"
+                            type="button">
+
+                        <span class="header-avatar">
+                            D
+                        </span>
+
+                        <span class="header-user-name">
+                            Delton
+                        </span>
+
+                        <i data-lucide="chevron-down"></i>
+
+                    </button>
+
+                </div>
+
+            </header>
+
+
+            <!-- =================================================
+                 BURSARY CONTENT
+                 ================================================= -->
+
+            <div class="dashboard-content bursary-content">
+
+
+                <!-- HERO -->
+
+                <section class="bursary-hero">
+
+                    <div>
+
+                        <div class="hero-eyebrow">
+
+                            <span></span>
+
+                            BURSARY DIRECTORY
+
+                        </div>
+
+
+                        <h1>
+
+                            Opportunities
+                            <em>for you.</em>
+
+                        </h1>
+
+
+                        <p>
+
+                            Discover bursaries matched to your academic
+                            profile, field of study and eligibility.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="hero-stat">
+
+                        <strong id="totalCount">
+                            —
+                        </strong>
+
+                        <span>
+                            bursaries available
+                        </span>
+
+                    </div>
+
+                </section>
+
+
+                <!-- AI MATCH -->
+
+                <section class="smart-match">
+
+                    <div class="smart-match-icon">
+
+                        <i data-lucide="sparkles"></i>
+
+                    </div>
+
+
+                    <div class="smart-match-content">
+
+                        <span>
+                            BURSARYFLOW AI
+                        </span>
+
+                        <h2>
+                            Find bursaries you're most likely to qualify for.
+                        </h2>
+
+                        <p>
+
+                            Tell us about your studies and academic
+                            performance and we'll automatically filter
+                            opportunities for you.
+
+                        </p>
+
+                    </div>
+
+
+                    <button id="matchButton"
+                            type="button">
+
+                        Find my matches
+
+                        <i data-lucide="arrow-right"></i>
+
+                    </button>
+
+                </section>
+
+
+                <!-- FILTERS -->
+
+                <section class="filter-area">
+
+                    <div class="filter-top">
+
+                        <div>
+
+                            <span class="section-label">
+                                EXPLORE
+                            </span>
+
+                            <h2>
+                                All bursaries
+                            </h2>
+
+                        </div>
+
+
+                        <div class="result-count">
+
+                            <strong id="visibleCount">
+                                0
+                            </strong>
+
+                            opportunities
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="filters">
+
+
+                        <div class="filter-search">
+
+                            <i data-lucide="search"></i>
+
+                            <input type="text"
+                                   id="directorySearch"
+                                   placeholder="Search opportunities..." />
+
+                        </div>
+
+
+                        <select id="studyLevelFilter">
+
+                            <option value="">
+                                Study level
+                            </option>
+
+                            <option value="Undergraduate">
+                                Undergraduate
+                            </option>
+
+                            <option value="Postgraduate">
+                                Postgraduate
+                            </option>
+
+                            <option value="Honours">
+                                Honours
+                            </option>
+
+                            <option value="Masters">
+                                Masters
+                            </option>
+
+                            <option value="PhD">
+                                PhD
+                            </option>
+
+                        </select>
+
+
+                        <select id="fieldFilter">
+
+                            <option value="">
+                                Field of study
+                            </option>
+
+                            <option value="Computer Science">
+                                Computer Science
+                            </option>
+
+                            <option value="Engineering">
+                                Engineering
+                            </option>
+
+                            <option value="Information Technology">
+                                Information Technology
+                            </option>
+
+                            <option value="Finance">
+                                Finance
+                            </option>
+
+                            <option value="Accounting">
+                                Accounting
+                            </option>
+
+                            <option value="Medicine">
+                                Medicine
+                            </option>
+
+                            <option value="Law">
+                                Law
+                            </option>
+
+                            <option value="Science">
+                                Science
+                            </option>
+
+                        </select>
+
+
+                        <select id="sortFilter">
+
+                            <option value="name">
+                                Sort: A-Z
+                            </option>
+
+                            <option value="verified">
+                                Verified first
+                            </option>
+
+                            <option value="average">
+                                Lowest average
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </section>
+
+
+                <!-- RESULTS -->
+
+                <section class="results-section">
+
+
+                    <div id="loadingState"
+                         class="loading-state">
+
+                        <div class="spinner"></div>
+
+                        <strong>
+                            Finding bursaries...
+                        </strong>
+
+                        <span>
+                            Connecting to BursaryFlow
+                        </span>
+
+                    </div>
+
+
+                    <div id="bursaryGrid"
+                         class="bursary-grid">
+                    </div>
+
+
+                    <div id="emptyState"
+                         class="empty-state hidden">
+
+                        <div class="empty-icon">
+
+                            <i data-lucide="search-x"></i>
+
+                        </div>
+
+                        <h3>
+                            No bursaries found
+                        </h3>
+
+                        <p>
+                            Try changing your search or filters.
+                        </p>
+
+                        <button id="clearFilters"
+                                type="button">
+
+                            Clear filters
+
+                        </button>
+
+                    </div>
+
+
+                    <div id="errorState"
+                         class="error-state hidden">
+
+                        <strong>
+                            We couldn't load the bursaries.
+                        </strong>
+
+                        <p>
+                            Please check that the BursaryFlow API is running.
+                        </p>
+
+                        <button id="retryButton"
+                                type="button">
+
+                            Try again
+
+                        </button>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <!-- LUCIDE -->
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+
+    <!-- BURSARY JS -->
+
+    <script src="~/js/bursary.js"></script>
+
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+                if (typeof lucide !== "undefined") {
+                    lucide.createIcons();
+                }
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,1463 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0" />
+
+    <title>BursaryFlow | My Profile</title>
+
+    <meta name="description"
+          content="Manage your BursaryFlow student profile and bursary information." />
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="~/css/dashboard.css" />
+
+    <link rel="stylesheet"
+          href="~/css/profile.css" />
+
+</head>
+
+<body>
+
+    <div class="dashboard-shell">
+
+        <!-- =====================================================
+             SIDEBAR
+             ===================================================== -->
+
+        <aside class="sidebar"
+               id="sidebar">
+
+            <div class="sidebar-brand">
+
+                <a href="/Dashboard"
+                   class="brand">
+
+                    <span class="brand-mark">
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                    </span>
+
+                    <span>
+                        Bursary<span>Flow</span>
+                    </span>
+
+                </a>
+
+            </div>
+
+
+            <!-- PROFILE -->
+
+            <div class="sidebar-profile">
+
+                <div class="profile-avatar">
+                    D
+                </div>
+
+                <div class="profile-details">
+
+                    <strong>
+                        Delton
+                    </strong>
+
+                    <span>
+                        Student
+                    </span>
+
+                </div>
+
+                <button class="profile-menu"
+                        type="button">
+
+                    ⋮
+
+                </button>
+
+            </div>
+
+
+            <!-- NAVIGATION -->
+
+            <nav class="sidebar-navigation">
+
+                <div class="navigation-label">
+                    WORKSPACE
+                </div>
+
+
+                <!-- DASHBOARD -->
+
+                <a href="/Dashboard"
+                   class="sidebar-link">
+
+                    <span class="sidebar-icon">
+
+                        <i data-lucide="layout-dashboard"></i>
+
+                    </span>
+
+                    <span>
+                        Dashboard
+                    </span>
+
+                </a>
+
+
+                <!-- FIND BURSARIES -->
+
+                <a href="/BursaryPage"
+                   class="sidebar-link">
+
+                    <span class="sidebar-icon">
+
+                        <i data-lucide="search"></i>
+
+                    </span>
+
+                    <span>
+                        Find bursaries
+                    </span>
+
+                    <span class="sidebar-count">
+                        0
+                    </span>
+
+                </a>
+
+
+                <!-- APPLICATIONS -->
+
+                <a href="/Applications"
+                   class="sidebar-link">
+
+                    <span class="sidebar-icon">
+
+                        <i data-lucide="send"></i>
+
+                    </span>
+
+                    <span>
+                        My applications
+                    </span>
+
+                </a>
+
+
+                <!-- DOCUMENTS -->
+
+                <a href="/Documents"
+                   class="sidebar-link">
+
+                    <span class="sidebar-icon">
+
+                        <i data-lucide="folder"></i>
+
+                    </span>
+
+                    <span>
+                        Documents
+                    </span>
+
+                </a>
+
+
+                <div class="navigation-label">
+                    TOOLS
+                </div>
+
+
+                <!-- PROFILE -->
+
+                <a href="/Profile"
+                   class="sidebar-link active">
+
+                    <span class="sidebar-icon">
+
+                        <i data-lucide="user-round"></i>
+
+                    </span>
+
+                    <span>
+                        My profile
+                    </span>
+
+                </a>
+
+
+                <!-- AI -->
+
+                <a href="/AiAssistant"
+                   class="sidebar-link">
+
+                    <span class="sidebar-icon">
+
+                        <i data-lucide="sparkles"></i>
+
+                    </span>
+
+                    <span>
+                        AI assistant
+                    </span>
+
+                    <span class="ai-badge">
+                        AI
+                    </span>
+
+                </a>
+
+
+                <!-- CREATE DOCUMENT -->
+
+                <a href="/Documents/Create"
+                   class="sidebar-link">
+
+                    <span class="sidebar-icon">
+
+                        <i data-lucide="file-plus-2"></i>
+
+                    </span>
+
+                    <span>
+                        Create document
+                    </span>
+
+                </a>
+
+
+                <div class="navigation-label">
+                    ACCOUNT
+                </div>
+
+
+                <!-- SETTINGS -->
+
+                <a href="/Settings"
+                   class="sidebar-link">
+
+                    <span class="sidebar-icon">
+
+                        <i data-lucide="settings"></i>
+
+                    </span>
+
+                    <span>
+                        Settings
+                    </span>
+
+                </a>
+
+            </nav>
+
+
+            <!-- SIDEBAR BOTTOM -->
+
+            <div class="sidebar-bottom">
+
+                <div class="help-card">
+
+                    <div class="help-icon">
+
+                        <i data-lucide="circle-help"></i>
+
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Need help?
+                        </strong>
+
+                        <span>
+                            Ask BursaryFlow AI
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <a href="/Account/Logout"
+                   class="logout-link">
+
+                    <i data-lucide="log-out"></i>
+
+                    <span>
+                        Sign out
+                    </span>
+
+                </a>
+
+            </div>
+
+        </aside>
+
+
+        <!-- =====================================================
+             MAIN
+             ===================================================== -->
+
+        <main class="dashboard-main">
+
+
+            <!-- HEADER -->
+
+            <header class="dashboard-header">
+
+                <button class="mobile-menu"
+                        id="mobileMenu"
+                        type="button"
+                        aria-label="Open navigation">
+
+                    <i data-lucide="menu"></i>
+
+                </button>
+
+
+                <!-- SEARCH -->
+
+                <div class="header-search">
+
+                    <i data-lucide="search"></i>
+
+                    <input type="text"
+                           id="globalSearch"
+                           placeholder="Search bursaries, applications or documents..." />
+
+                    <span class="search-shortcut">
+                        /
+                    </span>
+
+                </div>
+
+
+                <!-- HEADER ACTIONS -->
+
+                <div class="header-actions">
+
+                    <button class="header-icon-button"
+                            type="button"
+                            title="Notifications">
+
+                        <i data-lucide="bell"></i>
+
+                        <span class="notification-dot"></span>
+
+                    </button>
+
+
+                    <div class="header-divider"></div>
+
+
+                    <button class="header-user"
+                            type="button">
+
+                        <span class="header-avatar">
+                            D
+                        </span>
+
+                        <span class="header-user-name">
+                            Delton
+                        </span>
+
+                        <i data-lucide="chevron-down"></i>
+
+                    </button>
+
+                </div>
+
+            </header>
+
+
+            <!-- =================================================
+                 CONTENT
+                 ================================================= -->
+
+            <div class="dashboard-content profile-content">
+
+
+                <!-- =================================================
+                     PROFILE HERO
+                     ================================================= -->
+
+                <section class="profile-hero">
+
+                    <div>
+
+                        <div class="hero-eyebrow">
+
+                            <span></span>
+
+                            STUDENT PROFILE
+
+                        </div>
+
+
+                        <h1>
+
+                            Your
+                            <em>profile.</em>
+
+                        </h1>
+
+
+                        <p>
+
+                            Keep your personal and academic information
+                            up to date so BursaryFlow can find the right
+                            opportunities for you.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="profile-readiness">
+
+                        <div class="readiness-icon">
+
+                            <i data-lucide="sparkles"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                BURSARY READINESS
+                            </span>
+
+                            <strong id="readinessText">
+                                75% Ready
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================================
+                     PROFILE GRID
+                     ================================================= -->
+
+                <div class="profile-layout">
+
+
+                    <!-- =================================================
+                         LEFT COLUMN
+                         ================================================= -->
+
+                    <div class="profile-main-column">
+
+
+                        <!-- =================================================
+                             PERSONAL INFORMATION
+                             ================================================= -->
+
+                        <section class="profile-card">
+
+                            <div class="profile-card-header">
+
+                                <div>
+
+                                    <span class="section-label">
+                                        PERSONAL
+                                    </span>
+
+                                    <h2>
+                                        Personal information
+                                    </h2>
+
+                                    <p>
+                                        Basic information used to identify you.
+                                    </p>
+
+                                </div>
+
+
+                                <button type="button"
+                                        class="profile-edit-button"
+                                        data-section="personal">
+
+                                    <i data-lucide="pencil"></i>
+
+                                    Edit
+
+                                </button>
+
+                            </div>
+
+
+                            <div class="profile-form-grid">
+
+
+                                <!-- FIRST NAME -->
+
+                                <div class="profile-field">
+
+                                    <label for="firstName">
+                                        First name
+                                    </label>
+
+                                    <div class="profile-input-wrapper">
+
+                                        <i data-lucide="user"></i>
+
+                                        <input type="text"
+                                               id="firstName"
+                                               value="Delton"
+                                               disabled />
+
+                                    </div>
+
+                                </div>
+
+
+                                <!-- SURNAME -->
+
+                                <div class="profile-field">
+
+                                    <label for="surname">
+                                        Surname
+                                    </label>
+
+                                    <div class="profile-input-wrapper">
+
+                                        <i data-lucide="user"></i>
+
+                                        <input type="text"
+                                               id="surname"
+                                               value="Novela"
+                                               disabled />
+
+                                    </div>
+
+                                </div>
+
+
+                                <!-- EMAIL -->
+
+                                <div class="profile-field">
+
+                                    <label for="email">
+                                        Email address
+                                    </label>
+
+                                    <div class="profile-input-wrapper">
+
+                                        <i data-lucide="mail"></i>
+
+                                        <input type="email"
+                                               id="email"
+                                               value="delton@example.com"
+                                               disabled />
+
+                                        <span class="verified-badge">
+
+                                            <i data-lucide="circle-check"></i>
+
+                                            Verified
+
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+
+                                <!-- PHONE -->
+
+                                <div class="profile-field">
+
+                                    <label for="phone">
+                                        Phone number
+                                    </label>
+
+                                    <div class="profile-input-wrapper">
+
+                                        <i data-lucide="phone"></i>
+
+                                        <input type="tel"
+                                               id="phone"
+                                               value="+27 71 000 0000"
+                                               disabled />
+
+                                    </div>
+
+                                </div>
+
+
+                                <!-- DATE OF BIRTH -->
+
+                                <div class="profile-field">
+
+                                    <label for="dateOfBirth">
+                                        Date of birth
+                                    </label>
+
+                                    <div class="profile-input-wrapper">
+
+                                        <i data-lucide="calendar"></i>
+
+                                        <input type="date"
+                                               id="dateOfBirth"
+                                               value="2005-01-01"
+                                               disabled />
+
+                                    </div>
+
+                                </div>
+
+
+                                <!-- ID NUMBER -->
+
+                                <div class="profile-field">
+
+                                    <label for="idNumber">
+                                        ID number
+                                    </label>
+
+                                    <div class="profile-input-wrapper">
+
+                                        <i data-lucide="contact"></i>
+
+                                        <input type="text"
+                                               id="idNumber"
+                                               value="***************"
+                                               disabled />
+
+                                        <span class="field-lock">
+
+                                            <i data-lucide="lock"></i>
+
+                                        </span>
+
+                                    </div>
+
+                                    <small>
+                                        Your ID number is protected and cannot be edited here.
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="profile-save-area hidden"
+                                 id="personalSaveArea">
+
+                                <button type="button"
+                                        class="secondary-button"
+                                        data-cancel="personal">
+
+                                    Cancel
+
+                                </button>
+
+                                <button type="button"
+                                        class="green-button"
+                                        id="savePersonal">
+
+                                    <i data-lucide="save"></i>
+
+                                    Save changes
+
+                                </button>
+
+                            </div>
+
+                        </section>
+
+
+                        <!-- =================================================
+                             ACADEMIC INFORMATION
+                             ================================================= -->
+
+                        <section class="profile-card">
+
+                            <div class="profile-card-header">
+
+                                <div>
+
+                                    <span class="section-label">
+                                        ACADEMIC
+                                    </span>
+
+                                    <h2>
+                                        Academic information
+                                    </h2>
+
+                                    <p>
+                                        Help us match you with suitable bursaries.
+                                    </p>
+
+                                </div>
+
+
+                                <button type="button"
+                                        class="profile-edit-button"
+                                        data-section="academic">
+
+                                    <i data-lucide="pencil"></i>
+
+                                    Edit
+
+                                </button>
+
+                            </div>
+
+
+                            <div class="profile-form-grid">
+
+
+                                <!-- UNIVERSITY -->
+
+                                <div class="profile-field">
+
+                                    <label for="university">
+                                        University / institution
+                                    </label>
+
+                                    <div class="profile-input-wrapper">
+
+                                        <i data-lucide="school"></i>
+
+                                        <input type="text"
+                                               id="university"
+                                               value="University of Johannesburg"
+                                               disabled />
+
+                                    </div>
+
+                                </div>
+
+
+                                <!-- STUDENT NUMBER -->
+
+                                <div class="profile-field">
+
+                                    <label for="studentNumber">
+                                        Student number
+                                    </label>
+
+                                    <div class="profile-input-wrapper">
+
+                                        <i data-lucide="badge"></i>
+
+                                        <input type="text"
+                                               id="studentNumber"
+                                               value="2025XXXXXX"
+                                               disabled />
+
+                                    </div>
+
+                                </div>
+
+
+                                <!-- FACULTY -->
+
+                                <div class="profile-field">
+
+                                    <label for="faculty">
+                                        Faculty
+                                    </label>
+
+                                    <div class="profile-input-wrapper">
+
+                                        <i data-lucide="building-2"></i>
+
+                                        <input type="text"
+                                               id="faculty"
+                                               value="College of Business and Economics"
+                                               disabled />
+
+                                    </div>
+
+                                </div>
+
+
+                                <!-- DEGREE -->
+
+                                <div class="profile-field">
+
+                                    <label for="degree">
+                                        Degree / programme
+                                    </label>
+
+                                    <div class="profile-input-wrapper">
+
+                                        <i data-lucide="book-open"></i>
+
+                                        <input type="text"
+                                               id="degree"
+                                               value="BSc Computer Science and Informatics"
+                                               disabled />
+
+                                    </div>
+
+                                </div>
+
+
+                                <!-- YEAR -->
+
+                                <div class="profile-field">
+
+                                    <label for="studyYear">
+                                        Year of study
+                                    </label>
+
+                                    <div class="profile-input-wrapper">
+
+                                        <i data-lucide="layers"></i>
+
+                                        <select id="studyYear"
+                                                disabled>
+
+                                            <option value="1">
+                                                First year
+                                            </option>
+
+                                            <option value="2"
+                                                    selected>
+                                                Second year
+                                            </option>
+
+                                            <option value="3">
+                                                Third year
+                                            </option>
+
+                                            <option value="4">
+                                                Fourth year
+                                            </option>
+
+                                            <option value="5">
+                                                Postgraduate
+                                            </option>
+
+                                        </select>
+
+                                    </div>
+
+                                </div>
+
+
+                                <!-- AVERAGE -->
+
+                                <div class="profile-field">
+
+                                    <label for="academicAverage">
+                                        Academic average
+                                    </label>
+
+                                    <div class="profile-input-wrapper">
+
+                                        <i data-lucide="chart-no-axes-combined"></i>
+
+                                        <input type="number"
+                                               id="academicAverage"
+                                               value="70"
+                                               min="0"
+                                               max="100"
+                                               disabled />
+
+                                        <span class="input-suffix">
+                                            %
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="profile-save-area hidden"
+                                 id="academicSaveArea">
+
+                                <button type="button"
+                                        class="secondary-button"
+                                        data-cancel="academic">
+
+                                    Cancel
+
+                                </button>
+
+                                <button type="button"
+                                        class="green-button"
+                                        id="saveAcademic">
+
+                                    <i data-lucide="save"></i>
+
+                                    Save changes
+
+                                </button>
+
+                            </div>
+
+                        </section>
+
+
+                        <!-- =================================================
+                             BURSARY INFORMATION
+                             ================================================= -->
+
+                        <section class="profile-card">
+
+                            <div class="profile-card-header">
+
+                                <div>
+
+                                    <span class="section-label">
+                                        BURSARY MATCHING
+                                    </span>
+
+                                    <h2>
+                                        Your preferences
+                                    </h2>
+
+                                    <p>
+                                        Tell BursaryFlow what opportunities you're looking for.
+                                    </p>
+
+                                </div>
+
+
+                                <button type="button"
+                                        class="profile-edit-button"
+                                        data-section="preferences">
+
+                                    <i data-lucide="pencil"></i>
+
+                                    Edit
+
+                                </button>
+
+                            </div>
+
+
+                            <div class="profile-form-grid">
+
+
+                                <!-- FUNDING TYPE -->
+
+                                <div class="profile-field">
+
+                                    <label for="fundingType">
+                                        Funding type
+                                    </label>
+
+                                    <div class="profile-input-wrapper">
+
+                                        <i data-lucide="wallet"></i>
+
+                                        <select id="fundingType"
+                                                disabled>
+
+                                            <option selected>
+                                                Full bursary
+                                            </option>
+
+                                            <option>
+                                                Tuition only
+                                            </option>
+
+                                            <option>
+                                                Partial funding
+                                            </option>
+
+                                            <option>
+                                                Any funding
+                                            </option>
+
+                                        </select>
+
+                                    </div>
+
+                                </div>
+
+
+                                <!-- FIELD OF STUDY -->
+
+                                <div class="profile-field">
+
+                                    <label for="studyField">
+                                        Field of study
+                                    </label>
+
+                                    <div class="profile-input-wrapper">
+
+                                        <i data-lucide="cpu"></i>
+
+                                        <select id="studyField"
+                                                disabled>
+
+                                            <option selected>
+                                                Computer Science / IT
+                                            </option>
+
+                                            <option>
+                                                Engineering
+                                            </option>
+
+                                            <option>
+                                                Business
+                                            </option>
+
+                                            <option>
+                                                Health Sciences
+                                            </option>
+
+                                            <option>
+                                                Education
+                                            </option>
+
+                                            <option>
+                                                Law
+                                            </option>
+
+                                            <option>
+                                                Other
+                                            </option>
+
+                                        </select>
+
+                                    </div>
+
+                                </div>
+
+
+                                <!-- PROVINCE -->
+
+                                <div class="profile-field">
+
+                                    <label for="province">
+                                        Province
+                                    </label>
+
+                                    <div class="profile-input-wrapper">
+
+                                        <i data-lucide="map-pin"></i>
+
+                                        <select id="province"
+                                                disabled>
+
+                                            <option selected>
+                                                Gauteng
+                                            </option>
+
+                                            <option>
+                                                Limpopo
+                                            </option>
+
+                                            <option>
+                                                Mpumalanga
+                                            </option>
+
+                                            <option>
+                                                North West
+                                            </option>
+
+                                            <option>
+                                                KwaZulu-Natal
+                                            </option>
+
+                                            <option>
+                                                Eastern Cape
+                                            </option>
+
+                                            <option>
+                                                Western Cape
+                                            </option>
+
+                                            <option>
+                                                Northern Cape
+                                            </option>
+
+                                            <option>
+                                                Free State
+                                            </option>
+
+                                        </select>
+
+                                    </div>
+
+                                </div>
+
+
+                                <!-- RESIDENCE -->
+
+                                <div class="profile-field">
+
+                                    <label for="residence">
+
+                                        Living arrangement
+
+                                    </label>
+
+                                    <div class="profile-input-wrapper">
+
+                                        <i data-lucide="house"></i>
+
+                                        <select id="residence"
+                                                disabled>
+
+                                            <option selected>
+                                                Family home
+                                            </option>
+
+                                            <option>
+                                                University residence
+                                            </option>
+
+                                            <option>
+                                                Private accommodation
+                                            </option>
+
+                                            <option>
+                                                Other
+                                            </option>
+
+                                        </select>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="profile-save-area hidden"
+                                 id="preferencesSaveArea">
+
+                                <button type="button"
+                                        class="secondary-button"
+                                        data-cancel="preferences">
+
+                                    Cancel
+
+                                </button>
+
+                                <button type="button"
+                                        class="green-button"
+                                        id="savePreferences">
+
+                                    <i data-lucide="save"></i>
+
+                                    Save changes
+
+                                </button>
+
+                            </div>
+
+                        </section>
+
+
+                    </div>
+
+
+                    <!-- =================================================
+                         RIGHT COLUMN
+                         ================================================= -->
+
+                    <aside class="profile-side-column">
+
+
+                        <!-- =================================================
+                             PROFILE COMPLETION
+                             ================================================= -->
+
+                        <section class="profile-completion-card">
+
+                            <div class="completion-top">
+
+                                <div>
+
+                                    <span>
+                                        PROFILE COMPLETION
+                                    </span>
+
+                                    <strong id="completionPercentage">
+                                        75%
+                                    </strong>
+
+                                </div>
+
+                                <div class="completion-icon">
+
+                                    <i data-lucide="user-round-check"></i>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="completion-track">
+
+                                <div class="completion-bar"
+                                     id="completionBar"
+                                     style="width: 75%;">
+                                </div>
+
+                            </div>
+
+
+                            <p>
+
+                                Complete your profile to improve your
+                                bursary matches.
+
+                            </p>
+
+
+                            <div class="completion-items">
+
+
+                                <div class="completion-item complete">
+
+                                    <i data-lucide="circle-check"></i>
+
+                                    <span>
+                                        Personal information
+                                    </span>
+
+                                </div>
+
+
+                                <div class="completion-item complete">
+
+                                    <i data-lucide="circle-check"></i>
+
+                                    <span>
+                                        Academic information
+                                    </span>
+
+                                </div>
+
+
+                                <div class="completion-item complete">
+
+                                    <i data-lucide="circle-check"></i>
+
+                                    <span>
+                                        Contact details
+                                    </span>
+
+                                </div>
+
+
+                                <div class="completion-item">
+
+                                    <i data-lucide="circle"></i>
+
+                                    <span>
+                                        Financial information
+                                    </span>
+
+                                    <a href="/Profile">
+                                        Complete
+                                    </a>
+
+                                </div>
+
+
+                            </div>
+
+                        </section>
+
+
+                        <!-- =================================================
+                             PROFILE IDENTITY
+                             ================================================= -->
+
+                        <section class="profile-identity-card">
+
+                            <div class="identity-avatar">
+
+                                <span>
+                                    D
+                                </span>
+
+                                <button type="button"
+                                        class="avatar-edit"
+                                        title="Change profile photo">
+
+                                    <i data-lucide="camera"></i>
+
+                                </button>
+
+                            </div>
+
+
+                            <h2>
+                                Delton Novela
+                            </h2>
+
+                            <p>
+                                BSc Computer Science and Informatics
+                            </p>
+
+
+                            <div class="identity-status">
+
+                                <span></span>
+
+                                Profile active
+
+                            </div>
+
+
+                            <div class="identity-divider"></div>
+
+
+                            <div class="identity-detail">
+
+                                <i data-lucide="school"></i>
+
+                                <div>
+
+                                    <span>
+                                        Institution
+                                    </span>
+
+                                    <strong>
+                                        University of Johannesburg
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="identity-detail">
+
+                                <i data-lucide="calendar-days"></i>
+
+                                <div>
+
+                                    <span>
+                                        Student since
+                                    </span>
+
+                                    <strong>
+                                        2025
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+
+                        </section>
+
+
+                        <!-- =================================================
+                             AI MATCHING
+                             ================================================= -->
+
+                        <section class="profile-ai-card">
+
+                            <div class="ai-card-icon">
+
+                                <i data-lucide="sparkles"></i>
+
+                            </div>
+
+
+                            <span class="ai-card-label">
+                                BURSARYFLOW AI
+                            </span>
+
+
+                            <h3>
+                                Improve your matches.
+                            </h3>
+
+
+                            <p>
+
+                                Adding your financial information
+                                could help us find more relevant
+                                bursaries.
+
+                            </p>
+
+
+                            <a href="/AiAssistant">
+
+                                Open AI assistant
+
+                                <i data-lucide="arrow-right"></i>
+
+                            </a>
+
+                        </section>
+
+
+                    </aside>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <!-- =========================================================
+         LUCIDE
+         ========================================================= -->
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+
+    <!-- =========================================================
+         PROFILE JAVASCRIPT
+         ========================================================= -->
+
+    <script src="~/js/profile.js"></script>
+
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+                if (typeof lucide !== "undefined") {
+
+                    lucide.createIcons();
+
+                }
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,290 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>BursaryFlow | Login</title>
+
+    <meta name="description"
+          content="Log in to your BursaryFlow account." />
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="~/css/login.css" />
+</head>
+
+<body>
+
+    <main class="login-page">
+
+        <!-- BACK TO HOME -->
+
+        <a href="/"
+           class="back-home">
+            ← Back to home
+        </a>
+
+
+        <!-- LOGIN CARD -->
+
+        <section class="login-card">
+
+            <!-- BRAND -->
+
+            <a href="/"
+               class="login-brand">
+
+                <span class="brand-mark">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </span>
+
+                <span class="brand-name">
+                    Bursary<span>Flow</span>
+                </span>
+
+            </a>
+
+
+            <!-- HEADER -->
+
+            <div class="login-header">
+
+                <span class="login-label">
+                    WELCOME BACK
+                </span>
+
+                <h1>
+                    Welcome back.
+                </h1>
+
+                <p>
+                    Log in to continue managing your
+                    bursary journey.
+                </p>
+
+            </div>
+
+
+            <!-- LOGIN FORM -->
+
+            <form method="post"
+                  action="/Account/Login"
+                  class="login-form">
+
+                <!-- EMAIL -->
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email address
+                    </label>
+
+                    <input type="email"
+                           id="email"
+                           name="Email"
+                           placeholder="Enter your email address"
+                           autocomplete="email"
+                           required />
+
+                </div>
+
+
+                <!-- PASSWORD -->
+
+                <div class="form-group">
+
+                    <div class="password-label-row">
+
+                        <label for="password">
+                            Password
+                        </label>
+
+                        <a href="/Account/ForgotPassword">
+                            Forgot password?
+                        </a>
+
+                    </div>
+
+                    <div class="password-wrapper">
+
+                        <input type="password"
+                               id="password"
+                               name="Password"
+                               placeholder="Enter your password"
+                               autocomplete="current-password"
+                               required />
+
+                        <button type="button"
+                                class="show-password"
+                                id="showPassword">
+
+                            Show
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- REMEMBER ME -->
+
+                <div class="remember-row">
+
+                    <label class="remember-label">
+
+                        <input type="checkbox"
+                               name="RememberMe"
+                               value="true" />
+
+                        <span class="custom-checkbox"></span>
+
+                        <span>
+                            Remember me
+                        </span>
+
+                    </label>
+
+                </div>
+
+
+                <!-- LOGIN BUTTON -->
+
+                <button type="submit"
+                        class="login-button">
+
+                    <span>
+                        Log in
+                    </span>
+
+                    <span class="login-arrow">
+                        →
+                    </span>
+
+                </button>
+
+            </form>
+
+
+            <!-- REGISTER -->
+
+            <div class="register-section">
+
+                <span>
+                    Don't have an account?
+                </span>
+
+                <a href="/Account/Register">
+                    Create an account
+                </a>
+
+            </div>
+
+
+            <!-- SECURITY -->
+
+            <div class="login-security">
+
+                <span class="security-icon">
+                    ✓
+                </span>
+
+                <div>
+
+                    <strong>
+                        Your information matters
+                    </strong>
+
+                    <small>
+                        BursaryFlow is designed with
+                        responsible information handling in mind.
+                    </small>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+
+        <div class="login-footer">
+
+            <span>
+                © 2026 BursaryFlow
+            </span>
+
+            <span>
+                Apply smarter. Move forward.
+            </span>
+
+        </div>
+
+    </main>
+
+
+    <!-- LOGIN JAVASCRIPT -->
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const password =
+                document.getElementById("password");
+
+            const showPassword =
+                document.getElementById("showPassword");
+
+
+            if (showPassword && password) {
+
+                showPassword.addEventListener(
+                    "click",
+                    function () {
+
+                        if (password.type === "password") {
+
+                            password.type = "text";
+
+                            showPassword.textContent =
+                                "Hide";
+
+                        } else {
+
+                            password.type = "password";
+
+                            showPassword.textContent =
+                                "Show";
+
+                        }
+
+                    }
+                );
+
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>

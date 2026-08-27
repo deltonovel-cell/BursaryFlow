@@ -1,0 +1,1634 @@
+﻿@{
+    Layout = null;
+    ViewData["Title"] = "Settings";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0" />
+
+    <title>BursaryFlow | Settings</title>
+
+    <meta name="description"
+          content="Manage your BursaryFlow account, preferences, notifications, privacy and Delton AI settings." />
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="~/css/dashboard.css" />
+
+    <link rel="stylesheet"
+          href="~/css/settings.css" />
+</head>
+<body>
+    <div class="dashboard-shell">
+
+        <!-- =====================================================
+             SIDEBAR
+             ===================================================== -->
+
+        <aside class="sidebar"
+               id="sidebar">
+
+            <div class="sidebar-brand">
+
+                <a href="/Dashboard"
+                   class="brand">
+
+                    <span class="brand-mark">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+
+                    <span>
+                        Bursary<span>Flow</span>
+                    </span>
+
+                </a>
+
+            </div>
+
+
+            <div class="sidebar-profile">
+
+                <div class="profile-avatar">
+                    D
+                </div>
+
+                <div class="profile-details">
+
+                    <strong>
+                        Delton
+                    </strong>
+
+                    <span>
+                        Student
+                    </span>
+
+                </div>
+
+                <button class="profile-menu"
+                        type="button">
+
+                    ⋮
+
+                </button>
+
+            </div>
+
+
+            <nav class="sidebar-navigation">
+
+                <div class="navigation-label">
+                    WORKSPACE
+                </div>
+
+
+                <a href="/Dashboard"
+                   class="sidebar-link">
+
+                    <span class="sidebar-icon">
+                        <i data-lucide="layout-dashboard"></i>
+                    </span>
+
+                    <span>
+                        Dashboard
+                    </span>
+
+                </a>
+
+
+                <a href="/BursaryPage"
+                   class="sidebar-link">
+
+                    <span class="sidebar-icon">
+                        <i data-lucide="search"></i>
+                    </span>
+
+                    <span>
+                        Find bursaries
+                    </span>
+
+                    <span class="sidebar-count">
+                        0
+                    </span>
+
+                </a>
+
+
+                <a href="/Applications"
+                   class="sidebar-link">
+
+                    <span class="sidebar-icon">
+                        <i data-lucide="send"></i>
+                    </span>
+
+                    <span>
+                        My applications
+                    </span>
+
+                </a>
+
+
+                <a href="/Documents"
+                   class="sidebar-link">
+
+                    <span class="sidebar-icon">
+                        <i data-lucide="folder"></i>
+                    </span>
+
+                    <span>
+                        Documents
+                    </span>
+
+                </a>
+
+
+                <div class="navigation-label">
+                    TOOLS
+                </div>
+
+
+                <a href="/Profile"
+                   class="sidebar-link">
+
+                    <span class="sidebar-icon">
+                        <i data-lucide="user-round"></i>
+                    </span>
+
+                    <span>
+                        My profile
+                    </span>
+
+                </a>
+
+
+                <a href="/AiAssistant"
+                   class="sidebar-link">
+
+                    <span class="sidebar-icon">
+                        <i data-lucide="sparkles"></i>
+                    </span>
+
+                    <span>
+                        AI assistant
+                    </span>
+
+                    <span class="ai-badge">
+                        AI
+                    </span>
+
+                </a>
+
+
+                <a href="/Documents/Create"
+                   class="sidebar-link">
+
+                    <span class="sidebar-icon">
+                        <i data-lucide="file-plus-2"></i>
+                    </span>
+
+                    <span>
+                        Create document
+                    </span>
+
+                </a>
+
+
+                <div class="navigation-label">
+                    ACCOUNT
+                </div>
+
+
+                <a href="/Settings"
+                   class="sidebar-link active">
+
+                    <span class="sidebar-icon">
+                        <i data-lucide="settings"></i>
+                    </span>
+
+                    <span>
+                        Settings
+                    </span>
+
+                </a>
+
+            </nav>
+
+
+            <div class="sidebar-bottom">
+
+                <div class="help-card">
+
+                    <div class="help-icon">
+                        <i data-lucide="circle-help"></i>
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Need help?
+                        </strong>
+
+                        <span>
+                            Ask Delton AI
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <a href="/Account/Logout"
+                   class="logout-link">
+
+                    <i data-lucide="log-out"></i>
+
+                    <span>
+                        Sign out
+                    </span>
+
+                </a>
+
+            </div>
+
+        </aside>
+
+
+        <!-- =====================================================
+             MAIN
+             ===================================================== -->
+
+        <main class="dashboard-main">
+
+            <header class="dashboard-header">
+
+                <button class="mobile-menu"
+                        id="mobileMenu"
+                        type="button"
+                        aria-label="Open navigation">
+
+                    <i data-lucide="menu"></i>
+
+                </button>
+
+
+                <div class="header-search">
+
+                    <i data-lucide="search"></i>
+
+                    <input type="text"
+                           id="globalSearch"
+                           placeholder="Search bursaries, applications or documents..." />
+
+                    <span class="search-shortcut">
+                        /
+                    </span>
+
+                </div>
+
+
+                <div class="header-actions">
+
+                    <button class="header-icon-button"
+                            type="button"
+                            title="Notifications">
+
+                        <i data-lucide="bell"></i>
+
+                        <span class="notification-dot"></span>
+
+                    </button>
+
+
+                    <div class="header-divider"></div>
+
+
+                    <button class="header-user"
+                            type="button">
+
+                        <span class="header-avatar">
+                            D
+                        </span>
+
+                        <span class="header-user-name">
+                            Delton
+                        </span>
+
+                        <i data-lucide="chevron-down"></i>
+
+                    </button>
+
+                </div>
+
+            </header>
+
+
+            <!-- =================================================
+                 SETTINGS CONTENT
+                 ================================================= -->
+
+            <div class="dashboard-content settings-content">
+
+
+                <!-- =================================================
+                     HERO
+                     ================================================= -->
+
+                <section class="settings-hero">
+
+                    <div>
+
+                        <div class="settings-eyebrow">
+
+                            <span></span>
+
+                            ACCOUNT SETTINGS
+
+                        </div>
+
+
+                        <h1>
+                            Settings & <em>preferences.</em>
+                        </h1>
+
+
+                        <p>
+
+                            Manage your BursaryFlow account, notifications,
+                            privacy and Delton AI preferences from one place.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="settings-status">
+
+                        <div class="settings-status-icon">
+
+                            <i data-lucide="shield-check"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                ACCOUNT
+                            </span>
+
+                            <strong>
+                                Protected
+                            </strong>
+
+                        </div>
+
+                        <span class="settings-online-dot"></span>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================================
+                     SUCCESS / ERROR MESSAGES
+                     ================================================= -->
+                @if (TempData["SettingsSuccess"] != null)
+                {
+                    <div class="settings-alert success">
+
+                        <i data-lucide="check-circle-2"></i>
+
+                        <span>
+                            @TempData["SettingsSuccess"]
+                        </span>
+
+                    </div>
+                }
+
+
+                @if (TempData["PasswordSuccess"] != null)
+                {
+                    <div class="settings-alert success">
+
+                        <i data-lucide="check-circle-2"></i>
+
+                        <span>
+                            @TempData["PasswordSuccess"]
+                        </span>
+
+                    </div>
+                }
+
+
+                @if (TempData["PasswordError"] != null)
+                {
+                    <div class="settings-alert error">
+
+                        <i data-lucide="circle-alert"></i>
+
+                        <span>
+                            @TempData["PasswordError"]
+                        </span>
+
+                    </div>
+                }
+
+
+                @if (TempData["DeleteError"] != null)
+                {
+                    <div class="settings-alert error">
+
+                        <i data-lucide="circle-alert"></i>
+
+                        <span>
+                            @TempData["DeleteError"]
+                        </span>
+
+                    </div>
+                }
+
+
+                <!-- =================================================
+                     SETTINGS LAYOUT
+                     ================================================= -->
+
+                <div class="settings-layout">
+
+
+                    <!-- =================================================
+                         SETTINGS NAVIGATION
+                         ================================================= -->
+
+                    <aside class="settings-navigation">
+
+                        <button type="button"
+                                class="settings-nav-item active"
+                                data-section="account">
+
+                            <span class="settings-nav-icon">
+                                <i data-lucide="user-round"></i>
+                            </span>
+
+                            <span>
+                                Account
+                            </span>
+
+                            <i data-lucide="chevron-right"></i>
+
+                        </button>
+
+
+                        <button type="button"
+                                class="settings-nav-item"
+                                data-section="notifications">
+
+                            <span class="settings-nav-icon">
+                                <i data-lucide="bell"></i>
+                            </span>
+
+                            <span>
+                                Notifications
+                            </span>
+
+                            <i data-lucide="chevron-right"></i>
+
+                        </button>
+
+
+                        <button type="button"
+                                class="settings-nav-item"
+                                data-section="ai">
+
+                            <span class="settings-nav-icon">
+                                <i data-lucide="sparkles"></i>
+                            </span>
+
+                            <span>
+                                Delton AI
+                            </span>
+
+                            <i data-lucide="chevron-right"></i>
+
+                        </button>
+
+
+                        <button type="button"
+                                class="settings-nav-item"
+                                data-section="privacy">
+
+                            <span class="settings-nav-icon">
+                                <i data-lucide="lock-keyhole"></i>
+                            </span>
+
+                            <span>
+                                Privacy
+                            </span>
+
+                            <i data-lucide="chevron-right"></i>
+
+                        </button>
+
+
+                        <button type="button"
+                                class="settings-nav-item"
+                                data-section="security">
+
+                            <span class="settings-nav-icon">
+                                <i data-lucide="shield"></i>
+                            </span>
+
+                            <span>
+                                Security
+                            </span>
+
+                            <i data-lucide="chevron-right"></i>
+
+                        </button>
+
+                    </aside>
+
+
+                    <!-- =================================================
+                         SETTINGS PANELS
+                         ================================================= -->
+
+                    <div class="settings-panels">
+
+
+                        <!-- =================================================
+                             ACCOUNT
+                             ================================================= -->
+
+                        <section class="settings-panel active"
+                                 data-panel="account">
+
+                            <div class="settings-panel-heading">
+
+                                <div>
+
+                                    <span>
+                                        ACCOUNT
+                                    </span>
+
+                                    <h2>
+                                        Your account
+                                    </h2>
+
+                                    <p>
+                                        Manage the information associated
+                                        with your BursaryFlow account.
+                                    </p>
+
+                                </div>
+
+                                <div class="settings-heading-icon">
+
+                                    <i data-lucide="user-round"></i>
+
+                                </div>
+
+                            </div>
+
+
+                            <form method="post"
+                                  action="/Settings/Save"
+                                  class="settings-form">
+
+                                @Html.AntiForgeryToken()
+
+
+                                <div class="settings-form-grid">
+
+
+                                    <div class="settings-field">
+
+                                        <label for="fullName">
+                                            Full name
+                                        </label>
+
+                                        <input type="text"
+                                               id="fullName"
+                                               name="fullName"
+                                               value="Delton Novela"
+                                               placeholder="Your full name" />
+
+                                    </div>
+
+
+                                    <div class="settings-field">
+
+                                        <label for="email">
+                                            Email address
+                                        </label>
+
+                                        <input type="email"
+                                               id="email"
+                                               name="email"
+                                               value=""
+                                               placeholder="Your email address" />
+
+                                    </div>
+
+
+                                    <div class="settings-field">
+
+                                        <label for="studyLevel">
+                                            Study level
+                                        </label>
+
+                                        <select id="studyLevel"
+                                                name="studyLevel">
+
+                                            <option value="">
+                                                Select study level
+                                            </option>
+
+                                            <option value="First Year">
+                                                First Year
+                                            </option>
+
+                                            <option value="Second Year"
+                                                    selected>
+                                                Second Year
+                                            </option>
+
+                                            <option value="Third Year">
+                                                Third Year
+                                            </option>
+
+                                            <option value="Fourth Year">
+                                                Fourth Year
+                                            </option>
+
+                                            <option value="Postgraduate">
+                                                Postgraduate
+                                            </option>
+
+                                        </select>
+
+                                    </div>
+
+
+                                    <div class="settings-field">
+
+                                        <label for="institution">
+                                            Institution
+                                        </label>
+
+                                        <input type="text"
+                                               id="institution"
+                                               name="institution"
+                                               value="University of Johannesburg"
+                                               placeholder="Your institution" />
+
+                                    </div>
+
+
+                                    <div class="settings-field full">
+
+                                        <label for="fieldOfStudy">
+                                            Field of study
+                                        </label>
+
+                                        <input type="text"
+                                               id="fieldOfStudy"
+                                               name="fieldOfStudy"
+                                               value="Computer Science and Informatics"
+                                               placeholder="e.g. Computer Science" />
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="settings-form-footer">
+
+                                    <span>
+                                        <i data-lucide="info"></i>
+
+                                        Keep your information up to date
+                                        for better bursary matching.
+                                    </span>
+
+                                    <button type="submit"
+                                            class="settings-primary-button">
+
+                                        Save changes
+
+                                        <i data-lucide="arrow-right"></i>
+
+                                    </button>
+
+                                </div>
+
+                            </form>
+
+                        </section>
+
+
+                        <!-- =================================================
+                             NOTIFICATIONS
+                             ================================================= -->
+
+                        <section class="settings-panel"
+                                 data-panel="notifications">
+
+                            <div class="settings-panel-heading">
+
+                                <div>
+
+                                    <span>
+                                        NOTIFICATIONS
+                                    </span>
+
+                                    <h2>
+                                        Stay informed
+                                    </h2>
+
+                                    <p>
+                                        Choose what BursaryFlow should
+                                        notify you about.
+                                    </p>
+
+                                </div>
+
+                                <div class="settings-heading-icon">
+
+                                    <i data-lucide="bell"></i>
+
+                                </div>
+
+                            </div>
+
+
+                            <form method="post"
+                                  action="/Settings/Save"
+                                  class="settings-preference-form">
+
+                                @Html.AntiForgeryToken()
+
+
+                                <div class="preference-item">
+
+                                    <div class="preference-icon">
+                                        <i data-lucide="search"></i>
+                                    </div>
+
+                                    <div class="preference-content">
+
+                                        <strong>
+                                            Bursary alerts
+                                        </strong>
+
+                                        <span>
+                                            Get notified when new bursaries
+                                            match your profile.
+                                        </span>
+
+                                    </div>
+
+                                    <label class="toggle">
+
+                                        <input type="checkbox"
+                                               name="bursaryAlerts"
+                                               value="true"
+                                               checked />
+
+                                        <span></span>
+
+                                    </label>
+
+                                </div>
+
+
+                                <div class="preference-item">
+
+                                    <div class="preference-icon">
+                                        <i data-lucide="send"></i>
+                                    </div>
+
+                                    <div class="preference-content">
+
+                                        <strong>
+                                            Application updates
+                                        </strong>
+
+                                        <span>
+                                            Receive updates about your
+                                            bursary applications.
+                                        </span>
+
+                                    </div>
+
+                                    <label class="toggle">
+
+                                        <input type="checkbox"
+                                               name="applicationUpdates"
+                                               value="true"
+                                               checked />
+
+                                        <span></span>
+
+                                    </label>
+
+                                </div>
+
+
+                                <div class="preference-item">
+
+                                    <div class="preference-icon">
+                                        <i data-lucide="folder-clock"></i>
+                                    </div>
+
+                                    <div class="preference-content">
+
+                                        <strong>
+                                            Document reminders
+                                        </strong>
+
+                                        <span>
+                                            Reminders when important
+                                            documents may be missing.
+                                        </span>
+
+                                    </div>
+
+                                    <label class="toggle">
+
+                                        <input type="checkbox"
+                                               name="documentReminders"
+                                               value="true"
+                                               checked />
+
+                                        <span></span>
+
+                                    </label>
+
+                                </div>
+
+
+                                <div class="preference-item">
+
+                                    <div class="preference-icon">
+                                        <i data-lucide="sparkles"></i>
+                                    </div>
+
+                                    <div class="preference-content">
+
+                                        <strong>
+                                            AI recommendations
+                                        </strong>
+
+                                        <span>
+                                            Allow Delton to send useful
+                                            bursary recommendations.
+                                        </span>
+
+                                    </div>
+
+                                    <label class="toggle">
+
+                                        <input type="checkbox"
+                                               name="aiRecommendations"
+                                               value="true"
+                                               checked />
+
+                                        <span></span>
+
+                                    </label>
+
+                                </div>
+
+
+                                <div class="settings-form-footer">
+
+                                    <span>
+                                        <i data-lucide="bell-ring"></i>
+
+                                        You can change these preferences
+                                        at any time.
+                                    </span>
+
+                                    <button type="submit"
+                                            class="settings-primary-button">
+
+                                        Save preferences
+
+                                        <i data-lucide="check"></i>
+
+                                    </button>
+
+                                </div>
+
+                            </form>
+
+                        </section>
+
+
+                        <!-- =================================================
+                             DELTON AI
+                             ================================================= -->
+
+                        <section class="settings-panel"
+                                 data-panel="ai">
+
+                            <div class="settings-panel-heading">
+
+                                <div>
+
+                                    <span>
+                                        DELTON AI
+                                    </span>
+
+                                    <h2>
+                                        Your AI assistant
+                                    </h2>
+
+                                    <p>
+                                        Control how Delton uses your
+                                        BursaryFlow information.
+                                    </p>
+
+                                </div>
+
+                                <div class="settings-heading-icon ai">
+
+                                    <i data-lucide="sparkles"></i>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="ai-settings-banner">
+
+                                <div class="ai-settings-avatar">
+
+                                    <i data-lucide="sparkles"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <span>
+                                        DELTON AI
+                                    </span>
+
+                                    <strong>
+                                        Personalised assistance enabled
+                                    </strong>
+
+                                    <p>
+                                        Delton can use information from
+                                        your BursaryFlow profile to make
+                                        recommendations and assist with
+                                        documents.
+                                    </p>
+
+                                </div>
+
+                                <span class="ai-enabled-dot"></span>
+
+                            </div>
+
+
+                            <form method="post"
+                                  action="/Settings/Save"
+                                  class="settings-preference-form">
+
+                                @Html.AntiForgeryToken()
+
+
+                                <div class="preference-item">
+
+                                    <div class="preference-icon ai">
+                                        <i data-lucide="target"></i>
+                                    </div>
+
+                                    <div class="preference-content">
+
+                                        <strong>
+                                            Personalised matching
+                                        </strong>
+
+                                        <span>
+                                            Let Delton use your profile to
+                                            improve bursary recommendations.
+                                        </span>
+
+                                    </div>
+
+                                    <label class="toggle">
+
+                                        <input type="checkbox"
+                                               name="personalisedMatching"
+                                               value="true"
+                                               checked />
+
+                                        <span></span>
+
+                                    </label>
+
+                                </div>
+
+
+                                <div class="preference-item">
+
+                                    <div class="preference-icon ai">
+                                        <i data-lucide="file-pen-line"></i>
+                                    </div>
+
+                                    <div class="preference-content">
+
+                                        <strong>
+                                            AI document assistance
+                                        </strong>
+
+                                        <span>
+                                            Allow Delton to personalise
+                                            documents using your profile.
+                                        </span>
+
+                                    </div>
+
+                                    <label class="toggle">
+
+                                        <input type="checkbox"
+                                               name="aiDocumentAssistance"
+                                               value="true"
+                                               checked />
+
+                                        <span></span>
+
+                                    </label>
+
+                                </div>
+
+
+                                <div class="ai-privacy-note">
+
+                                    <i data-lucide="shield-check"></i>
+
+                                    <div>
+
+                                        <strong>
+                                            Your information stays private
+                                        </strong>
+
+                                        <p>
+                                            Delton is designed to assist
+                                            with your BursaryFlow experience.
+                                            Review important information before
+                                            submitting any application.
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="settings-form-footer">
+
+                                    <span>
+                                        <i data-lucide="sparkles"></i>
+
+                                        Your AI preferences are saved
+                                        separately from your documents.
+                                    </span>
+
+                                    <button type="submit"
+                                            class="settings-primary-button">
+
+                                        Save AI preferences
+
+                                        <i data-lucide="check"></i>
+
+                                    </button>
+
+                                </div>
+
+                            </form>
+
+                        </section>
+
+
+                        <!-- =================================================
+                             PRIVACY
+                             ================================================= -->
+
+                        <section class="settings-panel"
+                                 data-panel="privacy">
+
+                            <div class="settings-panel-heading">
+
+                                <div>
+
+                                    <span>
+                                        PRIVACY
+                                    </span>
+
+                                    <h2>
+                                        Privacy controls
+                                    </h2>
+
+                                    <p>
+                                        Control how your information is
+                                        handled inside BursaryFlow.
+                                    </p>
+
+                                </div>
+
+                                <div class="settings-heading-icon">
+
+                                    <i data-lucide="lock-keyhole"></i>
+
+                                </div>
+
+                            </div>
+
+
+                            <form method="post"
+                                  action="/Settings/Save"
+                                  class="settings-preference-form">
+
+                                @Html.AntiForgeryToken()
+
+
+                                <div class="privacy-highlight">
+
+                                    <div class="privacy-highlight-icon">
+
+                                        <i data-lucide="shield-check"></i>
+
+                                    </div>
+
+                                    <div>
+
+                                        <strong>
+                                            Privacy first
+                                        </strong>
+
+                                        <p>
+                                            Your personal information and
+                                            documents should only be used
+                                            for the BursaryFlow services
+                                            you choose to use.
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="preference-item">
+
+                                    <div class="preference-icon">
+                                        <i data-lucide="eye"></i>
+                                    </div>
+
+                                    <div class="preference-content">
+
+                                        <strong>
+                                            Profile visibility
+                                        </strong>
+
+                                        <span>
+                                            Control whether profile
+                                            information can be used
+                                            for matching.
+                                        </span>
+
+                                    </div>
+
+                                    <label class="toggle">
+
+                                        <input type="checkbox"
+                                               name="profileVisibility"
+                                               value="true"
+                                               checked />
+
+                                        <span></span>
+
+                                    </label>
+
+                                </div>
+
+
+                                <div class="preference-item">
+
+                                    <div class="preference-icon">
+                                        <i data-lucide="file-lock-2"></i>
+                                    </div>
+
+                                    <div class="preference-content">
+
+                                        <strong>
+                                            Document privacy
+                                        </strong>
+
+                                        <span>
+                                            Keep uploaded documents
+                                            restricted to your account.
+                                        </span>
+
+                                    </div>
+
+                                    <label class="toggle">
+
+                                        <input type="checkbox"
+                                               name="documentPrivacy"
+                                               value="true"
+                                               checked />
+
+                                        <span></span>
+
+                                    </label>
+
+                                </div>
+
+
+                                <div class="settings-form-footer">
+
+                                    <span>
+                                        <i data-lucide="lock"></i>
+
+                                        Your privacy preferences can
+                                        be updated whenever you need.
+                                    </span>
+
+                                    <button type="submit"
+                                            class="settings-primary-button">
+
+                                        Save privacy settings
+
+                                        <i data-lucide="check"></i>
+
+                                    </button>
+
+                                </div>
+
+                            </form>
+
+                        </section>
+
+
+                        <!-- =================================================
+                             SECURITY
+                             ================================================= -->
+
+                        <section class="settings-panel"
+                                 data-panel="security">
+
+                            <div class="settings-panel-heading">
+
+                                <div>
+
+                                    <span>
+                                        SECURITY
+                                    </span>
+
+                                    <h2>
+                                        Protect your account
+                                    </h2>
+
+                                    <p>
+                                        Update your password and manage
+                                        account security.
+                                    </p>
+
+                                </div>
+
+                                <div class="settings-heading-icon">
+
+                                    <i data-lucide="shield"></i>
+
+                                </div>
+
+                            </div>
+
+
+                            <form method="post"
+                                  action="/Settings/ChangePassword"
+                                  class="password-form">
+
+                                @Html.AntiForgeryToken()
+
+
+                                <div class="settings-field">
+
+                                    <label for="currentPassword">
+                                        Current password
+                                    </label>
+
+                                    <div class="password-input">
+
+                                        <input type="password"
+                                               id="currentPassword"
+                                               name="currentPassword"
+                                               placeholder="Enter your current password" />
+
+                                        <button type="button"
+                                                class="password-toggle"
+                                                data-target="currentPassword">
+
+                                            <i data-lucide="eye"></i>
+
+                                        </button>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="settings-form-grid">
+
+
+                                    <div class="settings-field">
+
+                                        <label for="newPassword">
+                                            New password
+                                        </label>
+
+                                        <div class="password-input">
+
+                                            <input type="password"
+                                                   id="newPassword"
+                                                   name="newPassword"
+                                                   placeholder="At least 8 characters" />
+
+                                            <button type="button"
+                                                    class="password-toggle"
+                                                    data-target="newPassword">
+
+                                                <i data-lucide="eye"></i>
+
+                                            </button>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="settings-field">
+
+                                        <label for="confirmPassword">
+                                            Confirm password
+                                        </label>
+
+                                        <div class="password-input">
+
+                                            <input type="password"
+                                                   id="confirmPassword"
+                                                   name="confirmPassword"
+                                                   placeholder="Repeat your password" />
+
+                                            <button type="button"
+                                                    class="password-toggle"
+                                                    data-target="confirmPassword">
+
+                                                <i data-lucide="eye"></i>
+
+                                            </button>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="password-requirements">
+
+                                    <span>
+                                        <i data-lucide="check"></i>
+                                        At least 8 characters
+                                    </span>
+
+                                    <span>
+                                        <i data-lucide="check"></i>
+                                        Use a strong password
+                                    </span>
+
+                                    <span>
+                                        <i data-lucide="check"></i>
+                                        Avoid easily guessed information
+                                    </span>
+
+                                </div>
+
+
+                                <div class="settings-form-footer">
+
+                                    <span>
+                                        <i data-lucide="shield-check"></i>
+
+                                        Never share your BursaryFlow password.
+                                    </span>
+
+                                    <button type="submit"
+                                            class="settings-primary-button">
+
+                                        Update password
+
+                                        <i data-lucide="arrow-right"></i>
+
+                                    </button>
+
+                                </div>
+
+                            </form>
+
+
+                            <!-- DANGER ZONE -->
+
+                            <div class="danger-zone">
+
+                                <div class="danger-heading">
+
+                                    <div class="danger-icon">
+
+                                        <i data-lucide="triangle-alert"></i>
+
+                                    </div>
+
+                                    <div>
+
+                                        <span>
+                                            DANGER ZONE
+                                        </span>
+
+                                        <h3>
+                                            Delete account
+                                        </h3>
+
+                                    </div>
+
+                                </div>
+
+
+                                <p>
+
+                                    Permanently deleting your account may
+                                    remove your profile, documents,
+                                    applications and preferences.
+
+                                </p>
+
+
+                                <button type="button"
+                                        class="danger-button"
+                                        id="openDeleteModal">
+
+                                    Delete my account
+
+                                    <i data-lucide="trash-2"></i>
+
+                                </button>
+
+                            </div>
+
+                        </section>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <!-- =========================================================
+         DELETE ACCOUNT MODAL
+         ========================================================= -->
+
+    <div class="settings-modal"
+         id="deleteModal">
+
+        <div class="settings-modal-backdrop"
+             id="deleteModalBackdrop"></div>
+
+        <div class="settings-modal-card">
+
+            <button type="button"
+                    class="settings-modal-close"
+                    id="closeDeleteModal">
+
+                <i data-lucide="x"></i>
+
+            </button>
+
+
+            <div class="modal-danger-icon">
+
+                <i data-lucide="trash-2"></i>
+
+            </div>
+
+
+            <span class="modal-eyebrow">
+                PERMANENT ACTION
+            </span>
+
+
+            <h2>
+                Delete your account?
+            </h2>
+
+
+            <p>
+
+                This action cannot be undone. Your BursaryFlow
+                account and associated data may be permanently removed.
+
+            </p>
+
+
+            <form method="post"
+                  action="/Settings/DeleteAccount">
+
+                @Html.AntiForgeryToken()
+
+
+                <label for="deleteConfirmation">
+                    Type DELETE to confirm
+                </label>
+
+
+                <input type="text"
+                       id="deleteConfirmation"
+                       name="confirmation"
+                       placeholder="DELETE"
+                       autocomplete="off" />
+
+
+                <div class="modal-actions">
+
+                    <button type="button"
+                            class="modal-cancel"
+                            id="cancelDelete">
+
+                        Cancel
+
+                    </button>
+
+
+                    <button type="submit"
+                            class="modal-delete">
+
+                        Delete account
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         LUCIDE
+         ========================================================= -->
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script src="~/js/settings.js"></script>
+
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+                if (typeof lucide !== "undefined") {
+
+                    lucide.createIcons();
+
+                }
+
+            }
+        );
+
+    </script>
+</body>
+</html>

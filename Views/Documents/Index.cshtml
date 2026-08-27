@@ -1,0 +1,1895 @@
+﻿@{
+    ViewData["Title"] = "Document Centre";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0" />
+
+    <title>BursaryFlow | Document Centre</title>
+
+    <meta name="description"
+          content="Manage, analyse and prepare your bursary documents with BursaryFlow." />
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="~/css/dashboard.css" />
+
+    <link rel="stylesheet"
+          href="~/css/documents.css" />
+
+</head>
+
+<body>
+
+    @Html.AntiForgeryToken()
+
+    <div class="dashboard-shell">
+
+        <!-- =====================================================
+             SIDEBAR
+        ====================================================== -->
+
+        <aside class="sidebar" id="sidebar">
+
+            <div class="sidebar-brand">
+
+                <a href="/Dashboard" class="brand">
+
+                    <span class="brand-mark">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+
+                    <span>
+                        Bursary<span>Flow</span>
+                    </span>
+
+                </a>
+
+            </div>
+
+
+            <div class="sidebar-profile">
+
+                <div class="profile-avatar">
+                    D
+                </div>
+
+                <div class="profile-details">
+
+                    <strong id="studentName">
+                        Delton
+                    </strong>
+
+                    <span>
+                        Student
+                    </span>
+
+                </div>
+
+                <button class="profile-menu"
+                        type="button">
+                    ⋮
+                </button>
+
+            </div>
+
+
+            <nav class="sidebar-navigation">
+
+                <div class="navigation-label">
+                    WORKSPACE
+                </div>
+
+                <a href="/Dashboard"
+                   class="sidebar-link">
+
+                    <span class="sidebar-icon">
+                        <i data-lucide="layout-dashboard"></i>
+                    </span>
+
+                    <span>
+                        Dashboard
+                    </span>
+
+                </a>
+
+
+                <a href="/BursaryPage"
+                   class="sidebar-link">
+
+                    <span class="sidebar-icon">
+                        <i data-lucide="search"></i>
+                    </span>
+
+                    <span>
+                        Find bursaries
+                    </span>
+
+                    <span class="sidebar-count"
+                          id="bursaryCount">
+                        0
+                    </span>
+
+                </a>
+
+
+                <a href="/Applications"
+                   class="sidebar-link">
+
+                    <span class="sidebar-icon">
+                        <i data-lucide="send"></i>
+                    </span>
+
+                    <span>
+                        My applications
+                    </span>
+
+                </a>
+
+
+                <a href="/Documents"
+                   class="sidebar-link active">
+
+                    <span class="sidebar-icon">
+                        <i data-lucide="folder"></i>
+                    </span>
+
+                    <span>
+                        Documents
+                    </span>
+
+                </a>
+
+
+                <div class="navigation-label">
+                    TOOLS
+                </div>
+
+
+                <a href="/Profile"
+                   class="sidebar-link">
+
+                    <span class="sidebar-icon">
+                        <i data-lucide="user-round"></i>
+                    </span>
+
+                    <span>
+                        My profile
+                    </span>
+
+                </a>
+
+
+                <a href="/AiAssistant"
+                   class="sidebar-link">
+
+                    <span class="sidebar-icon">
+                        <i data-lucide="sparkles"></i>
+                    </span>
+
+                    <span>
+                        AI assistant
+                    </span>
+
+                    <span class="ai-badge">
+                        AI
+                    </span>
+
+                </a>
+
+
+                <a href="/Documents/Create"
+                   class="sidebar-link">
+
+                    <span class="sidebar-icon">
+                        <i data-lucide="file-plus-2"></i>
+                    </span>
+
+                    <span>
+                        Create document
+                    </span>
+
+                </a>
+
+
+                <div class="navigation-label">
+                    ACCOUNT
+                </div>
+
+
+                <a href="/Settings"
+                   class="sidebar-link">
+
+                    <span class="sidebar-icon">
+                        <i data-lucide="settings"></i>
+                    </span>
+
+                    <span>
+                        Settings
+                    </span>
+
+                </a>
+
+            </nav>
+
+
+            <div class="sidebar-bottom">
+
+                <div class="help-card">
+
+                    <div class="help-icon">
+                        <i data-lucide="circle-help"></i>
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Need help?
+                        </strong>
+
+                        <span>
+                            Ask Delton AI
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <a href="/Account/Logout"
+                   class="logout-link">
+
+                    <i data-lucide="log-out"></i>
+
+                    <span>
+                        Sign out
+                    </span>
+
+                </a>
+
+            </div>
+
+        </aside>
+
+
+        <!-- =====================================================
+             MAIN
+        ====================================================== -->
+
+        <main class="dashboard-main">
+
+            <header class="dashboard-header">
+
+                <button class="mobile-menu"
+                        id="mobileMenu"
+                        type="button">
+
+                    <i data-lucide="menu"></i>
+
+                </button>
+
+
+                <div class="header-search">
+
+                    <i data-lucide="search"></i>
+
+                    <input type="text"
+                           id="globalSearch"
+                           placeholder="Search bursaries, applications or documents..." />
+
+                    <span class="search-shortcut">
+                        /
+                    </span>
+
+                </div>
+
+
+                <div class="header-actions">
+
+                    <button class="header-icon-button"
+                            type="button">
+
+                        <i data-lucide="bell"></i>
+
+                        <span class="notification-dot"></span>
+
+                    </button>
+
+                    <div class="header-divider"></div>
+
+                    <button class="header-user"
+                            type="button">
+
+                        <span class="header-avatar">
+                            D
+                        </span>
+
+                        <span class="header-user-name">
+                            Delton
+                        </span>
+
+                        <i data-lucide="chevron-down"></i>
+
+                    </button>
+
+                </div>
+
+            </header>
+
+
+            <div class="dashboard-content documents-page">
+
+                <!-- =================================================
+                     HEADER
+                ================================================== -->
+
+                <section class="documents-header">
+
+                    <div class="documents-header-content">
+
+                        <span class="documents-label">
+                            DOCUMENT CENTRE
+                        </span>
+
+                        <h1>
+                            Your Smart Document Vault
+                        </h1>
+
+                        <p>
+                            Upload, analyse, improve and prepare your
+                            documents before submitting bursary applications.
+                        </p>
+
+                    </div>
+
+
+                    <button type="button"
+                            class="document-upload-button"
+                            id="openUploadModal">
+
+                        <i data-lucide="upload"></i>
+
+                        Upload Document
+
+                    </button>
+
+                </section>
+
+
+                <!-- =================================================
+                     STATISTICS
+                ================================================== -->
+
+                <section class="document-statistics">
+
+                    <article class="document-stat-card">
+
+                        <div class="stat-icon">
+                            <i data-lucide="files"></i>
+                        </div>
+
+                        <div>
+
+                            <span>
+                                DOCUMENTS
+                            </span>
+
+                            <strong id="totalDocuments">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="document-stat-card">
+
+                        <div class="stat-icon verified">
+                            <i data-lucide="circle-check"></i>
+                        </div>
+
+                        <div>
+
+                            <span>
+                                VERIFIED
+                            </span>
+
+                            <strong id="verifiedDocuments">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="document-stat-card">
+
+                        <div class="stat-icon warning">
+                            <i data-lucide="triangle-alert"></i>
+                        </div>
+
+                        <div>
+
+                            <span>
+                                ISSUES FOUND
+                            </span>
+
+                            <strong id="documentIssues">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="document-stat-card">
+
+                        <div class="stat-icon storage">
+                            <i data-lucide="hard-drive"></i>
+                        </div>
+
+                        <div>
+
+                            <span>
+                                STORAGE
+                            </span>
+
+                            <strong id="storageUsed">
+                                0 MB
+                            </strong>
+
+                        </div>
+
+                    </article>
+
+                </section>
+
+
+                <!-- =================================================
+                     DOCUMENT LIBRARY
+                ================================================== -->
+
+                <section class="documents-workspace">
+
+                    <div class="workspace-header">
+
+                        <div>
+
+                            <span class="documents-label">
+                                MY DOCUMENTS
+                            </span>
+
+                            <h2>
+                                Document Library
+                            </h2>
+
+                        </div>
+
+
+                        <div class="document-controls">
+
+                            <div class="document-search">
+
+                                <i data-lucide="search"></i>
+
+                                <input type="text"
+                                       id="documentSearch"
+                                       placeholder="Search documents..." />
+
+                            </div>
+
+
+                            <select id="documentSort">
+
+                                <option value="recent">
+                                    Latest
+                                </option>
+
+                                <option value="name">
+                                    Name
+                                </option>
+
+                                <option value="type">
+                                    Type
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="document-filters">
+
+                        <button type="button"
+                                class="document-filter active"
+                                data-filter="all">
+                            All
+                        </button>
+
+                        <button type="button"
+                                class="document-filter"
+                                data-filter="identity">
+                            Identity
+                        </button>
+
+                        <button type="button"
+                                class="document-filter"
+                                data-filter="academic">
+                            Academic
+                        </button>
+
+                        <button type="button"
+                                class="document-filter"
+                                data-filter="financial">
+                            Financial
+                        </button>
+
+                        <button type="button"
+                                class="document-filter"
+                                data-filter="supporting">
+                            Supporting
+                        </button>
+
+                    </div>
+
+
+                    <div class="documents-list"
+                         id="documentsList">
+                    </div>
+
+
+                    <div class="documents-empty"
+                         id="emptyDocuments">
+
+                        <div class="empty-icon">
+                            <i data-lucide="folder-open"></i>
+                        </div>
+
+                        <h3>
+                            Your document vault is empty
+                        </h3>
+
+                        <p>
+                            Upload your first document and BursaryFlow
+                            will analyse its quality, spelling and readiness.
+                        </p>
+
+                        <button type="button"
+                                class="document-upload-button"
+                                id="emptyUploadButton">
+
+                            <i data-lucide="upload"></i>
+
+                            Upload First Document
+
+                        </button>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================================
+                     SELECTED DOCUMENT
+                ================================================== -->
+
+                <section class="selected-document-workspace hidden"
+                         id="selectedDocumentWorkspace">
+
+                    <div class="selected-document-header">
+
+                        <div class="selected-document-information">
+
+                            <div class="selected-document-icon">
+                                <i data-lucide="file-text"></i>
+                            </div>
+
+                            <div>
+
+                                <span class="documents-label">
+                                    SELECTED DOCUMENT
+                                </span>
+
+                                <h2 id="selectedDocumentName">
+                                    Document.pdf
+                                </h2>
+
+                                <p id="selectedDocumentMeta">
+                                    PDF · 0 MB
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="selected-document-actions">
+
+                            <button type="button"
+                                    id="editDocument">
+
+                                <i data-lucide="pencil"></i>
+
+                                Edit Document
+
+                            </button>
+
+
+                            <button type="button"
+                                    id="selectedQualityCheck"
+                                    class="ai-action-button">
+
+                                <i data-lucide="scan-search"></i>
+
+                                AI Quality Check
+
+                            </button>
+
+
+                            <button type="button"
+                                    id="selectedEnhanceDocument"
+                                    class="ai-action-button">
+
+                                <i data-lucide="wand-sparkles"></i>
+
+                                Enhance Quality
+
+                            </button>
+
+
+                            <button type="button"
+                                    id="downloadDocument">
+
+                                <i data-lucide="download"></i>
+
+                                Download
+
+                            </button>
+
+
+                            <button type="button"
+                                    id="deleteDocument">
+
+                                <i data-lucide="trash-2"></i>
+
+                                Delete
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- QUALITY SUMMARY -->
+
+                    <div class="document-quality-summary"
+                         id="documentQualitySummary">
+
+                        <div class="quality-summary-score">
+
+                            <div class="quality-summary-circle">
+
+                                <strong id="selectedQualityScore">
+                                    0
+                                </strong>
+
+                                <span>
+                                    %
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="quality-summary-information">
+
+                            <span>
+                                AI DOCUMENT QUALITY
+                            </span>
+
+                            <h3 id="selectedQualityTitle">
+                                Not analysed
+                            </h3>
+
+                            <p id="selectedQualityDescription">
+                                Run the AI Quality Check to determine
+                                how ready this document is for a bursary application.
+                            </p>
+
+                        </div>
+
+
+                        <div class="quality-summary-status">
+
+                            <div class="quality-status-icon">
+                                <i data-lucide="shield-check"></i>
+                            </div>
+
+                            <div>
+
+                                <span>
+                                    DOCUMENT STATUS
+                                </span>
+
+                                <strong id="selectedQualityStatus">
+                                    Waiting for analysis
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="document-analysis-workspace">
+
+                        <!-- PREVIEW -->
+
+                        <div class="document-preview-panel">
+
+                            <div class="panel-header">
+
+                                <div>
+
+                                    <span class="documents-label">
+                                        DOCUMENT PREVIEW
+                                    </span>
+
+                                    <h3>
+                                        Preview
+                                    </h3>
+
+                                </div>
+
+                                <button type="button"
+                                        id="fullPreviewButton">
+
+                                    <i data-lucide="maximize-2"></i>
+
+                                    Full preview
+
+                                </button>
+
+                            </div>
+
+
+                            <div class="document-preview-area"
+                                 id="documentPreviewArea">
+
+                                <div class="document-preview-placeholder">
+
+                                    <div>
+                                        <i data-lucide="file-text"></i>
+                                    </div>
+
+                                    <strong>
+                                        Select a document
+                                    </strong>
+
+                                    <span>
+                                        Your document preview will appear here.
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- AI PANEL -->
+
+                        <aside class="document-ai-panel">
+
+                            <div class="document-ai-panel-header">
+
+                                <div class="ai-panel-icon">
+                                    <i data-lucide="sparkles"></i>
+                                </div>
+
+                                <div>
+
+                                    <span>
+                                        BURSARYFLOW AI
+                                    </span>
+
+                                    <h3>
+                                        Document Assistant
+                                    </h3>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="document-ai-tools">
+
+                                <button type="button"
+                                        class="ai-tool"
+                                        id="aiAnalyseButton">
+
+                                    <span class="ai-tool-icon">
+                                        <i data-lucide="scan-search"></i>
+                                    </span>
+
+                                    <span>
+
+                                        <strong>
+                                            AI Quality Check
+                                        </strong>
+
+                                        <small>
+                                            Analyse document quality
+                                        </small>
+
+                                    </span>
+
+                                </button>
+
+
+                                <button type="button"
+                                        class="ai-tool"
+                                        id="spellCheckButton">
+
+                                    <span class="ai-tool-icon">
+                                        <i data-lucide="spell-check"></i>
+                                    </span>
+
+                                    <span>
+
+                                        <strong>
+                                            Spelling Scan
+                                        </strong>
+
+                                        <small>
+                                            Find spelling issues
+                                        </small>
+
+                                    </span>
+
+                                </button>
+
+
+                                <button type="button"
+                                        class="ai-tool"
+                                        id="typoCheckButton">
+
+                                    <span class="ai-tool-icon">
+                                        <i data-lucide="text-search"></i>
+                                    </span>
+
+                                    <span>
+
+                                        <strong>
+                                            Detect Typos
+                                        </strong>
+
+                                        <small>
+                                            Find typing errors
+                                        </small>
+
+                                    </span>
+
+                                </button>
+
+
+                                <button type="button"
+                                        class="ai-tool"
+                                        id="aiEnhanceButton">
+
+                                    <span class="ai-tool-icon">
+                                        <i data-lucide="wand-sparkles"></i>
+                                    </span>
+
+                                    <span>
+
+                                        <strong>
+                                            Enhance Quality
+                                        </strong>
+
+                                        <small>
+                                            Improve document quality
+                                        </small>
+
+                                    </span>
+
+                                </button>
+
+                            </div>
+
+
+                            <div class="document-ai-analysis hidden"
+                                 id="documentAiAnalysis">
+
+                                <div class="ai-analysis-header">
+
+                                    <div class="ai-bot-icon">
+                                        <i data-lucide="bot"></i>
+                                    </div>
+
+                                    <div>
+
+                                        <strong>
+                                            BursaryFlow AI Review
+                                        </strong>
+
+                                        <span id="qualityMessage">
+                                            Waiting for analysis...
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="quality-result">
+
+                                    <div class="quality-circle">
+
+                                        <strong id="qualityScore">
+                                            0
+                                        </strong>
+
+                                        <span>
+                                            %
+                                        </span>
+
+                                    </div>
+
+
+                                    <div class="quality-details">
+
+                                        <label>
+                                            DOCUMENT QUALITY
+                                        </label>
+
+                                        <h3 id="qualityTitle">
+                                            Not analysed
+                                        </h3>
+
+                                        <p id="qualityDescription">
+                                            Run AI analysis to check your document readiness.
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="quality-level-card">
+
+                                    <div>
+
+                                        <span>
+                                            QUALITY LEVEL
+                                        </span>
+
+                                        <strong id="qualityLevel">
+                                            Not analysed
+                                        </strong>
+
+                                    </div>
+
+                                    <div class="quality-percentage">
+
+                                        <strong id="qualityPercentage">
+                                            0%
+                                        </strong>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="warning-section">
+
+                                    <div class="warning-header">
+
+                                        <div>
+
+                                            <span>
+                                                AI FINDINGS
+                                            </span>
+
+                                            <h3>
+                                                Improvements needed
+                                            </h3>
+
+                                        </div>
+
+                                        <strong id="warningCount">
+                                            0
+                                        </strong>
+
+                                    </div>
+
+
+                                    <div class="warning-list"
+                                         id="documentWarningList">
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="document-health-section">
+
+                                <div class="document-health-card">
+
+                                    <div class="health-header">
+
+                                        <div class="health-icon">
+                                            <i data-lucide="shield-check"></i>
+                                        </div>
+
+                                        <div>
+
+                                            <span>
+                                                DOCUMENT HEALTH
+                                            </span>
+
+                                            <h3 id="healthTitle">
+                                                Not analysed
+                                            </h3>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="health-score">
+
+                                        <div class="score-circle">
+
+                                            <strong id="healthScore">
+                                                0
+                                            </strong>
+
+                                            <span>
+                                                %
+                                            </span>
+
+                                        </div>
+
+
+                                        <p id="healthDescription">
+                                            Select an AI tool to analyse
+                                            document readiness.
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="detected-issues">
+
+                                    <div class="issues-header">
+
+                                        <div>
+
+                                            <span>
+                                                AI FINDINGS
+                                            </span>
+
+                                            <h3>
+                                                Things to improve
+                                            </h3>
+
+                                        </div>
+
+                                        <strong id="issueCount">
+                                            0
+                                        </strong>
+
+                                    </div>
+
+
+                                    <div class="issues-list"
+                                         id="issuesList">
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="document-final-actions">
+
+                                <button type="button"
+                                        class="secondary-button"
+                                        id="saveDocumentChanges">
+
+                                    <i data-lucide="save"></i>
+
+                                    Save Changes
+
+                                </button>
+
+
+                                <button type="button"
+                                        class="primary-button"
+                                        id="prepareDocument">
+
+                                    <i data-lucide="file-check-2"></i>
+
+                                    Prepare for Application
+
+                                </button>
+
+                            </div>
+
+                        </aside>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <!-- =========================================================
+         UPLOAD MODAL
+    ========================================================== -->
+
+    <div class="document-modal hidden"
+         id="uploadModal">
+
+        <div class="document-modal-overlay"
+             id="uploadOverlay">
+        </div>
+
+
+        <div class="upload-workspace">
+
+            <button type="button"
+                    class="modal-close"
+                    id="closeUploadModal">
+
+                <i data-lucide="x"></i>
+
+            </button>
+
+
+            <!-- HEADER -->
+
+            <div class="upload-header">
+
+                <div class="upload-icon">
+                    <i data-lucide="upload-cloud"></i>
+                </div>
+
+                <span class="documents-label">
+                    DOCUMENT UPLOAD
+                </span>
+
+                <h2>
+                    Upload your bursary document
+                </h2>
+
+                <p>
+                    Select a document and prepare it with BursaryFlow AI
+                    before uploading it to your vault.
+                </p>
+
+            </div>
+
+
+            <!-- =====================================================
+                 DROP ZONE
+            ====================================================== -->
+
+            <div class="smart-upload-area"
+                 id="uploadDropZone">
+
+                <div class="upload-pulse">
+                    <i data-lucide="file-up"></i>
+                </div>
+
+                <h3>
+                    Drop your file here
+                </h3>
+
+                <span>
+                    or click to browse
+                </span>
+
+                <small>
+                    PDF, JPG, PNG, DOC, DOCX · Maximum 10MB
+                </small>
+
+                <input type="file"
+                       id="documentFile"
+                       accept=".pdf,.jpg,.jpeg,.png,.doc,.docx"
+                       hidden />
+
+            </div>
+
+
+            <!-- =====================================================
+                 SELECTED FILE
+            ====================================================== -->
+
+            <div class="selected-file hidden"
+                 id="selectedFile">
+
+                <div class="file-preview-icon">
+
+                    <i data-lucide="file-text"></i>
+
+                </div>
+
+
+                <div class="file-details">
+
+                    <strong id="selectedFileName">
+                        Document.pdf
+                    </strong>
+
+                    <span id="selectedFileSize">
+                        0 MB
+                    </span>
+
+
+                    <div class="scan-status">
+
+                        <span class="scan-dot"></span>
+
+                        <span id="selectedFileStatus">
+                            Document selected
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <button type="button"
+                        id="removeSelectedFile"
+                        title="Remove document">
+
+                    <i data-lucide="trash-2"></i>
+
+                </button>
+
+            </div>
+
+
+            <!-- =====================================================
+                 PRE-UPLOAD AI WORKSPACE
+                 THIS APPEARS IMMEDIATELY AFTER FILE SELECTION
+            ====================================================== -->
+
+            <div class="pre-upload-ai-workspace hidden"
+                 id="preUploadAiWorkspace">
+
+
+                <div class="pre-upload-ai-header">
+
+                    <div class="pre-upload-ai-title">
+
+                        <div class="ai-panel-icon">
+
+                            <i data-lucide="sparkles"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                BURSARYFLOW AI
+                            </span>
+
+                            <h3>
+                                Prepare your document
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="pre-upload-ready">
+
+                        <i data-lucide="circle-check"></i>
+
+                        Ready
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     PRE-UPLOAD ACTIONS
+                ================================================== -->
+
+                <div class="pre-upload-actions">
+
+
+                    <!-- EDIT -->
+
+                    <button type="button"
+                            class="pre-upload-action"
+                            id="preUploadEditButton">
+
+                        <div class="pre-upload-action-icon">
+
+                            <i data-lucide="pencil"></i>
+
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Edit Document
+                            </strong>
+
+                            <span>
+                                Review and edit your content
+                            </span>
+
+                        </div>
+
+                        <i data-lucide="chevron-right"
+                           class="action-arrow"></i>
+
+                    </button>
+
+
+                    <!-- QUALITY -->
+
+                    <button type="button"
+                            class="pre-upload-action"
+                            id="preUploadQualityButton">
+
+                        <div class="pre-upload-action-icon">
+
+                            <i data-lucide="scan-search"></i>
+
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                AI Quality Check
+                            </strong>
+
+                            <span>
+                                Analyse document readiness
+                            </span>
+
+                        </div>
+
+                        <div class="pre-upload-score"
+                             id="preUploadQualityScore">
+
+                            0%
+
+                        </div>
+
+                    </button>
+
+
+                    <!-- ENHANCE -->
+
+                    <button type="button"
+                            class="pre-upload-action"
+                            id="preUploadEnhanceButton">
+
+                        <div class="pre-upload-action-icon">
+
+                            <i data-lucide="wand-sparkles"></i>
+
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Enhance Quality
+                            </strong>
+
+                            <span>
+                                Improve document quality
+                            </span>
+
+                        </div>
+
+                        <i data-lucide="chevron-right"
+                           class="action-arrow"></i>
+
+                    </button>
+
+
+                    <!-- SPELLING -->
+
+                    <button type="button"
+                            class="pre-upload-action"
+                            id="preUploadSpellButton">
+
+                        <div class="pre-upload-action-icon">
+
+                            <i data-lucide="spell-check"></i>
+
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Spelling Scan
+                            </strong>
+
+                            <span>
+                                Find spelling issues
+                            </span>
+
+                        </div>
+
+                        <i data-lucide="chevron-right"
+                           class="action-arrow"></i>
+
+                    </button>
+
+
+                    <!-- TYPOS -->
+
+                    <button type="button"
+                            class="pre-upload-action"
+                            id="preUploadTypoButton">
+
+                        <div class="pre-upload-action-icon">
+
+                            <i data-lucide="text-search"></i>
+
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Detect Typos
+                            </strong>
+
+                            <span>
+                                Find typing errors
+                            </span>
+
+                        </div>
+
+                        <i data-lucide="chevron-right"
+                           class="action-arrow"></i>
+
+                    </button>
+
+                </div>
+
+
+                <!-- =================================================
+                     PRE-UPLOAD QUALITY RESULT
+                ================================================== -->
+
+                <div class="pre-upload-quality-result hidden"
+                     id="preUploadQualityResult">
+
+                    <div class="pre-upload-quality-score">
+
+                        <div class="pre-upload-quality-circle">
+
+                            <strong id="preUploadQualityPercentage">
+                                0
+                            </strong>
+
+                            <span>
+                                %
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="pre-upload-quality-details">
+
+                        <span>
+                            AI DOCUMENT QUALITY
+                        </span>
+
+                        <h3 id="preUploadQualityTitle">
+                            Not analysed
+                        </h3>
+
+                        <p id="preUploadQualityMessage">
+                            Run AI Quality Check to analyse this document.
+                        </p>
+
+                    </div>
+
+
+                    <div class="pre-upload-quality-level">
+
+                        <span>
+                            QUALITY LEVEL
+                        </span>
+
+                        <strong id="preUploadQualityLevel">
+                            Not analysed
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     PRE-UPLOAD FINDINGS
+                ================================================== -->
+
+                <div class="pre-upload-findings hidden"
+                     id="preUploadFindings">
+
+                    <div class="pre-upload-findings-header">
+
+                        <div>
+
+                            <span>
+                                AI FINDINGS
+                            </span>
+
+                            <strong>
+                                Document improvements
+                            </strong>
+
+                        </div>
+
+                        <span id="preUploadIssueCount">
+                            0
+                        </span>
+
+                    </div>
+
+
+                    <div id="preUploadFindingsList"
+                         class="pre-upload-findings-list">
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =====================================================
+                 OLD AI RESULT AREA
+                 KEPT FOR COMPATIBILITY
+            ====================================================== -->
+
+            <div class="document-upload-ai-analysis hidden"
+                 id="documentUploadAiAnalysis">
+
+                <div class="ai-analysis-header">
+
+                    <div class="ai-bot-icon">
+                        <i data-lucide="bot"></i>
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            BursaryFlow AI
+                        </strong>
+
+                        <span id="uploadQualityMessage">
+                            Analysing document...
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="quality-result">
+
+                    <div class="quality-circle">
+
+                        <strong id="uploadQualityScore">
+                            0
+                        </strong>
+
+                        <span>
+                            %
+                        </span>
+
+                    </div>
+
+
+                    <div class="quality-details">
+
+                        <label>
+                            DOCUMENT SCORE
+                        </label>
+
+                        <h3 id="uploadQualityTitle">
+                            Scanning...
+                        </h3>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =====================================================
+                 UPLOAD ACTIONS
+            ====================================================== -->
+
+            <div class="upload-actions">
+
+                <button type="button"
+                        class="secondary-button"
+                        id="cancelUpload">
+
+                    Cancel
+
+                </button>
+
+
+                <button type="button"
+                        class="primary-button"
+                        id="confirmUpload">
+
+                    <i data-lucide="cloud-upload"></i>
+
+                    Upload Document
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         SCANNER
+    ========================================================== -->
+
+    <div class="document-scanner hidden"
+         id="documentScanner">
+
+        <div class="scanner-animation">
+
+            <div class="scanner-ring"></div>
+
+            <div class="scanner-document">
+
+                <i data-lucide="file-text"></i>
+
+            </div>
+
+            <div class="scanner-line"></div>
+
+        </div>
+
+
+        <div class="scanner-information">
+
+            <strong id="scannerTitle">
+                Analysing document...
+            </strong>
+
+            <span id="scannerMessage">
+                Extracting text and checking quality
+            </span>
+
+            <div class="scanner-progress">
+
+                <div id="scannerProgressBar"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         DOCUMENT EDITOR
+    ========================================================== -->
+
+    <div class="document-editor-modal hidden"
+         id="documentEditorModal">
+
+        <div class="document-editor-overlay"
+             id="documentEditorOverlay">
+        </div>
+
+
+        <div class="document-editor-workspace">
+
+            <header class="editor-header">
+
+                <div>
+
+                    <span>
+                        DOCUMENT EDITOR
+                    </span>
+
+                    <h2 id="editorDocumentName">
+                        Edit Document
+                    </h2>
+
+                </div>
+
+
+                <button type="button"
+                        id="closeEditor">
+
+                    <i data-lucide="x"></i>
+
+                </button>
+
+            </header>
+
+
+            <div class="editor-body">
+
+                <div class="editor-toolbar">
+
+                    <button type="button"
+                            data-editor-action="bold">
+
+                        <i data-lucide="bold"></i>
+
+                    </button>
+
+                    <button type="button"
+                            data-editor-action="italic">
+
+                        <i data-lucide="italic"></i>
+
+                    </button>
+
+                    <button type="button"
+                            data-editor-action="underline">
+
+                        <i data-lucide="underline"></i>
+
+                    </button>
+
+                </div>
+
+
+                <textarea id="documentEditor"
+                          placeholder="Document content will appear here..."></textarea>
+
+            </div>
+
+
+            <footer class="editor-footer">
+
+                <button type="button"
+                        class="secondary-button"
+                        id="cancelEditor">
+
+                    Cancel
+
+                </button>
+
+
+                <button type="button"
+                        class="primary-button"
+                        id="saveEditorChanges">
+
+                    <i data-lucide="save"></i>
+
+                    Save Changes
+
+                </button>
+
+            </footer>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         API CONFIGURATION
+    ========================================================== -->
+
+    <script>
+
+        window.documentApi = {
+
+            index: "/Documents",
+
+            upload: "/Documents/Upload",
+
+            analyze: "/Documents/AnalyzeDocument",
+
+            enhance: "/Documents/EnhanceDocument",
+
+            download: "/Documents/Download",
+
+            delete: "/Documents/Delete",
+
+            preview: "/Documents/Preview",
+
+            edit: "/Documents/Edit",
+
+            save: "/Documents/Save",
+
+            prepare: "/Documents/PreparePdfEditor"
+
+        };
+
+
+        window.documentAntiForgeryToken =
+            document.querySelector(
+                'input[name="__RequestVerificationToken"]'
+            )?.value || "";
+
+    </script>
+
+
+    <!-- =========================================================
+         LUCIDE
+    ========================================================== -->
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+
+    <!-- =========================================================
+         DOCUMENT JS
+    ========================================================== -->
+
+    <script src="~/js/documents.js"></script>
+
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            if (window.lucide) {
+                lucide.createIcons();
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>

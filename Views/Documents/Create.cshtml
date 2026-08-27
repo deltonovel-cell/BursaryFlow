@@ -1,0 +1,1562 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0" />
+
+    <title>BursaryFlow | Create Document</title>
+
+    <meta name="description"
+          content="Create professional bursary documents with Delton AI." />
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="~/css/dashboard.css" />
+
+    <link rel="stylesheet"
+          href="~/css/create-document.css" />
+
+</head>
+
+<body>
+
+    <div class="dashboard-shell">
+
+        <!-- =====================================================
+             SIDEBAR
+             ===================================================== -->
+
+        <aside class="sidebar"
+               id="sidebar">
+
+            <div class="sidebar-brand">
+
+                <a href="/Dashboard"
+                   class="brand">
+
+                    <span class="brand-mark">
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                    </span>
+
+                    <span>
+                        Bursary<span>Flow</span>
+                    </span>
+
+                </a>
+
+            </div>
+
+
+            <!-- PROFILE -->
+
+            <div class="sidebar-profile">
+
+                <div class="profile-avatar">
+                    D
+                </div>
+
+                <div class="profile-details">
+
+                    <strong>
+                        Delton
+                    </strong>
+
+                    <span>
+                        Student
+                    </span>
+
+                </div>
+
+                <button class="profile-menu"
+                        type="button">
+
+                    ⋮
+
+                </button>
+
+            </div>
+
+
+            <!-- NAVIGATION -->
+
+            <nav class="sidebar-navigation">
+
+                <div class="navigation-label">
+                    WORKSPACE
+                </div>
+
+
+                <a href="/Dashboard"
+                   class="sidebar-link">
+
+                    <span class="sidebar-icon">
+                        <i data-lucide="layout-dashboard"></i>
+                    </span>
+
+                    <span>
+                        Dashboard
+                    </span>
+
+                </a>
+
+
+                <a href="/BursaryPage"
+                   class="sidebar-link">
+
+                    <span class="sidebar-icon">
+                        <i data-lucide="search"></i>
+                    </span>
+
+                    <span>
+                        Find bursaries
+                    </span>
+
+                    <span class="sidebar-count">
+                        0
+                    </span>
+
+                </a>
+
+
+                <a href="/Applications"
+                   class="sidebar-link">
+
+                    <span class="sidebar-icon">
+                        <i data-lucide="send"></i>
+                    </span>
+
+                    <span>
+                        My applications
+                    </span>
+
+                </a>
+
+
+                <a href="/Documents"
+                   class="sidebar-link">
+
+                    <span class="sidebar-icon">
+                        <i data-lucide="folder"></i>
+                    </span>
+
+                    <span>
+                        Documents
+                    </span>
+
+                </a>
+
+
+                <div class="navigation-label">
+                    TOOLS
+                </div>
+
+
+                <a href="/Profile"
+                   class="sidebar-link">
+
+                    <span class="sidebar-icon">
+                        <i data-lucide="user-round"></i>
+                    </span>
+
+                    <span>
+                        My profile
+                    </span>
+
+                </a>
+
+
+                <a href="/AiAssistant"
+                   class="sidebar-link">
+
+                    <span class="sidebar-icon">
+                        <i data-lucide="sparkles"></i>
+                    </span>
+
+                    <span>
+                        AI assistant
+                    </span>
+
+                    <span class="ai-badge">
+                        AI
+                    </span>
+
+                </a>
+
+
+                <a href="/Documents/Create"
+                   class="sidebar-link active">
+
+                    <span class="sidebar-icon">
+                        <i data-lucide="file-plus-2"></i>
+                    </span>
+
+                    <span>
+                        Create document
+                    </span>
+
+                </a>
+
+
+                <div class="navigation-label">
+                    ACCOUNT
+                </div>
+
+
+                <a href="/Settings"
+                   class="sidebar-link">
+
+                    <span class="sidebar-icon">
+                        <i data-lucide="settings"></i>
+                    </span>
+
+                    <span>
+                        Settings
+                    </span>
+
+                </a>
+
+            </nav>
+
+
+            <!-- SIDEBAR BOTTOM -->
+
+            <div class="sidebar-bottom">
+
+                <div class="help-card">
+
+                    <div class="help-icon">
+                        <i data-lucide="circle-help"></i>
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Need help?
+                        </strong>
+
+                        <span>
+                            Ask Delton AI
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <a href="/Account/Logout"
+                   class="logout-link">
+
+                    <i data-lucide="log-out"></i>
+
+                    <span>
+                        Sign out
+                    </span>
+
+                </a>
+
+            </div>
+
+        </aside>
+
+
+        <!-- =====================================================
+             MAIN
+             ===================================================== -->
+
+        <main class="dashboard-main">
+
+
+            <!-- HEADER -->
+
+            <header class="dashboard-header">
+
+                <button class="mobile-menu"
+                        id="mobileMenu"
+                        type="button"
+                        aria-label="Open navigation">
+
+                    <i data-lucide="menu"></i>
+
+                </button>
+
+
+                <div class="header-search">
+
+                    <i data-lucide="search"></i>
+
+                    <input type="text"
+                           id="globalSearch"
+                           placeholder="Search bursaries, applications or documents..." />
+
+                    <span class="search-shortcut">
+                        /
+                    </span>
+
+                </div>
+
+
+                <div class="header-actions">
+
+                    <button class="header-icon-button"
+                            type="button"
+                            title="Notifications">
+
+                        <i data-lucide="bell"></i>
+
+                        <span class="notification-dot"></span>
+
+                    </button>
+
+
+                    <div class="header-divider"></div>
+
+
+                    <button class="header-user"
+                            type="button">
+
+                        <span class="header-avatar">
+                            D
+                        </span>
+
+                        <span class="header-user-name">
+                            Delton
+                        </span>
+
+                        <i data-lucide="chevron-down"></i>
+
+                    </button>
+
+                </div>
+
+            </header>
+
+
+            <!-- =================================================
+                 CONTENT
+                 ================================================= -->
+
+            <div class="dashboard-content create-document-content">
+
+
+                <!-- =================================================
+                     HERO
+                     ================================================= -->
+
+                <section class="create-document-hero">
+
+                    <div class="create-document-hero-left">
+
+                        <div class="hero-eyebrow">
+
+                            <span></span>
+
+                            DOCUMENT STUDIO
+
+                        </div>
+
+
+                        <h1>
+
+                            Create something
+                            <em>great.</em>
+
+                        </h1>
+
+
+                        <p>
+
+                            Build professional bursary documents with
+                            help from Delton AI. Start from scratch,
+                            choose a document type and let BursaryFlow
+                            help you turn your ideas into a polished
+                            document.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="delton-create-card">
+
+                        <div class="delton-create-avatar">
+
+                            <i data-lucide="sparkles"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                DELTON AI
+                            </span>
+
+                            <strong>
+                                Ready to help
+                            </strong>
+
+                        </div>
+
+                        <span class="delton-online-dot"></span>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================================
+                     DOCUMENT WORKSPACE
+                     ================================================= -->
+
+                <section class="document-workspace">
+
+
+                    <!-- =================================================
+                         LEFT SETTINGS
+                         ================================================= -->
+
+                    <aside class="document-settings">
+
+
+                        <!-- DOCUMENT TYPE -->
+
+                        <div class="document-panel">
+
+                            <div class="document-panel-heading">
+
+                                <span>
+                                    01
+                                </span>
+
+                                <div>
+
+                                    <strong>
+                                        Document type
+                                    </strong>
+
+                                    <p>
+                                        What would you like to create?
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="document-type-list">
+
+
+                                <button type="button"
+                                        class="document-type active"
+                                        data-type="motivation">
+
+                                    <span class="document-type-icon">
+                                        <i data-lucide="heart-handshake"></i>
+                                    </span>
+
+                                    <span class="document-type-text">
+
+                                        <strong>
+                                            Motivation letter
+                                        </strong>
+
+                                        <small>
+                                            Tell your story
+                                        </small>
+
+                                    </span>
+
+                                    <i data-lucide="check"
+                                       class="document-type-check"></i>
+
+                                </button>
+
+
+                                <button type="button"
+                                        class="document-type"
+                                        data-type="personal">
+
+                                    <span class="document-type-icon">
+                                        <i data-lucide="user-round"></i>
+                                    </span>
+
+                                    <span class="document-type-text">
+
+                                        <strong>
+                                            Personal statement
+                                        </strong>
+
+                                        <small>
+                                            Introduce yourself
+                                        </small>
+
+                                    </span>
+
+                                    <i data-lucide="check"
+                                       class="document-type-check"></i>
+
+                                </button>
+
+
+                                <button type="button"
+                                        class="document-type"
+                                        data-type="email">
+
+                                    <span class="document-type-icon">
+                                        <i data-lucide="mail"></i>
+                                    </span>
+
+                                    <span class="document-type-text">
+
+                                        <strong>
+                                            Application email
+                                        </strong>
+
+                                        <small>
+                                            Write a professional email
+                                        </small>
+
+                                    </span>
+
+                                    <i data-lucide="check"
+                                       class="document-type-check"></i>
+
+                                </button>
+
+
+                                <button type="button"
+                                        class="document-type"
+                                        data-type="response">
+
+                                    <span class="document-type-icon">
+                                        <i data-lucide="message-square-text"></i>
+                                    </span>
+
+                                    <span class="document-type-text">
+
+                                        <strong>
+                                            Application response
+                                        </strong>
+
+                                        <small>
+                                            Answer bursary questions
+                                        </small>
+
+                                    </span>
+
+                                    <i data-lucide="check"
+                                       class="document-type-check"></i>
+
+                                </button>
+
+
+                                <button type="button"
+                                        class="document-type"
+                                        data-type="custom">
+
+                                    <span class="document-type-icon">
+                                        <i data-lucide="file-plus-2"></i>
+                                    </span>
+
+                                    <span class="document-type-text">
+
+                                        <strong>
+                                            Custom document
+                                        </strong>
+
+                                        <small>
+                                            Start your own document
+                                        </small>
+
+                                    </span>
+
+                                    <i data-lucide="check"
+                                       class="document-type-check"></i>
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- DOCUMENT DETAILS -->
+
+                        <div class="document-panel">
+
+                            <div class="document-panel-heading">
+
+                                <span>
+                                    02
+                                </span>
+
+                                <div>
+
+                                    <strong>
+                                        Document details
+                                    </strong>
+
+                                    <p>
+                                        Give Delton some context.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="document-form">
+
+
+                                <div class="document-field">
+
+                                    <label for="documentTitle">
+                                        Document title
+                                    </label>
+
+                                    <input type="text"
+                                           id="documentTitle"
+                                           value="Bursary Motivation Letter"
+                                           placeholder="e.g. NSFAS Motivation Letter" />
+
+                                </div>
+
+
+                                <div class="document-field">
+
+                                    <label for="bursaryName">
+                                        Bursary / organisation
+                                        <span>
+                                            Optional
+                                        </span>
+                                    </label>
+
+                                    <input type="text"
+                                           id="bursaryName"
+                                           placeholder="e.g. Vodacom Foundation" />
+
+                                </div>
+
+
+                                <div class="document-field">
+
+                                    <label for="documentTone">
+                                        Writing tone
+                                    </label>
+
+                                    <select id="documentTone">
+
+                                        <option value="professional"
+                                                selected>
+                                            Professional
+                                        </option>
+
+                                        <option value="confident">
+                                            Confident
+                                        </option>
+
+                                        <option value="personal">
+                                            Personal & heartfelt
+                                        </option>
+
+                                        <option value="formal">
+                                            Formal
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+
+                                <div class="document-field">
+
+                                    <label for="documentLength">
+                                        Document length
+                                    </label>
+
+                                    <select id="documentLength">
+
+                                        <option value="short">
+                                            Short
+                                        </option>
+
+                                        <option value="medium"
+                                                selected>
+                                            Medium
+                                        </option>
+
+                                        <option value="long">
+                                            Detailed
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- AI INSTRUCTIONS -->
+
+                        <div class="document-panel ai-instruction-panel">
+
+                            <div class="document-panel-heading">
+
+                                <span>
+                                    03
+                                </span>
+
+                                <div>
+
+                                    <strong>
+                                        Tell Delton more
+                                    </strong>
+
+                                    <p>
+                                        The more context you provide,
+                                        the better your document.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <textarea id="documentInstructions"
+                                      placeholder="Tell Delton about your goals, achievements, financial situation, career plans, why you need funding, or anything else you want included..."></textarea>
+
+
+                            <div class="instruction-tip">
+
+                                <i data-lucide="sparkles"></i>
+
+                                <span>
+                                    Delton can use your BursaryFlow
+                                    profile to personalise this document.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- AI GENERATE -->
+
+                        <button type="button"
+                                class="generate-document-button"
+                                id="generateDocument">
+
+                            <span class="generate-icon">
+
+                                <i data-lucide="sparkles"></i>
+
+                            </span>
+
+                            <span>
+
+                                <strong>
+                                    Generate with Delton
+                                </strong>
+
+                                <small>
+                                    Create your document with AI
+                                </small>
+
+                            </span>
+
+                            <i data-lucide="arrow-right"></i>
+
+                        </button>
+
+
+                    </aside>
+
+
+                    <!-- =================================================
+                         DOCUMENT PREVIEW
+                         ================================================= -->
+
+                    <div class="document-editor-area">
+
+
+                        <div class="editor-topbar">
+
+                            <div class="editor-document-info">
+
+                                <div class="editor-file-icon">
+
+                                    <i data-lucide="file-text"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <strong id="editorTitle">
+                                        Bursary Motivation Letter
+                                    </strong>
+
+                                    <span id="documentStatus">
+                                        Unsaved draft
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="editor-actions">
+
+                                <button type="button"
+                                        class="editor-action"
+                                        id="saveDocument">
+
+                                    <i data-lucide="save"></i>
+
+                                    Save draft
+
+                                </button>
+
+
+                                <button type="button"
+                                        class="editor-action"
+                                        id="downloadDocument">
+
+                                    <i data-lucide="download"></i>
+
+                                    Download
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- TOOLBAR -->
+
+                        <div class="editor-toolbar">
+
+                            <button type="button"
+                                    title="Bold"
+                                    data-command="bold">
+
+                                <i data-lucide="bold"></i>
+
+                            </button>
+
+
+                            <button type="button"
+                                    title="Italic"
+                                    data-command="italic">
+
+                                <i data-lucide="italic"></i>
+
+                            </button>
+
+
+                            <button type="button"
+                                    title="Underline"
+                                    data-command="underline">
+
+                                <i data-lucide="underline"></i>
+
+                            </button>
+
+
+                            <span class="toolbar-divider"></span>
+
+
+                            <button type="button"
+                                    title="Align left"
+                                    data-command="justifyLeft">
+
+                                <i data-lucide="align-left"></i>
+
+                            </button>
+
+
+                            <button type="button"
+                                    title="Align center"
+                                    data-command="justifyCenter">
+
+                                <i data-lucide="align-center"></i>
+
+                            </button>
+
+
+                            <button type="button"
+                                    title="Align right"
+                                    data-command="justifyRight">
+
+                                <i data-lucide="align-right"></i>
+
+                            </button>
+
+
+                            <span class="toolbar-divider"></span>
+
+
+                            <button type="button"
+                                    title="Bullet list"
+                                    data-command="insertUnorderedList">
+
+                                <i data-lucide="list"></i>
+
+                            </button>
+
+
+                            <button type="button"
+                                    title="Numbered list"
+                                    data-command="insertOrderedList">
+
+                                <i data-lucide="list-ordered"></i>
+
+                            </button>
+
+
+                            <span class="toolbar-divider"></span>
+
+
+                            <button type="button"
+                                    id="undoButton"
+                                    title="Undo">
+
+                                <i data-lucide="undo-2"></i>
+
+                            </button>
+
+
+                            <button type="button"
+                                    id="redoButton"
+                                    title="Redo">
+
+                                <i data-lucide="redo-2"></i>
+
+                            </button>
+
+                        </div>
+
+
+                        <!-- DOCUMENT PAPER -->
+
+                        <div class="document-paper-container">
+
+                            <article class="document-paper"
+                                     id="documentPaper"
+                                     contenteditable="true">
+
+
+                                <div class="document-paper-header">
+
+                                    <div class="paper-brand">
+
+                                        <span class="paper-brand-mark">
+
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+
+                                        </span>
+
+                                        <span>
+                                            Bursary<span>Flow</span>
+                                        </span>
+
+                                    </div>
+
+
+                                    <span class="paper-document-type">
+                                        MOTIVATION LETTER
+                                    </span>
+
+                                </div>
+
+
+                                <div class="paper-content"
+                                     id="paperContent">
+
+                                    <h1>
+                                        Bursary Motivation Letter
+                                    </h1>
+
+
+                                    <p class="paper-date">
+                                        26 August 2026
+                                    </p>
+
+
+                                    <p>
+                                        Dear Bursary Selection Committee,
+                                    </p>
+
+
+                                    <p>
+                                        My name is Delton Novela, and I am
+                                        currently pursuing a Bachelor of Science
+                                        in Computer Science and Informatics at
+                                        the University of Johannesburg. I am
+                                        writing to express my sincere interest
+                                        in receiving financial assistance to
+                                        support my studies and continue working
+                                        towards my academic and professional goals.
+                                    </p>
+
+
+                                    <p>
+                                        My passion for technology and computer
+                                        science has motivated me to build a
+                                        future in the technology industry. I
+                                        believe that education provides me with
+                                        the opportunity to develop the skills,
+                                        knowledge and experience necessary to
+                                        make a meaningful contribution to society.
+                                    </p>
+
+
+                                    <p>
+                                        Receiving this bursary would reduce the
+                                        financial pressure associated with my
+                                        studies and allow me to focus more fully
+                                        on my academic responsibilities. I am
+                                        committed to making the most of this
+                                        opportunity and maintaining strong
+                                        academic performance.
+                                    </p>
+
+
+                                    <p>
+                                        I would be grateful for the opportunity
+                                        to receive your support and demonstrate
+                                        my commitment, determination and potential.
+                                    </p>
+
+
+                                    <p>
+                                        Yours sincerely,
+                                    </p>
+
+
+                                    <p class="paper-signature">
+                                        <strong>
+                                            Delton Novela
+                                        </strong>
+
+                                        <br />
+
+                                        BSc Computer Science and Informatics
+
+                                        <br />
+
+                                        University of Johannesburg
+
+                                    </p>
+
+                                </div>
+
+                            </article>
+
+                        </div>
+
+
+                        <!-- EDITOR FOOTER -->
+
+                        <div class="editor-footer">
+
+                            <span>
+
+                                <i data-lucide="file-text"></i>
+
+                                <span id="wordCount">
+                                    0 words
+                                </span>
+
+                            </span>
+
+
+                            <span>
+
+                                <i data-lucide="clock-3"></i>
+
+                                Last edited just now
+
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================================
+                     AI TIP
+                     ================================================= -->
+
+                <section class="document-ai-banner">
+
+                    <div class="document-ai-banner-icon">
+
+                        <i data-lucide="sparkles"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            DELTON AI TIP
+                        </span>
+
+                        <h3>
+                            Make your motivation personal.
+                        </h3>
+
+                        <p>
+                            Generic motivation letters are easy to overlook.
+                            Add your goals, achievements, challenges and the
+                            impact your studies will have on your future.
+                        </p>
+
+                    </div>
+
+                    <button type="button"
+                            id="improveDocument">
+
+                        Improve my document
+
+                        <i data-lucide="arrow-right"></i>
+
+                    </button>
+
+                </section>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <!-- =========================================================
+         LUCIDE
+         ========================================================= -->
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+
+    <!-- =========================================================
+         CREATE DOCUMENT JAVASCRIPT
+         ========================================================= -->
+
+    <script src="~/js/createdocument.js"></script>
+
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+                if (typeof lucide !== "undefined") {
+
+                    lucide.createIcons();
+
+                }
+
+                const paper = document.getElementById("documentPaper");
+
+                const wordCount = document.getElementById("wordCount");
+
+                const titleInput =
+                    document.getElementById("documentTitle");
+
+                const editorTitle =
+                    document.getElementById("editorTitle");
+
+
+                function updateWordCount() {
+
+                    if (!paper || !wordCount) {
+                        return;
+                    }
+
+                    const text =
+                        paper.innerText
+                            .trim()
+                            .replace(/\s+/g, " ");
+
+                    if (!text) {
+
+                        wordCount.textContent =
+                            "0 words";
+
+                        return;
+
+                    }
+
+                    const words =
+                        text.split(" ").filter(Boolean).length;
+
+                    wordCount.textContent =
+                        words + (words === 1 ? " word" : " words");
+
+                }
+
+
+                if (paper) {
+
+                    paper.addEventListener(
+                        "input",
+                        updateWordCount
+                    );
+
+                }
+
+
+                if (titleInput && editorTitle) {
+
+                    titleInput.addEventListener(
+                        "input",
+                        function () {
+
+                            editorTitle.textContent =
+                                this.value.trim() ||
+                                "Untitled document";
+
+                        }
+                    );
+
+                }
+
+
+                document
+                    .querySelectorAll("[data-command]")
+                    .forEach(
+                        function (button) {
+
+                            button.addEventListener(
+                                "click",
+                                function () {
+
+                                    const command =
+                                        this.dataset.command;
+
+                                    document.execCommand(
+                                        command,
+                                        false,
+                                        null
+                                    );
+
+                                    if (paper) {
+                                        paper.focus();
+                                    }
+
+                                }
+                            );
+
+                        }
+                    );
+
+
+                const undoButton =
+                    document.getElementById("undoButton");
+
+                const redoButton =
+                    document.getElementById("redoButton");
+
+
+                if (undoButton) {
+
+                    undoButton.addEventListener(
+                        "click",
+                        function () {
+
+                            document.execCommand(
+                                "undo",
+                                false,
+                                null
+                            );
+
+                            if (paper) {
+                                paper.focus();
+                            }
+
+                        }
+                    );
+
+                }
+
+
+                if (redoButton) {
+
+                    redoButton.addEventListener(
+                        "click",
+                        function () {
+
+                            document.execCommand(
+                                "redo",
+                                false,
+                                null
+                            );
+
+                            if (paper) {
+                                paper.focus();
+                            }
+
+                        }
+                    );
+
+                }
+
+
+                document
+                    .querySelectorAll(".document-type")
+                    .forEach(
+                        function (button) {
+
+                            button.addEventListener(
+                                "click",
+                                function () {
+
+                                    document
+                                        .querySelectorAll(".document-type")
+                                        .forEach(
+                                            function (item) {
+
+                                                item.classList.remove(
+                                                    "active"
+                                                );
+
+                                            }
+                                        );
+
+                                    this.classList.add("active");
+
+                                    const type =
+                                        this.dataset.type;
+
+                                    const title =
+                                        document.getElementById(
+                                            "documentTitle"
+                                        );
+
+                                    if (!title) {
+                                        return;
+                                    }
+
+                                    const titles = {
+
+                                        motivation:
+                                            "Bursary Motivation Letter",
+
+                                        personal:
+                                            "Personal Statement",
+
+                                        email:
+                                            "Bursary Application Email",
+
+                                        response:
+                                            "Bursary Application Response",
+
+                                        custom:
+                                            "My Bursary Document"
+
+                                    };
+
+                                    title.value =
+                                        titles[type] ||
+                                        "My Bursary Document";
+
+                                    if (editorTitle) {
+
+                                        editorTitle.textContent =
+                                            title.value;
+
+                                    }
+
+                                }
+                            );
+
+                        }
+                    );
+
+
+                const saveButton =
+                    document.getElementById("saveDocument");
+
+                const status =
+                    document.getElementById("documentStatus");
+
+
+                if (saveButton) {
+
+                    saveButton.addEventListener(
+                        "click",
+                        function () {
+
+                            if (status) {
+
+                                status.textContent =
+                                    "Saved just now";
+
+                            }
+
+                            saveButton.classList.add(
+                                "saved"
+                            );
+
+                            setTimeout(
+                                function () {
+
+                                    saveButton.classList.remove(
+                                        "saved"
+                                    );
+
+                                },
+                                1500
+                            );
+
+                        }
+                    );
+
+                }
+
+
+                const generateButton =
+                    document.getElementById(
+                        "generateDocument"
+                    );
+
+
+                if (generateButton) {
+
+                    generateButton.addEventListener(
+                        "click",
+                        function () {
+
+                            const original =
+                                this.innerHTML;
+
+                            this.innerHTML =
+
+                                '<span class="generate-icon">' +
+                                '<i data-lucide="loader-circle"></i>' +
+                                '</span>' +
+                                '<span>' +
+                                '<strong>Delton is writing...</strong>' +
+                                '<small>Creating your document</small>' +
+                                '</span>';
+
+                            this.classList.add(
+                                "generating"
+                            );
+
+                            if (typeof lucide !== "undefined") {
+                                lucide.createIcons();
+                            }
+
+
+                            setTimeout(
+                                function () {
+
+                                    generateButton.innerHTML =
+                                        original;
+
+                                    generateButton.classList.remove(
+                                        "generating"
+                                    );
+
+                                    if (typeof lucide !== "undefined") {
+                                        lucide.createIcons();
+                                    }
+
+                                    if (status) {
+
+                                        status.textContent =
+                                            "Generated by Delton";
+
+                                    }
+
+                                },
+                                1800
+                            );
+
+                        }
+                    );
+
+                }
+
+
+                const improveButton =
+                    document.getElementById(
+                        "improveDocument"
+                    );
+
+
+                if (improveButton) {
+
+                    improveButton.addEventListener(
+                        "click",
+                        function () {
+
+                            if (!paper) {
+                                return;
+                            }
+
+                            const paragraph =
+                                document.createElement(
+                                    "p"
+                                );
+
+                            paragraph.innerHTML =
+                                "<strong>Delton's suggestion:</strong> " +
+                                "Consider adding a specific example " +
+                                "of an academic achievement, personal " +
+                                "challenge or career goal to make this " +
+                                "motivation more personal and memorable.";
+
+                            paper
+                                .querySelector(".paper-content")
+                                .appendChild(
+                                    paragraph
+                                );
+
+                            updateWordCount();
+
+                        }
+                    );
+
+                }
+
+
+                updateWordCount();
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>

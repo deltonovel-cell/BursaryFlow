@@ -1,0 +1,577 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8" />
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0" />
+
+    <title>BursaryFlow | Bursary Details</title>
+
+    <meta name="description"
+          content="View bursary details, eligibility requirements and funding information." />
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin />
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+          rel="stylesheet" />
+
+    <link rel="stylesheet"
+          href="~/css/bursary.css" />
+
+    <link rel="stylesheet"
+          href="~/css/bursary-details.css" />
+
+</head>
+
+<body>
+
+    <div class="bursary-page">
+
+        <!-- SIDEBAR -->
+
+        <aside class="bursary-sidebar"
+               id="sidebar">
+
+            <div class="sidebar-brand">
+
+                <a href="/Dashboard"
+                   class="brand">
+
+                    <span class="brand-mark">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+
+                    <span>
+                        Bursary<span>Flow</span>
+                    </span>
+
+                </a>
+
+            </div>
+
+
+            <nav class="sidebar-navigation">
+
+                <div class="navigation-label">
+                    WORKSPACE
+                </div>
+
+                <a href="/Dashboard"
+                   class="sidebar-link">
+
+                    <span>⌂</span>
+
+                    Dashboard
+
+                </a>
+
+
+                <a href="/BursaryPage"
+                   class="sidebar-link active">
+
+                    <span>⌕</span>
+
+                    Find bursaries
+
+                </a>
+
+
+                <a href="/Applications"
+                   class="sidebar-link">
+
+                    <span>↗</span>
+
+                    My applications
+
+                </a>
+
+
+                <a href="/Documents"
+                   class="sidebar-link">
+
+                    <span>▣</span>
+
+                    Documents
+
+                </a>
+
+
+                <div class="navigation-label">
+                    TOOLS
+                </div>
+
+
+                <a href="/Profile"
+                   class="sidebar-link">
+
+                    <span>○</span>
+
+                    My profile
+
+                </a>
+
+
+                <a href="/AiAssistant"
+                   class="sidebar-link">
+
+                    <span>✦</span>
+
+                    AI assistant
+
+                    <small>AI</small>
+
+                </a>
+
+
+                <a href="/Documents/Create"
+                   class="sidebar-link">
+
+                    <span>＋</span>
+
+                    Create document
+
+                </a>
+
+            </nav>
+
+
+            <div class="sidebar-bottom">
+
+                <a href="/Settings"
+                   class="sidebar-link">
+
+                    <span>⚙</span>
+
+                    Settings
+
+                </a>
+
+
+                <a href="/Account/Logout"
+                   class="logout-link">
+
+                    Sign out
+
+                </a>
+
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN -->
+
+        <main class="bursary-main">
+
+
+            <!-- HEADER -->
+
+            <header class="bursary-header">
+
+                <button id="mobileMenu"
+                        class="mobile-menu"
+                        type="button">
+
+                    ☰
+
+                </button>
+
+
+                <div class="header-search">
+
+                    <span>⌕</span>
+
+                    <input type="text"
+                           id="searchInput"
+                           placeholder="Search bursaries, applications or documents..." />
+
+                </div>
+
+
+                <div class="header-actions">
+
+                    <button class="notification-button"
+                            type="button">
+
+                        ♢
+
+                        <span></span>
+
+                    </button>
+
+
+                    <div class="header-avatar">
+                        D
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- DETAILS CONTENT -->
+
+            <div class="bursary-details-content">
+
+
+                <!-- BACK -->
+
+                <a href="/BursaryPage"
+                   class="back-link">
+
+                    ← Back to bursaries
+
+                </a>
+
+
+                <!-- LOADING -->
+
+                <div id="detailsLoading"
+                     class="details-loading">
+
+                    <div class="spinner"></div>
+
+                    <strong>
+                        Loading bursary...
+                    </strong>
+
+                    <span>
+                        Getting opportunity details
+                    </span>
+
+                </div>
+
+
+                <!-- ERROR -->
+
+                <div id="detailsError"
+                     class="details-error hidden">
+
+                    <strong>
+                        We couldn't load this bursary.
+                    </strong>
+
+                    <p>
+                        The bursary may no longer exist or the API could not be reached.
+                    </p>
+
+                    <a href="/BursaryPage"
+                       class="details-button">
+
+                        Back to bursaries
+
+                    </a>
+
+                </div>
+
+
+                <!-- DETAILS -->
+
+                <section id="bursaryDetails"
+                         class="bursary-details hidden">
+
+
+                    <!-- HERO -->
+
+                    <div class="details-hero">
+
+                        <div class="details-provider-logo"
+                             id="providerInitials">
+
+                            BF
+
+                        </div>
+
+
+                        <div class="details-hero-content">
+
+                            <div id="verifiedBadge"
+                                 class="verified hidden">
+
+                                ✓ Verified opportunity
+
+                            </div>
+
+
+                            <h1 id="bursaryName">
+                                Bursary Opportunity
+                            </h1>
+
+
+                            <p id="providerName"
+                               class="details-provider">
+
+                                Provider
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- MAIN GRID -->
+
+                    <div class="details-grid">
+
+
+                        <!-- LEFT -->
+
+                        <div class="details-main">
+
+
+                            <section class="details-card">
+
+                                <span class="details-label">
+                                    ABOUT THIS BURSARY
+                                </span>
+
+                                <h2>
+                                    Opportunity overview
+                                </h2>
+
+                                <p id="bursaryDescription">
+                                    Loading description...
+                                </p>
+
+                            </section>
+
+
+                            <!-- ELIGIBILITY -->
+
+                            <section class="details-card">
+
+                                <span class="details-label">
+                                    ELIGIBILITY
+                                </span>
+
+                                <h2>
+                                    Who can apply?
+                                </h2>
+
+
+                                <div class="eligibility-grid">
+
+
+                                    <div class="eligibility-item">
+
+                                        <span>
+                                            Study level
+                                        </span>
+
+                                        <strong id="studyLevel">
+                                            —
+                                        </strong>
+
+                                    </div>
+
+
+                                    <div class="eligibility-item">
+
+                                        <span>
+                                            Field of study
+                                        </span>
+
+                                        <strong id="studyFields">
+                                            —
+                                        </strong>
+
+                                    </div>
+
+
+                                    <div class="eligibility-item">
+
+                                        <span>
+                                            Minimum average
+                                        </span>
+
+                                        <strong id="minimumAverage">
+                                            —
+                                        </strong>
+
+                                    </div>
+
+
+                                    <div class="eligibility-item">
+
+                                        <span>
+                                            Year of study
+                                        </span>
+
+                                        <strong id="yearOfStudy">
+                                            —
+                                        </strong>
+
+                                    </div>
+
+
+                                    <div class="eligibility-item">
+
+                                        <span>
+                                            Maximum household income
+                                        </span>
+
+                                        <strong id="householdIncome">
+                                            —
+                                        </strong>
+
+                                    </div>
+
+
+                                    <div class="eligibility-item">
+
+                                        <span>
+                                            Citizenship
+                                        </span>
+
+                                        <strong id="citizenship">
+                                            —
+                                        </strong>
+
+                                    </div>
+
+                                </div>
+
+                            </section>
+
+
+                            <!-- FUNDING -->
+
+                            <section class="details-card">
+
+                                <span class="details-label">
+                                    FUNDING
+                                </span>
+
+                                <h2>
+                                    What does it cover?
+                                </h2>
+
+
+                                <div id="fundingList"
+                                     class="funding-list">
+                                </div>
+
+                            </section>
+
+
+                        </div>
+
+
+                        <!-- RIGHT -->
+
+                        <aside class="details-sidebar">
+
+
+                            <!-- APPLY -->
+
+                            <section class="apply-card">
+
+                                <span class="details-label">
+                                    APPLICATION
+                                </span>
+
+                                <h2>
+                                    Ready to apply?
+                                </h2>
+
+                                <p>
+                                    Make sure you meet the eligibility requirements before submitting your application.
+                                </p>
+
+
+                                <a id="applyButton"
+                                   href="#"
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   class="apply-button">
+
+                                    Apply now →
+
+                                </a>
+
+
+                                <a id="websiteButton"
+                                   href="#"
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   class="website-button hidden">
+
+                                    Visit provider website
+
+                                </a>
+
+                            </section>
+
+
+                            <!-- PROVIDER -->
+
+                            <section class="provider-card">
+
+                                <span class="details-label">
+                                    PROVIDER
+                                </span>
+
+
+                                <h3 id="providerCardName">
+                                    Provider
+                                </h3>
+
+
+                                <p id="providerType">
+                                    —
+                                </p>
+
+
+                                <div id="officialProvider"
+                                     class="provider-status hidden">
+
+                                    ✓ Official provider
+
+                                </div>
+
+
+                                <p id="providerContact"
+                                   class="provider-contact">
+                                </p>
+
+                            </section>
+
+
+                        </aside>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <script>
+
+        const bursaryId = @ViewBag.BursaryID;
+
+    </script>
+
+
+    <script src="~/js/bursary-details.js"></script>
+
+</body>
+</html>

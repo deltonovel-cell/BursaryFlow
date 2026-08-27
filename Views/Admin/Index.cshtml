@@ -1,0 +1,1376 @@
+﻿
+@{
+    ViewData["Title"] = "Admin Centre";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0" />
+
+    <title>BursaryFlow | Admin Centre</title>
+
+    <meta name="description"
+          content="BursaryFlow administration centre for managing bursaries, requirements and applications." />
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="~/css/dashboard.css" />
+
+    <link rel="stylesheet"
+          href="~/css/admin.css" />
+
+</head>
+
+
+<body>
+
+    @Html.AntiForgeryToken()
+
+
+    <div class="dashboard-shell admin-shell">
+
+
+        <!-- =====================================================
+             SIDEBAR
+        ====================================================== -->
+
+        <aside class="sidebar" id="sidebar">
+
+            <div class="sidebar-brand">
+
+                <a href="/Admin"
+                   class="brand">
+
+                    <span class="brand-mark">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+
+                    <span>
+                        Bursary<span>Flow</span>
+                    </span>
+
+                </a>
+
+            </div>
+
+
+            <!-- ADMIN PROFILE -->
+
+            <div class="sidebar-profile">
+
+                <div class="profile-avatar admin-avatar">
+                    A
+                </div>
+
+                <div class="profile-details">
+
+                    <strong>
+                        Administrator
+                    </strong>
+
+                    <span>
+                        BursaryFlow Admin
+                    </span>
+
+                </div>
+
+                <button class="profile-menu"
+                        type="button">
+
+                    ⋮
+
+                </button>
+
+            </div>
+
+
+            <!-- NAVIGATION -->
+
+            <nav class="sidebar-navigation">
+
+                <div class="navigation-label">
+                    ADMINISTRATION
+                </div>
+
+
+                <a href="/Admin"
+                   class="sidebar-link active">
+
+                    <span class="sidebar-icon">
+                        <i data-lucide="layout-dashboard"></i>
+                    </span>
+
+                    <span>
+                        Overview
+                    </span>
+
+                </a>
+
+
+                <a href="/Admin/Bursaries"
+                   class="sidebar-link">
+
+                    <span class="sidebar-icon">
+                        <i data-lucide="graduation-cap"></i>
+                    </span>
+
+                    <span>
+                        Bursaries
+                    </span>
+
+                    <span class="sidebar-count"
+                          id="bursaryCount">
+                        0
+                    </span>
+
+                </a>
+
+
+                <a href="/Admin/Requirements"
+                   class="sidebar-link">
+
+                    <span class="sidebar-icon">
+                        <i data-lucide="clipboard-list"></i>
+                    </span>
+
+                    <span>
+                        Requirements
+                    </span>
+
+                </a>
+
+
+                <a href="/Admin/Documents"
+                   class="sidebar-link">
+
+                    <span class="sidebar-icon">
+                        <i data-lucide="files"></i>
+                    </span>
+
+                    <span>
+                        Required Documents
+                    </span>
+
+                </a>
+
+
+                <a href="/Admin/Questions"
+                   class="sidebar-link">
+
+                    <span class="sidebar-icon">
+                        <i data-lucide="list-checks"></i>
+                    </span>
+
+                    <span>
+                        Application Questions
+                    </span>
+
+                </a>
+
+
+                <div class="navigation-label">
+                    APPLICATIONS
+                </div>
+
+
+                <a href="/Admin/Applications"
+                   class="sidebar-link">
+
+                    <span class="sidebar-icon">
+                        <i data-lucide="send"></i>
+                    </span>
+
+                    <span>
+                        Applications
+                    </span>
+
+                </a>
+
+
+                <a href="/Admin/Notifications"
+                   class="sidebar-link">
+
+                    <span class="sidebar-icon">
+                        <i data-lucide="bell"></i>
+                    </span>
+
+                    <span>
+                        Notifications
+                    </span>
+
+                    <span class="sidebar-count admin-notification-count">
+                        0
+                    </span>
+
+                </a>
+
+
+                <div class="navigation-label">
+                    DELTON AI
+                </div>
+
+
+                <a href="/Admin/AI"
+                   class="sidebar-link">
+
+                    <span class="sidebar-icon">
+                        <i data-lucide="sparkles"></i>
+                    </span>
+
+                    <span>
+                        Delton AI
+                    </span>
+
+                    <span class="ai-badge">
+                        AI
+                    </span>
+
+                </a>
+
+
+                <a href="/Admin/Activity"
+                   class="sidebar-link">
+
+                    <span class="sidebar-icon">
+                        <i data-lucide="activity"></i>
+                    </span>
+
+                    <span>
+                        Activity
+                    </span>
+
+                </a>
+
+
+                <div class="navigation-label">
+                    ACCOUNT
+                </div>
+
+
+                <a href="/Settings"
+                   class="sidebar-link">
+
+                    <span class="sidebar-icon">
+                        <i data-lucide="settings"></i>
+                    </span>
+
+                    <span>
+                        Settings
+                    </span>
+
+                </a>
+
+            </nav>
+
+
+            <!-- SIDEBAR BOTTOM -->
+
+            <div class="sidebar-bottom">
+
+                <div class="help-card">
+
+                    <div class="help-icon">
+                        <i data-lucide="circle-help"></i>
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Admin Help
+                        </strong>
+
+                        <span>
+                            BursaryFlow support
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <a href="/Account/Logout"
+                   class="logout-link">
+
+                    <i data-lucide="log-out"></i>
+
+                    <span>
+                        Sign out
+                    </span>
+
+                </a>
+
+            </div>
+
+        </aside>
+
+
+        <!-- =====================================================
+             MAIN
+        ====================================================== -->
+
+        <main class="dashboard-main">
+
+
+            <!-- HEADER -->
+
+            <header class="dashboard-header">
+
+                <button class="mobile-menu"
+                        id="mobileMenu"
+                        type="button">
+
+                    <i data-lucide="menu"></i>
+
+                </button>
+
+
+                <div class="header-search">
+
+                    <i data-lucide="search"></i>
+
+                    <input type="text"
+                           id="globalSearch"
+                           placeholder="Search bursaries, applications or students..." />
+
+                    <span class="search-shortcut">
+                        /
+                    </span>
+
+                </div>
+
+
+                <div class="header-actions">
+
+                    <button class="header-icon-button"
+                            type="button">
+
+                        <i data-lucide="bell"></i>
+
+                        <span class="notification-dot"></span>
+
+                    </button>
+
+
+                    <div class="header-divider"></div>
+
+
+                    <button class="header-user"
+                            type="button">
+
+                        <span class="header-avatar">
+                            A
+                        </span>
+
+                        <span class="header-user-name">
+                            Administrator
+                        </span>
+
+                        <i data-lucide="chevron-down"></i>
+
+                    </button>
+
+                </div>
+
+            </header>
+
+
+            <!-- =================================================
+                 CONTENT
+            ================================================== -->
+
+            <div class="dashboard-content admin-page">
+
+
+                <!-- PAGE HEADER -->
+
+                <section class="admin-header">
+
+                    <div class="admin-header-content">
+
+                        <span class="admin-label">
+                            ADMINISTRATION CENTRE
+                        </span>
+
+                        <h1>
+                            BursaryFlow Control Centre
+                        </h1>
+
+                        <p>
+                            Manage bursaries, application requirements,
+                            documents and the information Delton uses
+                            to prepare student applications.
+                        </p>
+
+                    </div>
+
+
+                    <button type="button"
+                            class="admin-primary-button"
+                            id="addBursaryButton">
+
+                        <i data-lucide="plus"></i>
+
+                        Add Bursary
+
+                    </button>
+
+                </section>
+
+
+                <!-- =================================================
+                     OVERVIEW STATISTICS
+                ================================================== -->
+
+                <section class="admin-statistics">
+
+
+                    <article class="admin-stat-card">
+
+                        <div class="admin-stat-icon">
+
+                            <i data-lucide="graduation-cap"></i>
+
+                        </div>
+
+                        <div class="admin-stat-information">
+
+                            <span>
+                                ACTIVE BURSARIES
+                            </span>
+
+                            <strong id="activeBursaries">
+                                0
+                            </strong>
+
+                            <small>
+                                Currently available
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="admin-stat-card">
+
+                        <div class="admin-stat-icon">
+
+                            <i data-lucide="file-check-2"></i>
+
+                        </div>
+
+                        <div class="admin-stat-information">
+
+                            <span>
+                                REQUIREMENTS
+                            </span>
+
+                            <strong id="totalRequirements">
+                                0
+                            </strong>
+
+                            <small>
+                                Configured requirements
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="admin-stat-card">
+
+                        <div class="admin-stat-icon">
+
+                            <i data-lucide="send"></i>
+
+                        </div>
+
+                        <div class="admin-stat-information">
+
+                            <span>
+                                APPLICATIONS
+                            </span>
+
+                            <strong id="totalApplications">
+                                0
+                            </strong>
+
+                            <small>
+                                Student applications
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="admin-stat-card">
+
+                        <div class="admin-stat-icon ai">
+
+                            <i data-lucide="sparkles"></i>
+
+                        </div>
+
+                        <div class="admin-stat-information">
+
+                            <span>
+                                DELTON STATUS
+                            </span>
+
+                            <strong id="deltonStatus">
+                                Ready
+                            </strong>
+
+                            <small>
+                                Application engine online
+                            </small>
+
+                        </div>
+
+                    </article>
+
+
+                </section>
+
+
+                <!-- =================================================
+                     MAIN ADMIN GRID
+                ================================================== -->
+
+                <section class="admin-dashboard-grid">
+
+
+                    <!-- =================================================
+                         BURSARY MANAGEMENT
+                    ================================================== -->
+
+                    <article class="admin-panel bursary-management-panel">
+
+                        <div class="admin-panel-header">
+
+                            <div>
+
+                                <span class="admin-label">
+                                    BURSARY MANAGEMENT
+                                </span>
+
+                                <h2>
+                                    Manage Bursaries
+                                </h2>
+
+                                <p>
+                                    Add and configure bursaries that
+                                    students can discover and apply for.
+                                </p>
+
+                            </div>
+
+
+                            <a href="/Admin/Bursaries"
+                               class="admin-view-button">
+
+                                View all
+
+                                <i data-lucide="arrow-up-right"></i>
+
+                            </a>
+
+                        </div>
+
+
+                        <div class="admin-bursary-list"
+                             id="adminBursaryList">
+
+
+                            <!-- SAMPLE EMPTY STATE -->
+
+                            <div class="admin-empty-state"
+                                 id="bursaryEmptyState">
+
+                                <div class="admin-empty-icon">
+
+                                    <i data-lucide="graduation-cap"></i>
+
+                                </div>
+
+                                <strong>
+                                    No bursaries configured yet
+                                </strong>
+
+                                <span>
+                                    Add your first bursary to begin
+                                    building the application system.
+                                </span>
+
+                                <button type="button"
+                                        class="admin-small-button"
+                                        id="emptyAddBursaryButton">
+
+                                    <i data-lucide="plus"></i>
+
+                                    Add Bursary
+
+                                </button>
+
+                            </div>
+
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =================================================
+                         QUICK ACTIONS
+                    ================================================== -->
+
+                    <article class="admin-panel quick-actions-panel">
+
+                        <div class="admin-panel-header">
+
+                            <div>
+
+                                <span class="admin-label">
+                                    QUICK ACTIONS
+                                </span>
+
+                                <h2>
+                                    Administration Tools
+                                </h2>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="admin-quick-actions">
+
+
+                            <a href="/Admin/Bursaries/Create"
+                               class="admin-quick-action">
+
+                                <div class="quick-action-icon">
+
+                                    <i data-lucide="plus-circle"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Add Bursary
+                                    </strong>
+
+                                    <span>
+                                        Create a new bursary listing
+                                    </span>
+
+                                </div>
+
+                                <i data-lucide="chevron-right"
+                                   class="quick-action-arrow"></i>
+
+                            </a>
+
+
+                            <a href="/Admin/Requirements"
+                               class="admin-quick-action">
+
+                                <div class="quick-action-icon">
+
+                                    <i data-lucide="clipboard-list"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Configure Requirements
+                                    </strong>
+
+                                    <span>
+                                        Set documents and eligibility
+                                    </span>
+
+                                </div>
+
+                                <i data-lucide="chevron-right"
+                                   class="quick-action-arrow"></i>
+
+                            </a>
+
+
+                            <a href="/Admin/Questions"
+                               class="admin-quick-action">
+
+                                <div class="quick-action-icon">
+
+                                    <i data-lucide="list-checks"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Application Questions
+                                    </strong>
+
+                                    <span>
+                                        Configure bursary questions
+                                    </span>
+
+                                </div>
+
+                                <i data-lucide="chevron-right"
+                                   class="quick-action-arrow"></i>
+
+                            </a>
+
+
+                            <a href="/Admin/Documents"
+                               class="admin-quick-action">
+
+                                <div class="quick-action-icon">
+
+                                    <i data-lucide="files"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Required Documents
+                                    </strong>
+
+                                    <span>
+                                        Define documents students need
+                                    </span>
+
+                                </div>
+
+                                <i data-lucide="chevron-right"
+                                   class="quick-action-arrow"></i>
+
+                            </a>
+
+
+                            <a href="/Admin/AI"
+                               class="admin-quick-action ai-action">
+
+                                <div class="quick-action-icon">
+
+                                    <i data-lucide="sparkles"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Delton AI
+                                    </strong>
+
+                                    <span>
+                                        Manage application intelligence
+                                    </span>
+
+                                </div>
+
+                                <span class="ai-badge">
+                                    AI
+                                </span>
+
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                </section>
+
+
+                <!-- =================================================
+                     APPLICATION PIPELINE
+                ================================================== -->
+
+                <section class="admin-panel application-pipeline-panel">
+
+                    <div class="admin-panel-header">
+
+                        <div>
+
+                            <span class="admin-label">
+                                APPLICATION PIPELINE
+                            </span>
+
+                            <h2>
+                                Student Application Activity
+                            </h2>
+
+                            <p>
+                                Monitor how applications are progressing
+                                through the BursaryFlow system.
+                            </p>
+
+                        </div>
+
+
+                        <a href="/Admin/Applications"
+                           class="admin-view-button">
+
+                            Manage applications
+
+                            <i data-lucide="arrow-up-right"></i>
+
+                        </a>
+
+                    </div>
+
+
+                    <div class="application-pipeline">
+
+
+                        <div class="pipeline-stage">
+
+                            <div class="pipeline-icon">
+
+                                <i data-lucide="search"></i>
+
+                            </div>
+
+                            <div>
+
+                                <span>
+                                    DISCOVERED
+                                </span>
+
+                                <strong id="discoveredApplications">
+                                    0
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="pipeline-line"></div>
+
+
+                        <div class="pipeline-stage">
+
+                            <div class="pipeline-icon">
+
+                                <i data-lucide="file-edit"></i>
+
+                            </div>
+
+                            <div>
+
+                                <span>
+                                    BEING PREPARED
+                                </span>
+
+                                <strong id="preparingApplications">
+                                    0
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="pipeline-line"></div>
+
+
+                        <div class="pipeline-stage">
+
+                            <div class="pipeline-icon">
+
+                                <i data-lucide="circle-check"></i>
+
+                            </div>
+
+                            <div>
+
+                                <span>
+                                    READY FOR REVIEW
+                                </span>
+
+                                <strong id="reviewApplications">
+                                    0
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="pipeline-line"></div>
+
+
+                        <div class="pipeline-stage">
+
+                            <div class="pipeline-icon">
+
+                                <i data-lucide="send"></i>
+
+                            </div>
+
+                            <div>
+
+                                <span>
+                                    SUBMITTED
+                                </span>
+
+                                <strong id="submittedApplications">
+                                    0
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================================
+                     DELTON AI STATUS
+                ================================================== -->
+
+                <section class="admin-ai-section">
+
+
+                    <div class="admin-ai-content">
+
+                        <div class="admin-ai-icon">
+
+                            <i data-lucide="sparkles"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <span class="admin-label">
+                                DELTON AI APPLICATION ENGINE
+                            </span>
+
+                            <h2>
+                                Intelligent Application Preparation
+                            </h2>
+
+                            <p>
+                                Delton can use student profiles,
+                                uploaded documents and configured
+                                bursary requirements to prepare
+                                applications before the student reviews
+                                and submits them.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="admin-ai-status">
+
+                        <span class="ai-status-dot"></span>
+
+                        <strong>
+                            System Ready
+                        </strong>
+
+                        <a href="/Admin/AI">
+
+                            Configure
+
+                            <i data-lucide="arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================================
+                     RECENT ACTIVITY
+                ================================================== -->
+
+                <section class="admin-panel activity-panel">
+
+                    <div class="admin-panel-header">
+
+                        <div>
+
+                            <span class="admin-label">
+                                SYSTEM ACTIVITY
+                            </span>
+
+                            <h2>
+                                Recent Activity
+                            </h2>
+
+                        </div>
+
+
+                        <a href="/Admin/Activity"
+                           class="admin-view-button">
+
+                            View activity
+
+                            <i data-lucide="arrow-up-right"></i>
+
+                        </a>
+
+                    </div>
+
+
+                    <div class="admin-activity-list"
+                         id="adminActivityList">
+
+
+                        <div class="admin-empty-activity">
+
+                            <div class="activity-empty-icon">
+
+                                <i data-lucide="activity"></i>
+
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    No recent activity
+                                </strong>
+
+                                <span>
+                                    System activity will appear here
+                                    once administration actions begin.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </section>
+
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <!-- =========================================================
+         ADD BURSARY MODAL
+    ========================================================== -->
+
+    <div class="admin-modal hidden"
+         id="bursaryModal">
+
+
+        <div class="admin-modal-overlay"
+             id="bursaryModalOverlay">
+        </div>
+
+
+        <div class="admin-modal-workspace">
+
+
+            <button type="button"
+                    class="admin-modal-close"
+                    id="closeBursaryModal">
+
+                <i data-lucide="x"></i>
+
+            </button>
+
+
+            <div class="admin-modal-header">
+
+                <div class="admin-modal-icon">
+
+                    <i data-lucide="graduation-cap"></i>
+
+                </div>
+
+                <span class="admin-label">
+                    BURSARY MANAGEMENT
+                </span>
+
+                <h2>
+                    Add a New Bursary
+                </h2>
+
+                <p>
+                    Create the bursary record first. You can configure
+                    its eligibility, documents and application questions
+                    afterwards.
+                </p>
+
+            </div>
+
+
+            <form id="addBursaryForm"
+                  class="admin-form">
+
+
+                <div class="admin-form-group">
+
+                    <label for="bursaryName">
+                        Bursary Name
+                    </label>
+
+                    <input type="text"
+                           id="bursaryName"
+                           name="Name"
+                           placeholder="e.g. NSFAS Bursary"
+                           required />
+
+                </div>
+
+
+                <div class="admin-form-row">
+
+
+                    <div class="admin-form-group">
+
+                        <label for="bursaryProvider">
+                            Provider
+                        </label>
+
+                        <input type="text"
+                               id="bursaryProvider"
+                               name="Provider"
+                               placeholder="Organisation name"
+                               required />
+
+                    </div>
+
+
+                    <div class="admin-form-group">
+
+                        <label for="bursaryStatus">
+                            Status
+                        </label>
+
+                        <select id="bursaryStatus"
+                                name="Status">
+
+                            <option value="active">
+                                Active
+                            </option>
+
+                            <option value="draft">
+                                Draft
+                            </option>
+
+                            <option value="closed">
+                                Closed
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div class="admin-form-group">
+
+                    <label for="bursaryDescription">
+                        Description
+                    </label>
+
+                    <textarea id="bursaryDescription"
+                              name="Description"
+                              rows="4"
+                              placeholder="Brief description of the bursary..."></textarea>
+
+                </div>
+
+
+                <div class="admin-form-row">
+
+
+                    <div class="admin-form-group">
+
+                        <label for="closingDate">
+                            Closing Date
+                        </label>
+
+                        <input type="date"
+                               id="closingDate"
+                               name="ClosingDate" />
+
+                    </div>
+
+
+                    <div class="admin-form-group">
+
+                        <label for="applicationMethod">
+                            Application Method
+                        </label>
+
+                        <select id="applicationMethod"
+                                name="ApplicationMethod">
+
+                            <option value="internal">
+                                BursaryFlow Application
+                            </option>
+
+                            <option value="external">
+                                External Application
+                            </option>
+
+                            <option value="form">
+                                Application Form
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div class="admin-form-notice">
+
+                    <i data-lucide="info"></i>
+
+                    <span>
+                        After creating the bursary, you will be able
+                        to configure its required documents, questions
+                        and application workflow.
+                    </span>
+
+                </div>
+
+
+                <div class="admin-modal-actions">
+
+                    <button type="button"
+                            class="admin-secondary-button"
+                            id="cancelBursary">
+
+                        Cancel
+
+                    </button>
+
+
+                    <button type="submit"
+                            class="admin-primary-button">
+
+                        <i data-lucide="plus"></i>
+
+                        Create Bursary
+
+                    </button>
+
+                </div>
+
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         JAVASCRIPT CONFIGURATION
+    ========================================================== -->
+
+    <script>
+
+        window.adminApi = {
+
+            index: "/Admin",
+
+            bursaries: "/Admin/Bursaries",
+
+            createBursary: "/Admin/Bursaries/Create",
+
+            requirements: "/Admin/Requirements",
+
+            documents: "/Admin/Documents",
+
+            questions: "/Admin/Questions",
+
+            applications: "/Admin/Applications",
+
+            notifications: "/Admin/Notifications",
+
+            ai: "/Admin/AI",
+
+            activity: "/Admin/Activity"
+
+        };
+
+
+        window.adminAntiForgeryToken =
+            document.querySelector(
+                'input[name="__RequestVerificationToken"]'
+            )?.value || "";
+
+    </script>
+
+
+    <!-- =========================================================
+         LUCIDE
+    ========================================================== -->
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+
+    <!-- =========================================================
+         ADMIN JS
+    ========================================================== -->
+
+    <script src="~/js/admin.js"></script>
+
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            if (window.lucide) {
+                lucide.createIcons();
+            }
+
+        });
+
+    </script>
+
+
+</body>
+
+</html>
+

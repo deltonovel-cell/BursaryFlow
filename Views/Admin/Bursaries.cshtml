@@ -1,0 +1,275 @@
+﻿@{
+    ViewData["Title"] = "Bursaries";
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>BursaryFlow | Bursaries</title>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+          rel="stylesheet">
+
+
+    <link rel="stylesheet" href="~/css/dashboard.css" />
+
+    <link rel="stylesheet" href="~/css/admin.css" />
+
+    <link rel="stylesheet" href="~/css/admin_bursaries.css" />
+
+
+</head>
+
+
+<body>
+
+
+    <div class="dashboard-shell admin-shell">
+
+
+        <!-- SIDEBAR REMAINS SAME AS ADMIN INDEX -->
+
+
+        <main class="dashboard-main">
+
+
+            <header class="dashboard-header">
+
+
+                <div class="header-search">
+
+                    <i data-lucide="search"></i>
+
+                    <input placeholder="Search bursaries..." />
+
+                </div>
+
+
+                <div class="header-actions">
+
+                    <button class="header-icon-button">
+
+                        <i data-lucide="bell"></i>
+
+                    </button>
+
+
+                    <button class="header-user">
+
+                        <span class="header-avatar">
+                            A
+                        </span>
+
+                        Administrator
+
+                    </button>
+
+                </div>
+
+
+            </header>
+
+
+
+            <div class="dashboard-content admin-bursaries-page">
+
+
+
+                <section class="bursaries-header">
+
+
+                    <div>
+
+
+                        <span class="admin-label">
+                            BURSARY MANAGEMENT
+                        </span>
+
+
+                        <h1>
+                            Manage Bursaries
+                        </h1>
+
+
+                        <p>
+                            Create, update and control bursaries available
+                            to students across South Africa.
+                        </p>
+
+
+                    </div>
+
+
+
+                    <button class="admin-primary-button">
+
+                        <i data-lucide="plus"></i>
+
+                        Add Bursary
+
+                    </button>
+
+
+                </section>
+
+
+
+
+                <section class="bursary-controls">
+
+
+                    <div class="bursary-search">
+
+
+                        <i data-lucide="search"></i>
+
+
+                        <input type="text"
+                               placeholder="Search bursary name or provider..." />
+
+
+                    </div>
+
+
+
+                    <select>
+
+                        <option>
+                            All Status
+                        </option>
+
+                        <option>
+                            Active
+                        </option>
+
+                        <option>
+                            Draft
+                        </option>
+
+                        <option>
+                            Closed
+                        </option>
+
+
+                    </select>
+
+
+
+                    <select>
+
+                        <option>
+                            All Levels
+                        </option>
+
+                        <option>
+                            High School
+                        </option>
+
+                        <option>
+                            TVET
+                        </option>
+
+                        <option>
+                            University
+                        </option>
+
+
+                    </select>
+
+
+                </section>
+
+
+
+
+
+                <section class="bursary-grid">
+
+
+
+                    <article class="bursary-empty-card">
+
+
+                        <div class="empty-bursary-icon">
+
+                            <i data-lucide="graduation-cap"></i>
+
+                        </div>
+
+
+
+                        <h2>
+                            No bursaries available
+                        </h2>
+
+
+
+                        <p>
+                            Start building your bursary database by adding
+                            your first bursary listing.
+                        </p>
+
+
+
+                        <button class="admin-primary-button">
+
+
+                            <i data-lucide="plus"></i>
+
+                            Create First Bursary
+
+
+                        </button>
+
+
+
+                    </article>
+
+
+
+                </section>
+
+
+
+            </div>
+
+
+        </main>
+
+
+    </div>
+
+
+
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded",()=>{
+
+            lucide.createIcons();
+
+        });
+
+    </script>
+
+
+</body>
+
+</html>
