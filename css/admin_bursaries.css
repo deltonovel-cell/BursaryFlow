@@ -1,0 +1,164 @@
+﻿.admin-bursaries-page {
+    max-width: 1550px;
+}
+
+
+
+.bursaries-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 30px;
+}
+
+
+
+    .bursaries-header h1 {
+        margin: 0;
+        color: #253b2c;
+        font-family: "Playfair Display",serif;
+        font-size: 44px;
+    }
+
+
+
+    .bursaries-header p {
+        margin-top: 12px;
+        color: #78847c;
+        max-width: 600px;
+        line-height: 1.6;
+        font-size: 14px;
+    }
+
+
+
+
+
+.bursary-controls {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 25px;
+}
+
+
+
+.bursary-search {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 45px;
+    padding: 0 15px;
+    border: 1px solid #e2e9e3;
+    border-radius: 12px;
+    background: white;
+}
+
+
+
+    .bursary-search input {
+        border: 0;
+        outline: none;
+        width: 100%;
+        font-family: "DM Sans";
+    }
+
+
+
+.bursary-controls select {
+    height: 45px;
+    padding: 0 15px;
+    border: 1px solid #e2e9e3;
+    border-radius: 12px;
+    background: white;
+    color: #526158;
+}
+
+
+
+
+
+.bursary-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+
+
+
+
+
+.bursary-empty-card {
+    grid-column: 1/-1;
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    background: white;
+    border: 1px solid #e8eee9;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(45,70,53,.05);
+}
+
+
+
+.empty-bursary-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 65px;
+    height: 65px;
+    border-radius: 18px;
+    background: #edf5ef;
+    color: #477a59;
+    margin-bottom: 20px;
+}
+
+
+
+    .empty-bursary-icon svg {
+        width: 30px;
+        height: 30px;
+    }
+
+
+
+.bursary-empty-card h2 {
+    color: #33483a;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+
+
+.bursary-empty-card p {
+    max-width: 400px;
+    color: #8a958d;
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+
+
+
+@media(max-width:900px) {
+
+
+    .bursaries-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+
+    .bursary-controls {
+        flex-direction: column;
+    }
+
+
+    .bursary-grid {
+        grid-template-columns: 1fr;
+    }
+}

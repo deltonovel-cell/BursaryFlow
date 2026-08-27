@@ -1,0 +1,374 @@
+﻿/* ================================
+   BURSARY DETAILS
+================================ */
+
+.bursary-details-content {
+    padding: 30px 55px 60px;
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 25px;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+    .back-link:hover {
+        color: var(--green);
+    }
+
+
+/* ================================
+   LOADING
+================================ */
+
+.details-loading {
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+    .details-loading span {
+        color: var(--light-muted);
+        font-size: 12px;
+    }
+
+
+/* ================================
+   ERROR
+================================ */
+
+.details-error {
+    padding: 40px;
+    text-align: center;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+}
+
+    .details-error p {
+        color: var(--light-muted);
+        font-size: 13px;
+        margin-bottom: 25px;
+    }
+
+
+/* ================================
+   HERO
+================================ */
+
+.details-hero {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    padding: 35px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    margin-bottom: 20px;
+}
+
+.details-provider-logo {
+    width: 72px;
+    height: 72px;
+    flex-shrink: 0;
+    border-radius: 16px;
+    background: #e4eee8;
+    color: #356b4f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.details-hero-content h1 {
+    margin: 5px 0 5px;
+    font-family: "Playfair Display", serif;
+    font-size: 36px;
+    line-height: 1.1;
+    color: var(--text);
+}
+
+.details-provider {
+    margin: 0;
+    color: var(--light-muted);
+    font-size: 14px;
+}
+
+.verified {
+    color: #356b4f;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .5px;
+}
+
+
+/* ================================
+   GRID
+================================ */
+
+.details-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 310px;
+    gap: 20px;
+}
+
+.details-main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.details-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+/* ================================
+   CARDS
+================================ */
+
+.details-card,
+.provider-card,
+.apply-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px;
+}
+
+.details-label {
+    display: block;
+    color: var(--light-muted);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    margin-bottom: 8px;
+}
+
+.details-card h2,
+.apply-card h2 {
+    margin: 0 0 15px;
+    font-size: 20px;
+}
+
+.details-card > p {
+    margin: 0;
+    color: #66716b;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+
+/* ================================
+   ELIGIBILITY
+================================ */
+
+.eligibility-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.eligibility-item {
+    padding: 15px;
+    background: #f7f9f7;
+    border-radius: 10px;
+}
+
+    .eligibility-item span {
+        display: block;
+        color: var(--light-muted);
+        font-size: 10px;
+        margin-bottom: 6px;
+    }
+
+    .eligibility-item strong {
+        display: block;
+        color: var(--text);
+        font-size: 13px;
+    }
+
+
+/* ================================
+   FUNDING
+================================ */
+
+.funding-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.funding-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 15px;
+    background: #f7f9f7;
+    border-radius: 10px;
+    color: var(--text);
+    font-size: 13px;
+}
+
+    .funding-item span {
+        width: 25px;
+        height: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: #dfece4;
+        color: #356b4f;
+        font-weight: 700;
+    }
+
+
+/* ================================
+   APPLY
+================================ */
+
+.apply-card {
+    background: #23422f;
+    color: white;
+    border: none;
+}
+
+    .apply-card .details-label {
+        color: #a9c2b3;
+    }
+
+    .apply-card h2 {
+        color: white;
+    }
+
+    .apply-card p {
+        color: #c5d5cb;
+        font-size: 12px;
+        line-height: 1.7;
+    }
+
+.apply-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 44px;
+    box-sizing: border-box;
+    background: white;
+    color: #23422f;
+    border-radius: 9px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    margin-top: 20px;
+}
+
+    .apply-button:hover {
+        background: #f1f5f2;
+    }
+
+.website-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    margin-top: 9px;
+    border: 1px solid rgba(255,255,255,.35);
+    border-radius: 9px;
+    color: white;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+
+/* ================================
+   PROVIDER
+================================ */
+
+.provider-card h3 {
+    margin: 0 0 5px;
+    font-size: 16px;
+}
+
+.provider-card p {
+    color: var(--light-muted);
+    font-size: 12px;
+    margin: 0;
+}
+
+.provider-status {
+    margin-top: 15px;
+    color: #356b4f;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.provider-contact {
+    margin-top: 12px !important;
+    line-height: 1.6;
+}
+
+
+/* ================================
+   HIDDEN
+================================ */
+
+.hidden {
+    display: none !important;
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 900px) {
+
+    .bursary-details-content {
+        padding: 25px 25px 50px;
+    }
+
+    .details-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .details-sidebar {
+        order: -1;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .bursary-details-content {
+        padding: 20px 15px 40px;
+    }
+
+    .details-hero {
+        padding: 22px;
+        align-items: flex-start;
+    }
+
+    .details-hero-content h1 {
+        font-size: 27px;
+    }
+
+    .eligibility-grid,
+    .funding-list {
+        grid-template-columns: 1fr;
+    }
+}

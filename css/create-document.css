@@ -1,0 +1,1096 @@
+﻿/* =========================================================
+   BURSARYFLOW — CREATE DOCUMENT
+   ========================================================= */
+
+.create-document-content {
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.create-document-hero {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 28px;
+}
+
+.create-document-hero-left {
+    max-width: 780px;
+}
+
+.hero-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 12px;
+    color: #477a59;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+}
+
+    .hero-eyebrow span {
+        width: 7px;
+        height: 7px;
+        flex-shrink: 0;
+        border-radius: 50%;
+        background: #4d9a68;
+        box-shadow: 0 0 0 5px #e8f4eb;
+    }
+
+.create-document-hero h1 {
+    margin: 0;
+    color: #253b2c;
+    font-family: "Playfair Display", serif;
+    font-size: 46px;
+    line-height: 1.08;
+    letter-spacing: -1px;
+}
+
+    .create-document-hero h1 em {
+        color: #4d8d60;
+        font-style: normal;
+    }
+
+.create-document-hero p {
+    max-width: 720px;
+    margin: 15px 0 0;
+    color: #78847c;
+    font-size: 14px;
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   DELTON STATUS CARD
+   ========================================================= */
+
+.delton-create-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 220px;
+    padding: 13px 16px;
+    border: 1px solid #dcebe0;
+    border-radius: 15px;
+    background: #f8fcf9;
+}
+
+.delton-create-avatar {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 13px;
+    background: linear-gradient(145deg, #477e59, #72ad82);
+    color: #ffffff;
+    box-shadow: 0 7px 18px rgba(61, 126, 79, .15);
+}
+
+    .delton-create-avatar svg {
+        width: 20px;
+        height: 20px;
+    }
+
+.delton-create-card div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+    .delton-create-card div:nth-child(2) span {
+        color: #70927a;
+        font-size: 8px;
+        font-weight: 700;
+        letter-spacing: 1.2px;
+    }
+
+    .delton-create-card div:nth-child(2) strong {
+        color: #304536;
+        font-size: 12px;
+    }
+
+.delton-online-dot {
+    width: 8px;
+    height: 8px;
+    margin-left: auto;
+    border-radius: 50%;
+    background: #4caf68;
+    box-shadow: 0 0 0 4px #e5f4e8;
+}
+
+
+/* =========================================================
+   DOCUMENT WORKSPACE
+   ========================================================= */
+
+.document-workspace {
+    display: grid;
+    grid-template-columns: 360px minmax(0, 1fr);
+    gap: 20px;
+    align-items: start;
+}
+
+
+/* =========================================================
+   LEFT SETTINGS
+   ========================================================= */
+
+.document-settings {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.document-panel {
+    padding: 20px;
+    border: 1px solid #dfeae2;
+    border-radius: 18px;
+    background: #ffffff;
+    box-shadow: 0 6px 22px rgba(44, 76, 54, .025);
+}
+
+.document-panel-heading {
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+    margin-bottom: 17px;
+}
+
+    .document-panel-heading > span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 28px;
+        height: 28px;
+        flex-shrink: 0;
+        border-radius: 9px;
+        background: #edf6ef;
+        color: #4d8d60;
+        font-size: 9px;
+        font-weight: 700;
+    }
+
+    .document-panel-heading strong {
+        display: block;
+        margin-bottom: 3px;
+        color: #304536;
+        font-size: 13px;
+        font-weight: 700;
+    }
+
+    .document-panel-heading p {
+        margin: 0;
+        color: #929c95;
+        font-size: 10px;
+        line-height: 1.5;
+    }
+
+
+/* =========================================================
+   DOCUMENT TYPE
+   ========================================================= */
+
+.document-type-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.document-type {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+    padding: 11px;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    background: transparent;
+    color: #56645b;
+    text-align: left;
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+    .document-type:hover {
+        border-color: #dce9df;
+        background: #f7faf8;
+    }
+
+    .document-type.active {
+        border-color: #c7dfcd;
+        background: #f0f8f2;
+    }
+
+.document-type-icon {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: #f0f5f1;
+    color: #6a9274;
+}
+
+.document-type.active .document-type-icon {
+    background: #dcefe0;
+    color: #477a59;
+}
+
+.document-type-icon svg {
+    width: 17px;
+    height: 17px;
+}
+
+.document-type-text {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+    .document-type-text strong {
+        color: #3c4e42;
+        font-size: 11px;
+        font-weight: 700;
+    }
+
+    .document-type-text small {
+        color: #929c95;
+        font-size: 9px;
+    }
+
+.document-type-check {
+    width: 15px;
+    height: 15px;
+    margin-left: auto;
+    flex-shrink: 0;
+    color: #4d8d60;
+    opacity: 0;
+}
+
+.document-type.active .document-type-check {
+    opacity: 1;
+}
+
+
+/* =========================================================
+   DOCUMENT FORM
+   ========================================================= */
+
+.document-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.document-field {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+    .document-field label {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: #4a5a50;
+        font-size: 10px;
+        font-weight: 700;
+    }
+
+        .document-field label span {
+            color: #9ba49e;
+            font-size: 8px;
+            font-weight: 500;
+        }
+
+    .document-field input,
+    .document-field select {
+        width: 100%;
+        box-sizing: border-box;
+        height: 42px;
+        padding: 0 12px;
+        border: 1px solid #dfe8e1;
+        border-radius: 10px;
+        outline: none;
+        background: #fbfdfb;
+        color: #455249;
+        font-family: "DM Sans", sans-serif;
+        font-size: 11px;
+        transition: .2s ease;
+    }
+
+        .document-field input::placeholder {
+            color: #a7afa9;
+        }
+
+        .document-field input:focus,
+        .document-field select:focus {
+            border-color: #91b99a;
+            background: #ffffff;
+            box-shadow: 0 0 0 3px rgba(77, 141, 96, .07);
+        }
+
+
+/* =========================================================
+   AI INSTRUCTIONS
+   ========================================================= */
+
+.ai-instruction-panel {
+    background: #f9fcfa;
+}
+
+#documentInstructions {
+    width: 100%;
+    min-height: 125px;
+    box-sizing: border-box;
+    resize: vertical;
+    padding: 12px;
+    border: 1px solid #dfe9e1;
+    border-radius: 11px;
+    outline: none;
+    background: #ffffff;
+    color: #455249;
+    font-family: "DM Sans", sans-serif;
+    font-size: 11px;
+    line-height: 1.6;
+    transition: .2s ease;
+}
+
+    #documentInstructions::placeholder {
+        color: #a4ada7;
+    }
+
+    #documentInstructions:focus {
+        border-color: #91b99a;
+        box-shadow: 0 0 0 3px rgba(77, 141, 96, .07);
+    }
+
+.instruction-tip {
+    display: flex;
+    align-items: flex-start;
+    gap: 7px;
+    margin-top: 10px;
+    padding: 9px 10px;
+    border-radius: 9px;
+    background: #edf7ef;
+}
+
+    .instruction-tip svg {
+        width: 14px;
+        height: 14px;
+        flex-shrink: 0;
+        color: #4d8d60;
+    }
+
+    .instruction-tip span {
+        color: #66806e;
+        font-size: 9px;
+        line-height: 1.5;
+    }
+
+
+/* =========================================================
+   GENERATE BUTTON
+   ========================================================= */
+
+.generate-document-button {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    width: 100%;
+    padding: 13px;
+    border: 0;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #315c40, #477a59);
+    color: #ffffff;
+    text-align: left;
+    cursor: pointer;
+    box-shadow: 0 9px 22px rgba(49, 92, 64, .16);
+    transition: .2s ease;
+}
+
+    .generate-document-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 13px 26px rgba(49, 92, 64, .22);
+    }
+
+    .generate-document-button.generating {
+        opacity: .85;
+        cursor: wait;
+    }
+
+.generate-icon {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 11px;
+    background: rgba(255, 255, 255, .13);
+}
+
+    .generate-icon svg {
+        width: 18px;
+        height: 18px;
+    }
+
+.generate-document-button > span:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.generate-document-button strong {
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.generate-document-button small {
+    color: #c7ddcc;
+    font-size: 9px;
+}
+
+.generate-document-button > svg {
+    width: 17px;
+    height: 17px;
+    margin-left: auto;
+}
+
+
+/* =========================================================
+   EDITOR AREA
+   ========================================================= */
+
+.document-editor-area {
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid #dfeae2;
+    border-radius: 20px;
+    background: #f5f8f5;
+    box-shadow: 0 8px 30px rgba(44, 76, 54, .04);
+}
+
+
+/* =========================================================
+   EDITOR TOP BAR
+   ========================================================= */
+
+.editor-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 14px 17px;
+    border-bottom: 1px solid #e2eae4;
+    background: #ffffff;
+}
+
+.editor-document-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+}
+
+.editor-file-icon {
+    width: 37px;
+    height: 37px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: #edf6ef;
+    color: #4d8d60;
+}
+
+    .editor-file-icon svg {
+        width: 17px;
+        height: 17px;
+    }
+
+.editor-document-info > div:last-child {
+    min-width: 0;
+}
+
+.editor-document-info strong {
+    display: block;
+    overflow: hidden;
+    margin-bottom: 3px;
+    color: #34473a;
+    font-size: 12px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.editor-document-info span {
+    color: #9aa39d;
+    font-size: 9px;
+}
+
+.editor-actions {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.editor-action {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 10px;
+    border: 1px solid #dfe8e1;
+    border-radius: 9px;
+    background: #ffffff;
+    color: #627068;
+    font-family: "DM Sans", sans-serif;
+    font-size: 9px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+    .editor-action svg {
+        width: 14px;
+        height: 14px;
+    }
+
+    .editor-action:hover {
+        border-color: #b9d5c0;
+        background: #f3f9f4;
+        color: #477a59;
+    }
+
+    .editor-action.saved {
+        border-color: #b9d8c0;
+        background: #edf7ef;
+        color: #477a59;
+    }
+
+
+/* =========================================================
+   TOOLBAR
+   ========================================================= */
+
+.editor-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    min-height: 45px;
+    padding: 5px 12px;
+    border-bottom: 1px solid #e2e9e4;
+    background: #fbfdfb;
+}
+
+    .editor-toolbar button {
+        width: 31px;
+        height: 31px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 0;
+        border-radius: 7px;
+        background: transparent;
+        color: #718078;
+        cursor: pointer;
+        transition: .15s ease;
+    }
+
+        .editor-toolbar button:hover {
+            background: #eaf4ec;
+            color: #477a59;
+        }
+
+        .editor-toolbar button svg {
+            width: 15px;
+            height: 15px;
+        }
+
+.toolbar-divider {
+    width: 1px;
+    height: 22px;
+    margin: 0 6px;
+    background: #dfe7e1;
+}
+
+
+/* =========================================================
+   DOCUMENT PAPER
+   ========================================================= */
+
+.document-paper-container {
+    overflow: auto;
+    max-height: 790px;
+    padding: 35px;
+    background: radial-gradient( circle at 1px 1px, #dce5de 1px, transparent 1px );
+    background-size: 18px 18px;
+}
+
+.document-paper {
+    width: min(100%, 780px);
+    min-height: 1000px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 70px 75px;
+    outline: none;
+    background: #ffffff;
+    color: #404b44;
+    box-shadow: 0 10px 35px rgba(35, 55, 42, .10);
+}
+
+    .document-paper:focus {
+        box-shadow: 0 10px 35px rgba(35, 55, 42, .10), 0 0 0 2px rgba(77, 141, 96, .15);
+    }
+
+
+/* =========================================================
+   PAPER HEADER
+   ========================================================= */
+
+.document-paper-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid #e2e9e4;
+}
+
+.paper-brand {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: #304536;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+    .paper-brand > span:last-child > span {
+        color: #5c966b;
+    }
+
+.paper-brand-mark {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    gap: 2px;
+    width: 24px;
+    height: 24px;
+}
+
+    .paper-brand-mark span {
+        display: block;
+        width: 5px;
+        border-radius: 3px 3px 1px 1px;
+        background: #477a59;
+    }
+
+        .paper-brand-mark span:nth-child(1) {
+            height: 12px;
+        }
+
+        .paper-brand-mark span:nth-child(2) {
+            height: 18px;
+        }
+
+        .paper-brand-mark span:nth-child(3) {
+            height: 15px;
+        }
+
+.paper-document-type {
+    color: #7d9383;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+}
+
+
+/* =========================================================
+   PAPER CONTENT
+   ========================================================= */
+
+.paper-content {
+    padding-top: 40px;
+}
+
+    .paper-content h1 {
+        margin: 0 0 8px;
+        color: #293d30;
+        font-family: "Playfair Display", serif;
+        font-size: 30px;
+        line-height: 1.2;
+    }
+
+    .paper-content p {
+        margin: 0 0 18px;
+        color: #4d584f;
+        font-family: "DM Sans", sans-serif;
+        font-size: 12px;
+        line-height: 1.85;
+    }
+
+    .paper-content .paper-date {
+        margin-bottom: 35px;
+        color: #99a29c;
+        font-size: 10px;
+    }
+
+    .paper-content .paper-signature {
+        margin-top: 30px;
+    }
+
+    .paper-content strong {
+        color: #304536;
+    }
+
+
+/* =========================================================
+   EDITOR FOOTER
+   ========================================================= */
+
+.editor-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    min-height: 37px;
+    padding: 0 15px;
+    border-top: 1px solid #e0e8e2;
+    background: #ffffff;
+    color: #98a19b;
+    font-size: 9px;
+}
+
+    .editor-footer > span {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .editor-footer svg {
+        width: 13px;
+        height: 13px;
+    }
+
+
+/* =========================================================
+   AI BANNER
+   ========================================================= */
+
+.document-ai-banner {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+    padding: 20px 22px;
+    border: 1px solid #d9e9dd;
+    border-radius: 18px;
+    background: linear-gradient( 135deg, #f1f8f3, #f9fcfa );
+}
+
+.document-ai-banner-icon {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 13px;
+    background: #dfeee2;
+    color: #4d8d60;
+}
+
+    .document-ai-banner-icon svg {
+        width: 20px;
+        height: 20px;
+    }
+
+.document-ai-banner > div:nth-child(2) {
+    min-width: 0;
+}
+
+    .document-ai-banner > div:nth-child(2) > span {
+        display: block;
+        margin-bottom: 3px;
+        color: #6d9577;
+        font-size: 8px;
+        font-weight: 700;
+        letter-spacing: 1.3px;
+    }
+
+.document-ai-banner h3 {
+    margin: 0 0 4px;
+    color: #304536;
+    font-family: "Playfair Display", serif;
+    font-size: 18px;
+}
+
+.document-ai-banner p {
+    max-width: 750px;
+    margin: 0;
+    color: #7f8b83;
+    font-size: 10px;
+    line-height: 1.6;
+}
+
+.document-ai-banner button {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-left: auto;
+    padding: 10px 13px;
+    border: 1px solid #c9ddce;
+    border-radius: 10px;
+    background: #ffffff;
+    color: #477a59;
+    font-family: "DM Sans", sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+    .document-ai-banner button:hover {
+        border-color: #9cbea5;
+        background: #edf7ef;
+        transform: translateY(-1px);
+    }
+
+    .document-ai-banner button svg {
+        width: 14px;
+        height: 14px;
+    }
+
+
+/* =========================================================
+   SCROLLBARS
+   ========================================================= */
+
+.document-paper-container::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+}
+
+.document-paper-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.document-paper-container::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #cdd9d0;
+}
+
+    .document-paper-container::-webkit-scrollbar-thumb:hover {
+        background: #b2c5b7;
+    }
+
+
+/* =========================================================
+   RESPONSIVE — 1250px
+   ========================================================= */
+
+@media (max-width: 1250px) {
+
+    .document-workspace {
+        grid-template-columns: 320px minmax(0, 1fr);
+    }
+
+    .document-paper {
+        padding: 55px 60px;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE — 1050px
+   ========================================================= */
+
+@media (max-width: 1050px) {
+
+    .document-workspace {
+        grid-template-columns: 1fr;
+    }
+
+    .document-settings {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-items: start;
+    }
+
+    .generate-document-button {
+        grid-column: span 2;
+    }
+
+    .create-document-hero {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .delton-create-card {
+        align-self: flex-start;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE — 800px
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .document-settings {
+        display: flex;
+    }
+
+    .generate-document-button {
+        width: 100%;
+    }
+
+    .document-paper-container {
+        padding: 20px;
+    }
+
+    .document-paper {
+        min-height: 900px;
+        padding: 45px 40px;
+    }
+
+    .editor-topbar {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .editor-actions {
+        width: 100%;
+    }
+
+    .editor-action {
+        flex: 1;
+        justify-content: center;
+    }
+
+    .document-ai-banner {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+        .document-ai-banner button {
+            width: 100%;
+            justify-content: center;
+            margin-left: 60px;
+        }
+}
+
+
+/* =========================================================
+   RESPONSIVE — 600px
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .create-document-hero h1 {
+        font-size: 36px;
+    }
+
+    .create-document-hero p {
+        font-size: 12px;
+    }
+
+    .delton-create-card {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .document-panel {
+        padding: 16px;
+        border-radius: 15px;
+    }
+
+    .document-paper-container {
+        padding: 12px;
+    }
+
+    .document-paper {
+        min-height: 800px;
+        padding: 35px 25px;
+    }
+
+    .document-paper-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .paper-document-type {
+        margin-left: 0;
+    }
+
+    .paper-content h1 {
+        font-size: 25px;
+    }
+
+    .paper-content p {
+        font-size: 11px;
+    }
+
+    .editor-toolbar {
+        overflow-x: auto;
+    }
+
+    .document-ai-banner {
+        padding: 17px;
+    }
+
+        .document-ai-banner button {
+            margin-left: 0;
+        }
+}
+
+
+/* =========================================================
+   RESPONSIVE — 450px
+   ========================================================= */
+
+@media (max-width: 450px) {
+
+    .create-document-hero h1 {
+        font-size: 32px;
+    }
+
+    .document-type {
+        padding: 9px;
+    }
+
+    .document-type-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .editor-actions {
+        flex-direction: column;
+    }
+
+    .editor-action {
+        width: 100%;
+    }
+
+    .editor-footer {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 9px 12px;
+    }
+}
