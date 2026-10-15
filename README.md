@@ -114,9 +114,9 @@ BursaryFlow is still in the early stages, but feedback is very welcome, especial
 
 ## Author
 
-**[Your Name]**
+**[Delton Novela]**
 Computer Science student | South Africa
-🔗 [LinkedIn](https://www.linkedin.com/in/[your-profile]) · 💻 [GitHub](https://github.com/deltonovel-cell)
+🔗 [LinkedIn](https://www.linkedin.com/in/delton-novela-820541402/?isSelfProfile=true]) · 💻 [GitHub](https://github.com/deltonovel-cell)
 
 ---
 
